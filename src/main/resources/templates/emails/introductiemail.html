@@ -10,67 +10,93 @@
       box-sizing: border-box;
     }
 
-    body {
-      background-color: white;
-      display: grid;
+    .container {
+      width: 365px;
       margin: 0;
-      height: 4000px;
+      padding: 1em;
+      text-align: center;
+      display: grid;
       grid-template: repeat(20, 1fr) / repeat(10, 1fr);
-      overflow: scroll;
     }
 
     .progressie-bar {
       grid-area: 1 / 1 / 3 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: blue;
+      text-align: center;
       border: 1px solid black;
     }
 
     .intro-tekst {
-      grid-area: 3 / 1 / 7 / 11;
-      border: 1px solid white;
-      display: flex;
+      grid-area: 3 / 1 / 6 / 11;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       justify-content: center;
       align-items: center;
       margin: 0;
       border: 1px solid black;
+      background-color: blue;
+    }
+
+    .titel-introtekst {
+      text-align: center;
+      color: white;
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+
+    .tekst-introtekst {
+      text-align: center;
+      color: white;
+      grid-column: 1/3;
+      grid-row: 2/5;
+      margin: 10px;
     }
 
     .rapport-samenvatting {
-      grid-area: 7 / 1 / 13 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      grid-area: 6 / 1 / 11 / 11;
       margin: 0;
       border: 1px solid black;
+      text-align: center;
+      background-color: rgba(211, 211, 211, 0.5);
+      padding-left: 12px;
     }
 
-    .green-box {
-      width: 200px; /* Adjust width as needed */
-      height: 120px; /* Adjust height as needed */
-      background-color: #abecab; /* Green color */
-      border-radius: 10px; /* Adjust border radius for rounded corners */
-      text-align: center; /* Center text horizontally */
-      line-height: 100px; /* Center text vertically */
-      color: #1a00f6; /* Text color */
+    .green-container {
+      top: 30px;
+      width: 285px;
+      margin: 50px auto;
+      border: 1px solid black;
+      border-radius: 15px;
+      background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+      text-align: center;
+      line-height: 150px;
+
     }
 
   </style>
 </head>
 
 <body>
-<div class="progressie-bar">
-  <h1> Progressie bar</h1>
-</div>
-<div class="intro-tekst">
-  <div class="green-box">Sample text</div>
-
-</div>
-<div class="rapport-samenvatting">
-  <h1> Rapport Samenvatting</h1>
+<div class="container">
+  <div class="progressie-bar">
+    <h1>Progressie bar</h1>
+  </div>
+  <div class="intro-tekst">
+    <h1 class="titel-introtekst">Welcome User!</h1>
+    <p class="tekst-introtekst">
+      How nice that you have completed the MAE personal development meter.
+      My name is Sophia and I am your online supervisor this period.
+      Together with my team, we hope that you will be one of thousands of
+      clients who will see results within 2 months. The progress bar will
+      tell you how far you've come so far. Feel free to take a look and we
+      will contact you again soon!
+    </p>
+  </div>
+  <div class="rapport-samenvatting">
+    <div class="green-container">
+      <h1>idk</h1>
+    </div>
+  </div>
 </div>
 </body>
 
