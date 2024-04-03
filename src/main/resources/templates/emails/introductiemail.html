@@ -10,38 +10,32 @@
       box-sizing: border-box;
     }
 
-    body {
-      background-color: white;
-      display: grid;
+    .container{
+      width: 365px;
       margin: 0;
-      height: 4000px;
+      padding: 1em;
+      text-align: center;
+      display: grid;
       grid-template: repeat(20, 1fr) / repeat(10, 1fr);
-      overflow: scroll;
     }
 
     .progressie-bar {
       grid-area: 1 / 1 / 3 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #3D59FF;
+      text-align: center;
       border: 1px solid black;
     }
 
     .intro-tekst {
-      /*grid-area: 3 / 1 / 7 / 11;*/
-      grid-column: col 3 / span 2;
-      grid-row: row 5;
+      grid-area: 3 / 1 / 7 / 11;
       display: grid;
       grid-template-columns: 1fr 1fr;
-
-      border: 1px solid white;
       /*display: flex;*/
       justify-content: center;
       align-items: center;
       margin: 0;
       border: 1px solid black;
-      background-color: blue;
+      background-color: #3D59FF;
     }
 
     .titel-introtekst {
@@ -54,7 +48,6 @@
     .tekst-introtekst {
       text-align: center;
       color: white;
-
       grid-column: 1/3;
       grid-row: 2/5;
       margin: 10px;
@@ -62,33 +55,33 @@
 
     .rapport-samenvatting {
       grid-area: 7 / 1 / 13 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin: 0;
       border: 1px solid black;
+      text-align: center;
     }
+
   </style>
 </head>
 
 <body>
-<div class="progressie-bar">
-  <h1> Progressie bar</h1>
-</div>
-<div class="intro-tekst">
-  <h1 class="titel-introtekst"> Welcome User!</h1>
-  <p class="tekst-introtekst">
-    How nice that you have completed the MAE personal development meter. <br>
-    My name is Sophia and I am your online supervisor this period.<br>
-    Together with my team, we hope that you will be one of thousands of <br>
-    clients who will see results within 2 months. The progress bar will <br>
-    tell you how far you've come so far. Feel free to take a look and we <br>
-    will contact you again soon!
-  </p>
-</div>
-<div class="rapport-samenvatting">
-  <h1> Rapport Samenvatting</h1>
+<div class="container">
+  <div class="progressie-bar">
+    <h1> Progressie bar</h1>
+  </div>
+  <div class="intro-tekst">
+    <h1 class="titel-introtekst"> Welcome User!</h1>
+    <p class="tekst-introtekst">
+      How nice that you have completed the MAE personal development meter.
+      My name is Sophia and I am your online supervisor this period.
+      Together with my team, we hope that you will be one of thousands of
+      clients who will see results within 2 months. The progress bar will
+      tell you how far you've come so far. Feel free to take a look and we
+      will contact you again soon!
+    </p>
+  </div>
+  <div class="rapport-samenvatting">
+    <h1> Rapport Samenvatting</h1>
+  </div>
 </div>
 </body>
 
