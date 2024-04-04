@@ -30,9 +30,9 @@
         height: 35px;
         background-color: #4b8e4b;
         border-radius: 50%;
-        border: 3px solid lightgreen;
+        border: 3px solid darkgreen;
         display: inline-block;
-        margin: 0 10px; /* Space between indicators */
+        margin: 0 10px;
       }
 
       .intro-tekst {
@@ -53,13 +53,8 @@
         background-color: rgba(211, 211, 211, 0.5);
         text-align: center;
         border: 1px solid rgba(211, 211, 211, 0.5);
-      }
 
-      .pb {
-        color: lightgreen;
-        text-decoration: underline;
       }
-
       .green-container {
         top: 30px;
         width: 285px;
@@ -69,9 +64,10 @@
         text-align: center;
         line-height: 150px;
       }
-
-      span:hover + .progressie-bar {
-        background-color: red;
+      span.pb {
+        font-weight: bold;
+        color: lightgreen;
+        text-decoration: underline;
       }
 
     </style>
@@ -83,7 +79,7 @@
       <tr>
         <td align="center" valign="middle">
           <div class="progressie-indicator"></div>
-          <div class="progressie-indicator " style="background-color: white"></div>
+          <div class="progressie-indicator"  style="background-color: white"></div>
           <div class="progressie-indicator"  style="background-color: white"></div>
           <div class="progressie-indicator"  style="background-color: white"></div>
           <div class="progressie-indicator"  style="background-color: white"></div>
@@ -94,7 +90,7 @@
       <h1>Welcome Shaey!</h1>
       <p>How nice that you have completed the MAE personal development meter. My name is Sophia and I am your online
         supervisor this period. Together with my team, we hope that you will be one of thousands of clients who will
-        see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span> will tell you how far you've come so far. Feel free to take a
+        see results within 2 months. The <span class="pb">progress bar</span> will tell you how far you've come so far. Feel free to take a
         look and we will contact you again soon</p>
     </div>
     <div class="rapport-samenvatting">
@@ -105,6 +101,24 @@
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var pb = document.querySelector('.pb');
+      var progressieIndicators = document.querySelectorAll('.progressie-indicator');
+
+      pb.addEventListener('mouseover', function() {
+        progressieIndicators.forEach(function(indicator) {
+          indicator.style.borderColor = 'lightgreen';
+        });
+      });
+
+      pb.addEventListener('mouseout', function() {
+        progressieIndicators.forEach(function(indicator) {
+          indicator.style.borderColor = 'green';
+        });
+      });
+    });
+  </script>
   </body>
 
   </html>
