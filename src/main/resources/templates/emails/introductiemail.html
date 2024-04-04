@@ -5,6 +5,12 @@
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-keyframes>
+    @keyframes enlarge {
+      0%   {font-size: 12px;}
+      100% {font-size: 14px;}
+    }
+    </style>
   <style amp-custom>
     * {
       box-sizing: border-box;
@@ -73,6 +79,29 @@
 
     }
 
+    .report-button {
+      position: relative;
+      bottom: -30px;
+      left: -60px;
+      background-color: #0000ff;
+      border: 1px solid #0000ff;
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .report-button:hover {
+      background-color: transparent;
+      animation: enlarge 0.5s forwards;
+      color: #0000ff
+    }
+
   </style>
 </head>
 
@@ -95,6 +124,7 @@
   <div class="rapport-samenvatting">
     <div class="green-container">
       <h1>idk</h1>
+      <button class="report-button">See my report</button>
     </div>
   </div>
 </div>
