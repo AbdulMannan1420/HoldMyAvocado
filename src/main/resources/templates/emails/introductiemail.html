@@ -1,155 +1,110 @@
-<!doctype html>
-<html ⚡4email lang="en" data-css-strict>
+  <!doctype html>
+  <html ⚡4email lang="en" data-css-strict>
 
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    * {
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>body {
+      visibility: hidden
+    }</style>
+    <style amp-custom>
+      * {
+        box-sizing: border-box;
+      }
 
-    body {
-      background-color: white;
-      display: grid;
-      margin: 0;
-      height: 4000px;
-      grid-template: repeat(20, 1fr) / repeat(10, 1fr);
-      overflow: scroll;
-    }
-    .progressie-bar {
-      grid-area: 1 / 1 / 3 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid black;
-      background-color: blue;
-    }
-    .progress-step1 {
-        position: relative;
-        width: 30px;
-        height: 20px;
-        margin-right: -1px;
-        margin-left: -1px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: darkolivegreen;
-    }
-    .barbetweenprogress1-2 {
-      top: 50%;
-      left: 60%;
-      width: 20px;
-      height: 5px;
-      background: linear-gradient(to right, darkolivegreen 0%, white 100%);
-    }
-    .progress-step2 {
-        position: relative;
-        width: 30px;
-        height: 20px;
-        margin-right: -1px;
-        margin-left: -1px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: white;
-    }
-    .barbetweenprogress2-3 {
-        top: 50%;
-        left: 60%;
-        width: 20px;
-        height: 5px;
-        background: white;
-    }
-    .progress-step3 {
-        position: relative;
-        width: 30px;
-        height: 20px;
-        margin-right: -1px;
-        margin-left: -1px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: white;
-    }
-    .barbetweenprogress3-4 {
-        top: 50%;
-        left: 60%;
-        width: 20px;
-        height: 5px;
-        background: white;
-    }
-    .progress-step4 {
-        position: relative;
-        width: 30px;
-        height: 20px;
-        margin-right: -1px;
-        margin-left: -1px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: white;
-    }
-    .barbetweenprogress4-5 {
-        top: 50%;
-        left: 60%;
-        width: 20px;
-        height: 5px;
-        background: white;
-        alignment: center;
-    }
-    .last-step {
-        position: relative;
-        width: 30px;
-        height: 20px;
-        margin-left: -1px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: white;
-    }
-    .intro-tekst {
-      grid-area: 3 / 1 / 7 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      border: 1px solid black;
-    }
+      .body {
+        width: 365px;
+        margin: 0;
+        padding: 1em;
+        text-align: center;
+      }
 
-    .rapport-samenvatting {
-      grid-area: 7 / 1 / 13 / 11;
-      border: 1px solid white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      border: 1px solid black;
-    }
-  </style>
-</head>
+      .progressie-bar {
+        background-color: blue;
+        text-align: center;
+        padding-top: 17px;
+      }
 
-<body>
-<div class="progressie-bar" >
-  <div class="progress-step1" id="step1"></div>
-    <div class="barbetweenprogress1-2" id="bbp1-2"></div>
-  <div class="progress-step2" id="step2"></div>
-    <div class="barbetweenprogress2-3" id="bbp2-3"></div>
-  <div class="progress-step3" id="step3"></div>
-    <div class="barbetweenprogress3-4" id="bbp3-4"></div>
-  <div class="progress-step4" id="step4"></div>
-    <div class="barbetweenprogress4-5" id="bbp4-5"></div>
-  <div class="last-step" id="step5"></div>
-</div>
-<div class="intro-tekst">
-  <h1> Introtekst</h1>
-</div>
-<div class="rapport-samenvatting">
-  <h1> Rapport Samenvatting</h1>
-</div>
-</body>
+      .progressie-indicator {
+        width: 35px;
+        height: 35px;
+        background-color: #4b8e4b;
+        border-radius: 50%;
+        border: 3px solid lightgreen;
+        display: inline-block;
+        margin: 0 10px; /* Space between indicators */
+      }
 
-</html>
+      .intro-tekst {
+        margin: 0;
+        border: 1px solid blue;
+        background: blue;
+        text-align: center;
+        color: white;
+      }
+
+      .intro-tekst > p {
+        margin-left: 17px;
+        margin-right: 17px;
+      }
+
+      .rapport-samenvatting {
+        margin: 0;
+        background-color: rgba(211, 211, 211, 0.5);
+        text-align: center;
+        border: 1px solid rgba(211, 211, 211, 0.5);
+      }
+
+      .pb {
+        color: lightgreen;
+        text-decoration: underline;
+      }
+
+      .green-container {
+        top: 30px;
+        width: 285px;
+        margin: 50px auto;
+        border-radius: 15px;
+        background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+        text-align: center;
+        line-height: 150px;
+      }
+
+      span:hover + .progressie-bar {
+        background-color: red;
+      }
+
+    </style>
+  </head>
+
+  <body>
+  <div class="body">
+    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" valign="middle">
+          <div class="progressie-indicator"></div>
+          <div class="progressie-indicator " style="background-color: white"></div>
+          <div class="progressie-indicator"  style="background-color: white"></div>
+          <div class="progressie-indicator"  style="background-color: white"></div>
+          <div class="progressie-indicator"  style="background-color: white"></div>
+        </td>
+      </tr>
+    </table>
+    <div class="intro-tekst">
+      <h1>Welcome Shaey!</h1>
+      <p>How nice that you have completed the MAE personal development meter. My name is Sophia and I am your online
+        supervisor this period. Together with my team, we hope that you will be one of thousands of clients who will
+        see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span> will tell you how far you've come so far. Feel free to take a
+        look and we will contact you again soon</p>
+    </div>
+    <div class="rapport-samenvatting">
+      <div class="green-container">
+        <div class="lowest-focuspoint">
+          <h1>idk</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+
+  </html>
