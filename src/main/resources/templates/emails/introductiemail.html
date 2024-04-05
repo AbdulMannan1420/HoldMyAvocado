@@ -4,11 +4,17 @@
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body {visibility: hidden}</style>
+  <style amp4email-boilerplate>body {
+    visibility: hidden
+  }</style>
   <style amp-keyframes>
     @keyframes enlarge {
-      0%   {font-size: 12px;}
-      100% {font-size: 14px;}
+      0% {
+        font-size: 12px;
+      }
+      100% {
+        font-size: 14px;
+      }
     }
   </style>
   <style amp-custom>
@@ -17,7 +23,7 @@
     }
 
     .body {
-      width: 365px;
+      width: 400px;
       margin: 0;
       padding: 1em;
       text-align: center;
@@ -66,6 +72,7 @@
       color: lightgreen;
       text-decoration: underline;
     }
+
     .green-container {
       margin: 50px auto;
       border-radius: 15px;
@@ -75,8 +82,8 @@
       padding-right: 100px;
 
 
-
     }
+
     .lowest-focuspoint {
       border: 1px solid black;
       color: orange;
@@ -86,12 +93,13 @@
       background-color: blue;
       bottom: 100px;
     }
+
     .focus-button {
       background-color: inherit;
       border: 2px solid blue;
       color: blue;
       height: 27px;
-      width: 130px;
+      width: 150px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -99,7 +107,7 @@
       transition-duration: 0.4s;
       cursor: pointer;
       border-radius: 20px;
-      margin-left: 17px;
+      margin-left: 30px;
 
 
     }
@@ -108,6 +116,7 @@
       background-color: blue;
       color: white;
     }
+
     .report-button {
       background-color: blue;
       border: 2px solid blue;
@@ -116,34 +125,53 @@
       text-decoration: none;
       display: inline-block;
       height: 27px;
-      width: 130px;
+      width: 155px;
       font-size: 10px;
       cursor: pointer;
       border-radius: 20px;
-      margin-left: 12px;
+      margin-left: 40px;
       transition-duration: 0.4s;
     }
+
     .report-button:hover {
       background-color: transparent;
       animation: enlarge 0.5s forwards;
       color: #0000ff
     }
 
-    .buttons{
+    .buttons {
 
       display: flex;
       width: 300px;
       margin-top: 10px;
 
     }
-    .focuspoints{
-      padding-left: 23px;
-      padding-right: 15px;
+
+    .focuspoints {
       background-color: rgba(211, 211, 211, 0.5);
       text-align: center;
-      border: 1px solid black;
+      width: 100%;
+      height: 217px;
+      display: flex;
 
     }
+    .focuspoints > div{
+      width: 70%;
+      height: 95%;
+      border: 1px solid black;
+    }
+    .focuspoint-1{
+      margin-left: 5px;
+      margin-right: 10px;
+    }
+    .focuspoint-2{
+      margin-right: 10px;
+    }
+
+    .focuspoint-3{
+      margin-right: 5px;
+    }
+
 
 
   </style>
@@ -164,9 +192,11 @@
   </table>
   <div class="intro-tekst">
     <h1 style="color: white;">Welcome Shaey!</h1>
-    <p style="color: white;">How nice that you have completed the MAE personal development meter. My name is Sophia and I am your online
+    <p style="color: white;">How nice that you have completed the MAE personal development meter. My name is Sophia
+      and I am your online
       supervisor this period. Together with my team, we hope that you will be one of thousands of clients who will
-      see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span>  will tell you how far you've come so far. Feel free to take a
+      see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span> will tell
+      you how far you've come so far. Feel free to take a
       look and we will contact you again soon</p>
   </div>
   <div class="rapport-samenvatting">
@@ -179,7 +209,7 @@ margin-top: 10px;">
         <amp-img src="ff.png"
                  alt="photo description"
                  width="110px"
-                 height="110px" >
+                 height="110px">
         </amp-img>
       </div>
       <div class="buttons">
@@ -192,9 +222,9 @@ margin-top: 10px;">
     </div>
   </div>
   <div class="focuspoints">
-    <h1>
-      User story 2
-    </h1>
+    <div class="focuspoint-1"><h3> Focuspoint 1</h3></div>
+    <div class="focuspoint-2"><h3> Focuspoint 2</h3></div>
+    <div class="focuspoint-3"><h3> Focuspoint 3</h3></div>
   </div>
 </div>
 </body>
