@@ -2,199 +2,229 @@
 <html ⚡4email lang="en" data-css-strict>
 
 <head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body {visibility: hidden}</style>
-  <style amp-keyframes>
-    @keyframes enlarge {
-      0%   {font-size: 12px;}
-      100% {font-size: 14px;}
-    }
-  </style>
-  <style amp-custom>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>body {
+        visibility: hidden
+    }</style>
+    <style amp-keyframes>
+        @keyframes enlarge {
+            0% {
+                font-size: 12px;
+            }
+            100% {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <style amp-custom>
+        * {
+            box-sizing: border-box;
+        }
 
-    .body {
-      width: 365px;
-      margin: 0;
-      padding: 1em;
-      text-align: center;
-    }
+        .body {
+            width: 410px;
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+        }
 
-    .progressie-bar {
+        .progressie-bar {
 
-      background-color: #3D59FF;
-      text-align: center;
-      padding-top: 17px;
-    }
+            background-color: #3D59FF;
+            text-align: center;
+            padding-top: 17px;
+        }
 
-    .progressie-indicator {
-      width: 35px;
-      height: 35px;
-      background-color: #2E8B57;
-      border-radius: 50%;
-      border: 3px solid lightgreen;
-      display: inline-block;
-      margin: 0 10px; /* Space between indicators */
-    }
+        .progressie-indicator {
+            width: 35px;
+            height: 35px;
+            background-color: #2E8B57;
+            border-radius: 50%;
+            border: 3px solid lightgreen;
+            display: inline-block;
+            margin: 0 10px; /* Space between indicators */
+        }
 
-    .intro-tekst {
-      margin: 0;
-      border: 1px solid #3D59FF;
-      background: #3D59FF;
-      text-align: center;
-      color: white;
-    }
+        .intro-tekst {
+            margin: 0;
+            border: 1px solid #3D59FF;
+            background: #3D59FF;
+            text-align: center;
+            color: white;
+        }
 
-    .intro-tekst > p {
-      margin-left: 17px;
-      margin-right: 17px;
-    }
+        .intro-tekst > p {
+            margin-left: 17px;
+            margin-right: 17px;
+        }
 
-    .rapport-samenvatting {
-      padding-left: 23px;
-      padding-right: 15px;
-      background-color: rgba(211, 211, 211, 0.5);
-      text-align: center;
-      border: 1px solid rgba(211, 211, 211, 0.5);
+        .rapport-samenvatting {
+            padding-left: 23px;
+            padding-right: 15px;
+            background-color: rgba(211, 211, 211, 0.5);
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
 
-    }
+        }
 
-    .pb {
-      color: lightgreen;
-      text-decoration: underline;
-    }
-    .green-container {
-      margin: 50px auto;
-      border-radius: 15px;
-      background: linear-gradient(to bottom right, #11E930, #FFFFFF);
-      text-align: center;
-      padding-bottom: 13px;
-      padding-right: 100px;
+        .pb {
+            color: lightgreen;
+            text-decoration: underline;
+        }
 
-
-
-    }
-    .lowest-focuspoint {
-      border: 1px solid black;
-      color: orange;
-      height: 175px;
-      width: 150px;
-      border-radius: 10px;
-      background-color: blue;
-      bottom: 100px;
-    }
-    .focus-button {
-      background-color: inherit;
-      border: 2px solid blue;
-      color: blue;
-      height: 27px;
-      width: 130px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 10px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-      border-radius: 20px;
-      margin-left: 17px;
+        .green-container {
+            margin: 50px auto;
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            padding-bottom: 13px;
+            padding-right: 100px;
 
 
-    }
+        }
 
-    .focus-button:hover {
-      background-color: blue;
-      color: white;
-    }
-    .report-button {
-      background-color: blue;
-      border: 2px solid blue;
-      color: #11E930;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      height: 27px;
-      width: 130px;
-      font-size: 10px;
-      cursor: pointer;
-      border-radius: 20px;
-      margin-left: 12px;
-      transition-duration: 0.4s;
-    }
-    .report-button:hover {
-      background-color: transparent;
-      animation: enlarge 0.5s forwards;
-      color: #0000ff
-    }
+        .lowest-focuspoint {
+            border: 1px solid black;
+            color: orange;
+            height: 175px;
+            width: 150px;
+            border-radius: 10px;
+            background-color: blue;
+            bottom: 100px;
+        }
 
-    .buttons{
-
-      display: flex;
-      width: 300px;
-      margin-top: 10px;
-
-    }
-    .focuspoints{
-      padding-left: 23px;
-      padding-right: 15px;
-      background-color: rgba(211, 211, 211, 0.5);
-      text-align: center;
-      border: 1px solid black;
-
-    }
+        .focus-button {
+            background-color: inherit;
+            border: 2px solid blue;
+            color: blue;
+            height: 27px;
+            width: 130px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 17px;
 
 
-  </style>
+        }
+
+        .focus-button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .report-button {
+            background-color: blue;
+            border: 2px solid blue;
+            color: #11E930;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            height: 27px;
+            width: 130px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 12px;
+            transition-duration: 0.4s;
+        }
+
+        .report-button:hover {
+            background-color: transparent;
+            animation: enlarge 0.5s forwards;
+            color: #0000ff
+        }
+
+        .buttons {
+
+            display: flex;
+            width: 300px;
+            margin-top: 10px;
+
+        }
+
+        .focuspoints {
+          background-color: rgba(211, 211, 211, 0.5);
+          text-align: center;
+          width: 100%;
+          height: 217px;
+          display: flex;
+
+        }
+        .focuspoints > div{
+          width: 70%;
+          height: 95%;
+          border: 1px solid black;
+        }
+        .focuspoint-1{
+          margin-left: 5px;
+          margin-right: 10px;
+        }
+        .focuspoint-2{
+          margin-right: 10px;
+        }
+
+        .focuspoint-3{
+          margin-right: 5px;
+        }
+
+
+
+    </style>
 </head>
 
 <body>
 <div class="body">
-  <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-      <td align="center" valign="middle">
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-      </td>
-    </tr>
-  </table>
-  <div class="intro-tekst">
-    <h1 style="color: white;">Welcome Shaey!</h1>
-    <p style="color: white;">How nice that you have completed the MAE personal development meter. My name is Sophia and I am your online
-      supervisor this period. Together with my team, we hope that you will be one of thousands of clients who will
-      see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span>  will tell you how far you've come so far. Feel free to take a
-      look and we will contact you again soon</p>
-  </div>
-  <div class="rapport-samenvatting">
-    <div class="green-container">
-      <div class="lowest-focuspoint">
-        <h2 style="font-weight: bold;
-margin-top: 10px;">
-          Financial Fit
-        </h2>
-        <amp-img src="ff.png"
-                 alt="photo description"
-                 width="110px"
-                 height="110px" >
-        </amp-img>
-      </div>
-      <div class="buttons">
-        <button class="report-button">See my report</button>
-        <button class="focus-button">Choose Focuspoint</button>
-
-
-      </div>
-
+    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="intro-tekst">
+        <h1 style="color: white;">Welcome Shaey!</h1>
+        <p style="color: white;">How nice that you have completed the MAE personal development meter. My name is Sophia
+            and I am your online
+            supervisor this period. Together with my team, we hope that you will be one of thousands of clients who will
+            see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span> will tell
+            you how far you've come so far. Feel free to take a
+            look and we will contact you again soon</p>
     </div>
-  </div>
+    <div class="rapport-samenvatting">
+        <div class="green-container">
+            <div class="lowest-focuspoint">
+                <h2 style="font-weight: bold;
+margin-top: 10px;">
+                    Financial Fit
+                </h2>
+                <amp-img src="ff.png"
+                         alt="photo description"
+                         width="110px"
+                         height="110px">
+                </amp-img>
+            </div>
+            <div class="buttons">
+                <button class="report-button">See my report</button>
+                <button class="focus-button">Choose Focuspoint</button>
+
+
+            </div>
+
+        </div>
+    </div>
   <div class="focuspoints">
-    <h1>
-      User story 2
-    </h1>
+    <div class="focuspoint-1"><h3> Focuspoint 1</h3></div>
+    <div class="focuspoint-2"><h3> Focuspoint 2</h3></div>
+    <div class="focuspoint-3"><h3> Focuspoint 3</h3></div>
   </div>
 </div>
 </body>
