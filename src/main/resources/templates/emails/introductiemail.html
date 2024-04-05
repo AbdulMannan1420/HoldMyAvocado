@@ -4,9 +4,13 @@
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body {
-    visibility: hidden
-  }</style>
+  <style amp4email-boilerplate>body {visibility: hidden}</style>
+  <style amp-keyframes>
+    @keyframes enlarge {
+      0%   {font-size: 12px;}
+      100% {font-size: 14px;}
+    }
+  </style>
   <style amp-custom>
     * {
       box-sizing: border-box;
@@ -117,6 +121,12 @@
       cursor: pointer;
       border-radius: 20px;
       margin-left: 12px;
+      transition-duration: 0.4s;
+    }
+    .report-button:hover {
+      background-color: transparent;
+      animation: enlarge 0.5s forwards;
+      color: #0000ff
     }
 
     .buttons{
