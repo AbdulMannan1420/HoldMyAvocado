@@ -147,30 +147,46 @@
 
     }
 
-    .focuspoints {
-      background-color: rgba(211, 211, 211, 0.5);
-      text-align: center;
-      width: 100%;
-      height: 217px;
+    .choose-focuspoint {
       display: flex;
+      justify-content: space-around;
+      font-size: 7px;
+      color: darkorange;
+    }
+    .focuspoint {
+      width: 100px;
+      border-radius: 12px;
+      background-color: white;
+      margin: 3px;
+      font-size: 10px;
+      box-shadow: 3px 3px 1px 0px #938c8c;
+      margin-bottom: 10px;
+    }
 
-    }
-    .focuspoints > div{
-      width: 70%;
-      height: 95%;
-      border: 1px solid black;
-    }
-    .focuspoint-1{
-      margin-left: 5px;
-      margin-right: 10px;
-    }
-    .focuspoint-2{
-      margin-right: 10px;
+    input[type="radio"] {
+      display: none;
     }
 
-    .focuspoint-3{
-      margin-right: 5px;
+    /* Create a custom radio button */
+    input[type="radio"] + label {
+      padding: 10px 20px;
+      background-color: rgba(211, 211, 211, 0.5);
+      color: blue;
+      cursor: pointer;
+      border-radius: 15px;
+      border: 1px solid blue;
+      margin: 7px;
+      display: inline-block;
+      font-size: 10px;
     }
+
+    /* Change the background color when the radio button is selected */
+    input[type="radio"]:checked + label {
+      background-color: blue;
+      color: white;
+    }
+
+
 
 
 
@@ -216,16 +232,46 @@ margin-top: 10px;">
         <button class="report-button">See my report</button>
         <button class="focus-button">Choose Focuspoint</button>
 
-
       </div>
-
     </div>
+    <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
+      <div class="choose-focuspoint">
+        <div class="focus-1 focuspoint">
+          <h2>Job Crafting</h2>
+          <amp-img src="ff.png"
+                   alt="photo description"
+                   width="70px"
+                   height="70px" >
+          </amp-img>
+          <input type="radio" id="job-crafting" name="option" value="job-crafting">
+          <label for="job-crafting">Choose</label><br>
+
+        </div>
+        <div class="focus-2 focuspoint">
+          <h2>Me Life</h2>
+          <amp-img src="ff.png"
+                   alt="photo description"
+                   width="70px"
+                   height="70px" >
+          </amp-img>
+          <input type="radio" id="me-life" name="option" value="me-life">
+          <label for="me-life">Choose</label><br>
+        </div>
+        <div class="focus-3 focuspoint">
+          <h2>Adoptability</h2>
+          <amp-img src="ff.png"
+                   alt="photo description"
+                   width="70px"
+                   height="70px" >
+          </amp-img>
+          <input type="radio" id="adoptability" name="option" value="adoptability">
+          <label for="adoptability">Choose</label><br>
+        </div>
+      </div>
+    </form>
+
   </div>
-  <div class="focuspoints">
-    <div class="focuspoint-1"><h3> Focuspoint 1</h3></div>
-    <div class="focuspoint-2"><h3> Focuspoint 2</h3></div>
-    <div class="focuspoint-3"><h3> Focuspoint 3</h3></div>
-  </div>
+</div>
 </div>
 </body>
 
