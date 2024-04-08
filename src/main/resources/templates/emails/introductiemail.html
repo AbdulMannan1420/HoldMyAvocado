@@ -1,5 +1,5 @@
 <!doctype html>
-<html ⚡4email lang="en" data-css-strict>
+<html ⚡4email lang="en"data-css-strict="">
 
 <head>
   <meta charset="utf-8">
@@ -7,16 +7,6 @@
   <style amp4email-boilerplate>body {
     visibility: hidden
   }</style>
-  <style amp-keyframes>
-    @keyframes enlarge {
-      0% {
-        font-size: 12px;
-      }
-      100% {
-        font-size: 14px;
-      }
-    }
-  </style>
   <style amp-custom>
     * {
       box-sizing: border-box;
@@ -31,7 +21,7 @@
 
     .progressie-bar {
 
-      background-color: #3D59FF;
+      background-color: blue;
       text-align: center;
       padding-top: 17px;
     }
@@ -48,8 +38,8 @@
 
     .intro-tekst {
       margin: 0;
-      border: 1px solid #3D59FF;
-      background: #3D59FF;
+      border: 1px solid blue;
+      background-color: blue;
       text-align: center;
       color: white;
     }
@@ -78,8 +68,10 @@
       border-radius: 15px;
       background: linear-gradient(to bottom right, #11E930, #FFFFFF);
       text-align: center;
-      padding-bottom: 13px;
-      padding-right: 100px;
+      height: 235px;
+      display: flex;
+      padding-bottom: 10px;
+      padding-top: 10px;
 
 
     }
@@ -92,6 +84,7 @@
       border-radius: 10px;
       background-color: blue;
       bottom: 100px;
+      margin-bottom: 20px;
     }
 
     .focus-button {
@@ -99,7 +92,7 @@
       border: 2px solid blue;
       color: blue;
       height: 27px;
-      width: 150px;
+      width: 123px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -108,6 +101,7 @@
       cursor: pointer;
       border-radius: 20px;
       margin-left: 30px;
+      margin-top: 8px;
 
 
     }
@@ -125,26 +119,68 @@
       text-decoration: none;
       display: inline-block;
       height: 27px;
-      width: 155px;
+      width: 123px;
       font-size: 10px;
       cursor: pointer;
       border-radius: 20px;
       margin-left: 40px;
+      margin-top: 30px;
       transition-duration: 0.4s;
     }
 
     .report-button:hover {
       background-color: transparent;
-      animation: enlarge 0.5s forwards;
       color: #0000ff
     }
 
-    .buttons {
 
-      display: flex;
-      width: 300px;
-      margin-top: 10px;
+    .focuspoints > div {
+      width: 70%;
+      height: 95%;
+      border: 1px solid black;
+    }
 
+
+    .lowest_focuspoint-image {
+      margin-left: 32px;
+    }
+
+    .percentage {
+      display: block;
+      width: fit-content;
+      font-size: 20px;
+      background-color: white;
+      font-weight: bold;
+      box-shadow: 0px 0px 10px 10px white;
+      border-radius: 10px;
+      margin-left: 70%;
+      margin-top: 0;
+    }
+
+    .PART1 {
+
+      width: 150px;
+
+    }
+
+    .PART2 {
+
+      text-align: center;
+
+
+    }
+
+    .recommend {
+      color: orange;
+      font-weight: bold;
+
+    }
+
+    .lfs-tekst {
+      color: blue !important;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
     }
 
     .choose-focuspoint {
@@ -189,7 +225,6 @@
 
 
 
-
   </style>
 </head>
 
@@ -208,70 +243,74 @@
   </table>
   <div class="intro-tekst">
     <h1 style="color: white;">Welcome Shaey!</h1>
-    <p style="color: white;">How nice that you have completed the MAE personal development meter. My name is Sophia
-      and I am your online
-      supervisor this period. Together with my team, we hope that you will be one of thousands of clients who will
-      see results within 2 months. The <span class="pb" style="font-weight: bold;">progress bar</span> will tell
-      you how far you've come so far. Feel free to take a
-      look and we will contact you again soon</p>
+    <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
+      en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
+      ziet. De<span class="pb" style="font-weight: bold;">voortgangsbalk</span>laat zien hoe ver je al bent. Neem
+      gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
   </div>
   <div class="rapport-samenvatting">
     <div class="green-container">
-      <div class="lowest-focuspoint">
-        <h2 style="font-weight: bold;
-margin-top: 10px;">
-          Financial Fit
-        </h2>
-        <amp-img src="ff.png"
-                 alt="photo description"
-                 width="110px"
-                 height="110px">
-        </amp-img>
-      </div>
-      <div class="buttons">
+      <div class="PART1">
+        <div class="lowest-focuspoint">
+          <h2 style="font-weight: bold;
+    margin-top: 10px;">
+            Financial Fit
+          </h2>
+          <img class="lowest_focuspoint-image"
+               src="https://drive.google.com/uc?export=download&id=1sdDU8Q0QvnzLsqIti8jRQ0Wfl7uRyDhs"
+               alt="logo" title="Logo" style="display:block" width="83" height="87"/>
+          <p class="percentage">
+            45%
+          </p>
+        </div>
         <button class="report-button">See my report</button>
+      </div>
+      <div class="PART2">
+        <h4 class="recommend"> Recommended</h4>
+        <p class="lfs-tekst">The test has shown that you are not properly preparing for your financial future.
+          This is very important to have security in your life</p>
         <button class="focus-button">Choose Focuspoint</button>
-
       </div>
     </div>
-    <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
-      <div class="choose-focuspoint">
-        <div class="focus-1 focuspoint">
-          <h2>Job Crafting</h2>
-          <amp-img src="ff.png"
-                   alt="photo description"
-                   width="70px"
-                   height="70px" >
-          </amp-img>
-          <input type="radio" id="job-crafting" name="option" value="job-crafting">
-          <label for="job-crafting">Choose</label><br>
-
-        </div>
-        <div class="focus-2 focuspoint">
-          <h2>Me Life</h2>
-          <amp-img src="ff.png"
-                   alt="photo description"
-                   width="70px"
-                   height="70px" >
-          </amp-img>
-          <input type="radio" id="me-life" name="option" value="me-life">
-          <label for="me-life">Choose</label><br>
-        </div>
-        <div class="focus-3 focuspoint">
-          <h2>Adoptability</h2>
-          <amp-img src="ff.png"
-                   alt="photo description"
-                   width="70px"
-                   height="70px" >
-          </amp-img>
-          <input type="radio" id="adoptability" name="option" value="adoptability">
-          <label for="adoptability">Choose</label><br>
-        </div>
-      </div>
-    </form>
-
   </div>
-</div>
+  <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
+    <div class="choose-focuspoint">
+      <div class="focus-1 focuspoint">
+        <h2>Job Crafting</h2>
+        <amp-img src="ff.png"
+                 alt="photo description"
+                 width="70px"
+                 height="70px" >
+        </amp-img>
+        <input type="radio" id="job-crafting" name="option" value="job-crafting">
+        <label for="job-crafting">Choose</label><br>
+
+      </div>
+      <div class="focus-2 focuspoint">
+        <h2>Me Life</h2>
+        <amp-img src="ff.png"
+                 alt="photo description"
+                 width="70px"
+                 height="70px" >
+        </amp-img>
+        <input type="radio" id="me-life" name="option" value="me-life">
+        <label for="me-life">Choose</label><br>
+      </div>
+      <div class="focus-3 focuspoint">
+        <h2>Adoptability</h2>
+        <amp-img src="ff.png"
+                 alt="photo description"
+                 width="70px"
+                 height="70px" >
+        </amp-img>
+        <input type="radio" id="adoptability" name="option" value="adoptability">
+        <label for="adoptability">Choose</label><br>
+      </div>
+    </div>
+  </form>
+
+
+
 </div>
 </body>
 
