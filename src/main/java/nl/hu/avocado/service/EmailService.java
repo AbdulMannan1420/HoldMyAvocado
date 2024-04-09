@@ -55,6 +55,7 @@ public class EmailService {
             properties.put("lowestFocuspointName", report.getLowestFocuspoint().getNaam());
             properties.put("lowestFocuspointPercentage", report.getLowestFocuspointPercentage());
             properties.put("lowestFocuspointAdvies", report.getLowestFocuspoint().getAdvies());
+            properties.put("lowestFocuspointStatus", report.getLowestFocuspoint().getLogo());
             context.setVariables(properties);
 
 

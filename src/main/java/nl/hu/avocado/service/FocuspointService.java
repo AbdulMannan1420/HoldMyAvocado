@@ -20,11 +20,11 @@ public class FocuspointService {
     }
 
     public FocuspointDTO focuspointIntoDTO(Focuspoint focuspoint) {
-        return new FocuspointDTO(focuspoint.getId(), focuspoint.getNaam(), focuspoint.getRanking(), focuspoint.getScore(), focuspoint.getStatus(), focuspoint.getAdvies());
+        return new FocuspointDTO(focuspoint.getId(), focuspoint.getNaam(), focuspoint.getRanking(), focuspoint.getScore(), focuspoint.getLogo(), focuspoint.getAdvies());
     }
 
     public Focuspoint dtoIntoFocuspoint(FocuspointDTO dto) {
-        return new Focuspoint(dto.getId(), dto.getNaam(), dto.getScore(), dto.getRanking(), dto.getStatus(), dto.getAdvies());
+        return new Focuspoint(dto.getId(), dto.getNaam(), dto.getScore(), dto.getRanking(), dto.getLogo(), dto.getAdvies());
     }
 
     public void voegFocuspoint(FocuspointDTO focuspointDTO) {

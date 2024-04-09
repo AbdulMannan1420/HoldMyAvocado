@@ -14,16 +14,16 @@ public class Focuspoint {
     private String naam;
     private int ranking;
     private double score;
-    private String status;
+    private String logo;
 
     private String advies;
 
-    public Focuspoint(Long id, String naam, double score, int ranking, String status, String advies) {
+    public Focuspoint(Long id, String naam, double score, int ranking, String logo, String advies) {
         this.id = id;
         this.naam = naam;
         this.score = score;
         this.ranking = ranking;
-        this.status = status;
+        this.logo = logo;
         this.advies = advies;
     }
 
@@ -50,8 +50,8 @@ public class Focuspoint {
     }
 
 
-    public String getStatus() {
-        return status;
+    public String getLogo() {
+        return logo;
     }
 
 

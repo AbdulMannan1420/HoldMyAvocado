@@ -68,7 +68,7 @@
       border-radius: 15px;
       background: linear-gradient(to bottom right, #11E930, #FFFFFF);
       text-align: center;
-      height: 235px;
+      height: 260px;
       display: flex;
       padding-bottom: 10px;
 
@@ -78,13 +78,13 @@
     .lowest-focuspoint {
       border: 1px solid black;
       color: orange;
-      height: 175px;
-      width: 150px;
+      max-height: 200px;
+      min-width: 150px;
       border-radius: 10px;
       background-color: blue;
       bottom: 100px;
-      margin-bottom: 20px;
       margin-top: 0px;
+
 
     }
 
@@ -102,7 +102,7 @@
       cursor: pointer;
       border-radius: 20px;
       margin-left: 30px;
-
+      margin-top: 26px;
 
 
     }
@@ -126,6 +126,7 @@
       border-radius: 20px;
       margin-left: 40px;
       transition-duration: 0.4s;
+      margin-top: 21px;
     }
 
     .report-button:hover {
@@ -137,6 +138,7 @@
       margin-left: 32px;
     }
 
+
     .percentage {
       display: block;
       width: 50px;
@@ -145,8 +147,9 @@
       font-weight: bold;
       box-shadow: 0px 0px 10px 10px white;
       border-radius: 10px;
-      margin-left: 65%;
-
+      margin-left: 67%;
+      border: 1px solid black;
+      margin-bottom: 10px;
 
     }
 
@@ -209,10 +212,10 @@
             <span th:text="${lowestFocuspointName}"></span>
           </h2>
           <img class="lowest_focuspoint-image"
-               src="https://drive.google.com/uc?export=download&id=1sdDU8Q0QvnzLsqIti8jRQ0Wfl7uRyDhs"
+               th:src="${lowestFocuspointStatus}"
                alt="logo" title="Logo" style="display:block" width="83" height="87"/>
           <p class="percentage">
-            <span th:text="${lowestFocuspointPercentage}"></span> %
+            <span th:text="${lowestFocuspointPercentage}"></span>%
           </p>
         </div>
         <button class="report-button">See my report</button>

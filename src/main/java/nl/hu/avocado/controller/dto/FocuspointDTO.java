@@ -11,16 +11,16 @@ public class FocuspointDTO {
     private String naam;
     private int ranking;
     private double score;
-    private String status;
+    private String logo;
 
     private String advies;
 
-    public FocuspointDTO(Long id, String naam, int ranking, double score, String status, String advies) {
+    public FocuspointDTO(Long id, String naam, int ranking, double score, String logo, String advies) {
         this.id = id;
         this.naam = naam;
         this.ranking = ranking;
         this.score = score;
-        this.status = status;
+        this.logo = logo;
         this.advies = advies;
     }
 
@@ -56,12 +56,12 @@ public class FocuspointDTO {
         this.score = score;
     }
 
-    public String getStatus() {
-        return status;
+    public String getLogo() {
+        return logo;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setLogo(String status) {
+        this.logo = status;
     }
 
     public String getAdvies() {
