@@ -3,6 +3,7 @@ package nl.hu.avocado.service;
 
 import jakarta.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;
+import nl.hu.avocado.domain.Report;
 import nl.hu.avocado.model.SendHTMLEmailRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +13,9 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Service
@@ -31,7 +35,7 @@ public class EmailService {
     private String fromName;
 
     @Async
-    public void htmlSend(SendHTMLEmailRequest sendHTMLEmailRequest) {
+    public void htmlSend(SendHTMLEmailRequest sendHTMLEmailRequest, Report report) {
 
 
         try {
@@ -46,6 +50,13 @@ public class EmailService {
 
             // Thymeleaf Context
             Context context = new Context();
+            Map<String, Object> properties = new HashMap<String, Object>();
+            properties.put("name", report.getVoornaam());
+            properties.put("lowestFocuspointName", report.getLowestFocuspoint().getNaam());
+            properties.put("lowestFocuspointPercentage", report.getLowestFocuspointPercentage());
+            properties.put("lowestFocuspointAdvies", report.getLowestFocuspoint().getAdvies());
+            context.setVariables(properties);
+
 
             String html = templateEngine.process("emails/" + sendHTMLEmailRequest.getTemplateName(), context);
 

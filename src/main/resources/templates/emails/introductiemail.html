@@ -71,7 +71,6 @@
       height: 235px;
       display: flex;
       padding-bottom: 10px;
-      padding-top: 10px;
 
 
     }
@@ -85,6 +84,8 @@
       background-color: blue;
       bottom: 100px;
       margin-bottom: 20px;
+      margin-top: 0px;
+
     }
 
     .focus-button {
@@ -101,7 +102,7 @@
       cursor: pointer;
       border-radius: 20px;
       margin-left: 30px;
-      margin-top: 8px;
+
 
 
     }
@@ -124,7 +125,6 @@
       cursor: pointer;
       border-radius: 20px;
       margin-left: 40px;
-      margin-top: 30px;
       transition-duration: 0.4s;
     }
 
@@ -139,14 +139,15 @@
 
     .percentage {
       display: block;
-      width: fit-content;
+      width: 50px;
       font-size: 20px;
       background-color: white;
       font-weight: bold;
       box-shadow: 0px 0px 10px 10px white;
       border-radius: 10px;
-      margin-left: 70%;
-      margin-top: 0;
+      margin-left: 65%;
+
+
     }
 
     .PART1 {
@@ -156,9 +157,7 @@
     }
 
     .PART2 {
-
       text-align: center;
-
 
     }
 
@@ -169,10 +168,12 @@
     }
 
     .lfs-tekst {
-      color: blue !important;
+      color: blue;
       padding-left: 10px;
       padding-right: 10px;
       text-align: center;
+      min-width: 100px;
+      min-height: 130px;
     }
 
 
@@ -193,10 +194,10 @@
     </tr>
   </table>
   <div class="intro-tekst">
-    <h1 style="color: white;">Welcome Shaey!</h1>
+    <h1 style="color: white;">Welcome <span th:text="${name}" th:remove="tag"></span></h1>
     <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
       en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
-      ziet. De<span class="pb" style="font-weight: bold;">voortgangsbalk</span>laat zien hoe ver je al bent. Neem
+      ziet. De <span class="pb" style="font-weight: bold;">voortgangsbalk</span> laat zien hoe ver je al bent. Neem
       gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
   </div>
   <div class="rapport-samenvatting">
@@ -205,21 +206,20 @@
         <div class="lowest-focuspoint">
           <h2 style="font-weight: bold;
     margin-top: 10px;">
-            Financial Fit
+            <span th:text="${lowestFocuspointName}"></span>
           </h2>
           <img class="lowest_focuspoint-image"
                src="https://drive.google.com/uc?export=download&id=1sdDU8Q0QvnzLsqIti8jRQ0Wfl7uRyDhs"
                alt="logo" title="Logo" style="display:block" width="83" height="87"/>
           <p class="percentage">
-            45%
+            <span th:text="${lowestFocuspointPercentage}"></span> %
           </p>
         </div>
         <button class="report-button">See my report</button>
       </div>
       <div class="PART2">
         <h4 class="recommend"> Recommended</h4>
-        <p class="lfs-tekst">The test has shown that you are not properly preparing for your financial future.
-          This is very important to have security in your life</p>
+        <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
         <button class="focus-button">Choose Focuspoint</button>
       </div>
     </div>
