@@ -222,9 +222,6 @@
       color: white;
     }
 
-
-
-
   </style>
 </head>
 
@@ -306,6 +303,89 @@
         <input type="radio" id="adoptability" name="option" value="adoptability">
         <label for="adoptability">Choose</label><br>
       </div>
+    </div>
+  </form>
+
+  <form action="http://example.nl/hu/avocado" id="inhoudsvoorkeur-form" method="post">
+    <div class="inhoud-container" style="
+    background-color: blue;
+    border-radius: 25px;
+    margin-bottom: 15px">
+
+      <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+        <tr>
+          <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+
+            <select id="options" name="options" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 12px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+
+              <option value="option1" style="border: none">Audio</option>
+              <option value="option2">Video</option>
+              <option value="option3">Assignments</option>
+              <option value="option4">E-course</option>
+              <option value="option5">Articles</option>
+              <option value="option6">Snackable content</option>
+            </select>
+          </td>
+
+          <td style="
+          text-align: left;
+          color: white;">What kind of content do you prefer?</td>
+
+        </tr>
+      </table>
+    </div>
+    <div class="tijd-container" style="
+    background-color: blue;
+    border-radius: 25px;
+    margin-bottom: 15px">
+
+      <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+        <tr>
+          <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+
+            <select id="time-options" name="time-options" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 12px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+
+              <option value="option1">9 a.m.</option>
+              <option value="option2">10 a.m.</option>
+              <option value="option3">11 a.m.</option>
+              <option value="option4">12 p.m.</option>
+              <option value="option5">1 p.m.</option>
+              <option value="option6">2 p.m.</option>
+              <option value="option7">3 p.m.</option>
+              <option value="option8">4 p.m.</option>
+              <option value="option9">5 p.m.</option>
+
+            </select>
+          </td>
+
+          <td style="
+          text-align: left;
+          color: white;">What time do you most prefer?</td>
+
+        </tr>
+      </table>
     </div>
   </form>
 
