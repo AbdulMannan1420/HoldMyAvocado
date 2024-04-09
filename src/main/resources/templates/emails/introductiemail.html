@@ -222,36 +222,6 @@
       color: white;
     }
 
-    .inhoud-container {
-      background-color: blue;
-      border-radius: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .inhoud-dropdown-container {
-      width: 30%;
-      background-color: cornflowerblue;
-      border-radius: 25px 0 0 25px;
-      padding: 8px;
-    }
-
-    select {
-      width: 100%;
-      border-radius: 25px;
-      border: none;
-      padding: 5px;
-      color: white;
-      background-color: cornflowerblue;
-    }
-
-    label[for="options"] {
-      color: white;
-      margin-right: 10px;
-    }
-
-
-
   </style>
 </head>
 
@@ -337,18 +307,44 @@
   </form>
 
   <form action="http://example.nl/hu/avocado" id="inhoudsvoorkeur-form" method="post">
-    <div class="inhoud-container" >
-      <div class="inhoud-dropdown-container">
-        <select id="options" name="options">
-          <option value="option1">Audio</option>
-          <option value="option2">Video</option>
-          <option value="option3">Assignments</option>
-          <option value="option4">E-course</option>
-          <option value="option5">Articles</option>
-          <option value="option6">Snackable content</option>
-        </select>
-      </div>
-      <label for="options">What kind of content do you prefer? </label>
+
+
+    <div class="inhoud-container" style="
+    background-color: blue;
+    border-radius: 25px;">
+
+      <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+        <tr>
+          <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+
+            <select id="options" name="options" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 10px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+
+              <option value="option1">Audio</option>
+              <option value="option2">Video</option>
+              <option value="option3">Assignments</option>
+              <option value="option4">E-course</option>
+              <option value="option5">Articles</option>
+              <option value="option6">Snackable content</option>
+            </select>
+          </td>
+
+          <td style="
+          text-align: left;
+          color: white;">What kind of content do you prefer?</td>
+
+        </tr>
+      </table>
     </div>
   </form>
 
