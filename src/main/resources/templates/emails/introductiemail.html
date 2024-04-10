@@ -293,6 +293,11 @@
       padding-left:  7px;
       padding-right:  7px;
     }
+    #time_preference{
+      background-color: rgba(211, 211, 211, 0.5);
+      padding: 17px 7px;
+
+    }
 
 
   </style>
@@ -451,11 +456,56 @@
           </td>
           <td style="
           text-align: left;
-          color: white;">When do you want to receive the mails?</td>
+          color: white;">What day do you prefer?</td>
 
         </tr>
       </table>
     </div>
+
+  </form>
+  <form action="http://example.nl/hu/avocado" id="time_preference" method="post">
+    <div class="tijd-container" style="
+    background-color: blue;
+    border-radius: 25px;">
+
+      <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+        <tr>
+          <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+
+            <select id="time-options" name="time-options" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+
+              <option value="option1">9 a.m.</option>
+              <option value="option2">10 a.m.</option>
+              <option value="option3">11 a.m.</option>
+              <option value="option4">12 p.m.</option>
+              <option value="option5">1 p.m.</option>
+              <option value="option6">2 p.m.</option>
+              <option value="option7">3 p.m.</option>
+              <option value="option8">4 p.m.</option>
+              <option value="option9">5 p.m.</option>
+
+            </select>
+          </td>
+
+          <td style="
+          text-align: left;
+          color: white;">What time do you most prefer?</td>
+
+        </tr>
+      </table>
+    </div>
+
   </form>
 
 
