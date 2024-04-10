@@ -179,6 +179,61 @@
       min-height: 130px;
     }
 
+    .choose-focuspoint {
+      display: flex;
+      font-size: 7px;
+      color: darkorange;
+      background-color: rgba(211, 211, 211, 0.5);
+    }
+
+    .focuspoint {
+      width: 100px;
+      border-radius: 12px;
+      background-color: white;
+      font-size: 10px;
+      box-shadow: 3px 3px 1px 0px #938c8c;
+
+    }
+
+    .focus-1 {
+      margin-right: 10px;
+      margin-left: 13px;
+    }
+
+    .focus-2 {
+      margin-left: 10px;
+      margin-right: 18px;
+    }
+
+    .focus-3 {
+      margin-right: 10px;
+    }
+
+    .secondLowest_focuspoint-image, .thirdLowest_focuspoint-image, .fourthLowest_focuspoint-image {
+      margin-right: 3px;
+    }
+
+
+    #job-crafting, #me-life, #adoptability {
+      display: none;
+    }
+
+
+    label {
+      padding: 4px 20px;
+      background-color: transparent;
+      color: blue;
+      border-radius: 15px;
+      border: 1px solid blue;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 10px;
+      margin-left: 0px;
+      margin-top: 10px;
+
+    }
+
+
 
   </style>
 </head>
@@ -226,7 +281,37 @@
         <button class="focus-button">Choose Focuspoint</button>
       </div>
     </div>
-  </div>
+   </div>
+  <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
+    <div class="choose-focuspoint">
+      <div class="focus-1 focuspoint">
+        <h2>Job Crafting</h2>
+        <img class="secondLowest_focuspoint-image"
+             src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+             alt="logo" width="70" height="70"/>
+        <input type="radio" id="job-crafting" name="option" value="job-crafting">
+        <label for="job-crafting">Choose</label><br>
+
+
+      </div>
+      <div class="focus-2 focuspoint">
+        <h2>Me Life</h2>
+        <img class="thirdLowest_focuspoint-image"
+             src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+             alt="logo" width="70" height="70"/>
+        <input type="radio" id="me-life" name="option" value="me-life">
+        <label for="me-life">Choose</label><br>
+      </div>
+      <div class="focus-3 focuspoint">
+        <h2>Adoptability</h2>
+        <img class="fourthLowest_focuspoint-image"
+             src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+             alt="logo" width="70" height="70"/>
+        <input type="radio" id="adoptability" name="option" value="adoptability">
+        <label for="adoptability">Choose</label><br>
+      </div>
+    </div>
+  </form>
 
 
 </div>
