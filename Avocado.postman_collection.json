@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "ae166850-b45c-4b1b-9e05-6deb9a71501f",
+		"name": "Avocado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27440580"
+	},
+	"item": [
+		{
+			"name": "Introductie mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"subject\": \"Test Intro mail\",\r\n    \"name\": \"Matthew\",\r\n    \"templateName\": \"introductiemail.html\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add report",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"voornaam\": \"Matthew\",\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"focuspoints\": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/report",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/report/matthewbijlhout@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"matthewbijlhout@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "voeg focuspoint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"naam\": \"Werk/privé balans\",\r\n    \"ranking\": 9,\r\n    \"score\": 3,\r\n    \"status\": \"Je neemt privé vaak de tijd om te doen wat je belangrijk vindt. Je bespreekt in privé situaties meestal wat jij zou willen doen. Je kunt werk en privé in de meeste gevallen goed combineren.\",\r\n    \"advies\": \"Neem privé in alle situaties de tijd om te doen wat jij belangrijk vindt. Bespreek in privé situaties in alle gevallen wat jij zou willen doen. Onderzoek altijd hoe je werk en privé beter kunt combineren.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/focuspoint",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"focuspoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get focuspoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/focuspoint/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"focuspoint",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get focuspoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/focuspoint",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"focuspoint"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
