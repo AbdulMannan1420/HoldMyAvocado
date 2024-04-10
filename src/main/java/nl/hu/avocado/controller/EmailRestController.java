@@ -1,9 +1,10 @@
 package nl.hu.avocado.controller;
 
 
-
+import nl.hu.avocado.domain.Report;
 import nl.hu.avocado.model.SendHTMLEmailRequest;
 import nl.hu.avocado.service.EmailService;
+import nl.hu.avocado.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +19,19 @@ public class EmailRestController {
     EmailService emailService;
 
 
-    @PostMapping("/sendHTMLEmail")
-    public String sendHTMLEmail(@RequestBody SendHTMLEmailRequest sendHTMLEmailRequest) {
+    @Autowired
+    private ReportService reportService;
 
-        emailService.htmlSend(sendHTMLEmailRequest);
+    @PostMapping("/sendHTMLEmail")
+    public String sendIntroductionMail(@RequestBody SendHTMLEmailRequest sendHTMLEmailRequest) {
+        Report report = reportService.findByEmail(sendHTMLEmailRequest.getEmail());
+
+        if (report == null) {
+            return "Report not found";
+        }
+
+        emailService.htmlSend(sendHTMLEmailRequest, report);
 
         return "Message Queued";
     }
-
 }
