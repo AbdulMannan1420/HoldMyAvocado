@@ -1,404 +1,386 @@
 <!doctype html>
-<html ⚡4email lang="en" data-css-strict="">
+<html ⚡4email lang="en" data-css-strict>
 
 <head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body {
-    visibility: hidden
-  }</style>
-  <style amp-custom>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>body {
+        visibility: hidden
+    }</style>
+    <style amp-custom>
+        * {
+            box-sizing: border-box;
+        }
 
-    .body {
-      width: 400px;
-      margin: 0;
-      padding: 1em;
-      text-align: center;
-    }
+        .body {
+            width: 400px;
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+        }
 
-    .progressie-bar {
+        .progressie-bar {
 
-      background-color: blue;
-      text-align: center;
-      padding-top: 17px;
-    }
+            background-color: blue;
+            text-align: center;
+            padding-top: 17px;
+        }
 
-    .progressie-indicator {
-      width: 35px;
-      height: 35px;
-      background-color: #2E8B57;
-      border-radius: 50%;
-      border: 3px solid lightgreen;
-      display: inline-block;
-      margin: 0 10px; /* Space between indicators */
-    }
+        .progressie-indicator {
+            width: 35px;
+            height: 35px;
+            background-color: #2E8B57;
+            border-radius: 50%;
+            border: 3px solid lightgreen;
+            display: inline-block;
+            margin: 0 10px; /* Space between indicators */
+        }
 
-    .intro-tekst {
-      margin: 0;
-      border: 1px solid blue;
-      background-color: blue;
-      text-align: center;
-      color: white;
-    }
+        .intro-tekst {
+            margin: 0;
+            border: 1px solid blue;
+            background-color: blue;
+            text-align: center;
+            color: white;
+        }
 
-    .intro-tekst > p {
-      margin-left: 17px;
-      margin-right: 17px;
-    }
+        .intro-tekst > p {
+            margin-left: 17px;
+            margin-right: 17px;
+        }
 
-    .rapport-samenvatting {
-      padding-left: 23px;
-      padding-right: 15px;
-      background-color: rgba(211, 211, 211, 0.5);
-      text-align: center;
-      border: 1px solid rgba(211, 211, 211, 0.5);
+        .rapport-samenvatting {
+            padding-left: 23px;
+            padding-right: 15px;
+            background-color: rgba(211, 211, 211, 0.5);
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
 
-    }
+        }
 
-    .pb {
-      color: lightgreen;
-      text-decoration: underline;
-    }
+        .pb {
+            color: lightgreen;
+            text-decoration: underline;
+        }
 
-    .green-container {
-      margin: 50px auto;
-      border-radius: 15px;
-      background: linear-gradient(to bottom right, #11E930, #FFFFFF);
-      text-align: center;
-      height: 235px;
-      display: flex;
-      padding-bottom: 10px;
-      padding-top: 10px;
-
-
-    }
-
-    .lowest-focuspoint {
-      border: 1px solid black;
-      color: orange;
-      height: 175px;
-      width: 150px;
-      border-radius: 10px;
-      background-color: blue;
-      bottom: 100px;
-      margin-bottom: 20px;
-    }
-
-    .focus-button {
-      background-color: inherit;
-      border: 2px solid blue;
-      color: blue;
-      height: 27px;
-      width: 123px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 10px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-      border-radius: 20px;
-      margin-left: 10px;
-      margin-top: 8px;
-
-    }
-
-    .focus-button:hover {
-      background-color: blue;
-      color: white;
-    }
+        .green-container {
+            margin: 50px auto;
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            height: 260px;
+            display: flex;
+            padding-bottom: 10px;
 
 
-    .report-button {
-      background-color: inherit;
-      border: 2px solid blue;
-      color: blue;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      height: 27px;
-      width: 123px;
-      font-size: 10px;
-      cursor: pointer;
-      border-radius: 20px;
-      margin-left: 25px;
-      margin-top: 30px;
-      transition-duration: 0.4s;
-    }
+        }
 
-    .report-button:hover {
-      background-color: blue;
-      color: white;
-    }
-
-    label {
-      background-color: blue;
-      border: 2px solid blue;
-      color: #11E930;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      height: 27px;
-      width: 80px;
-      font-size: 10px;
-      cursor: pointer;
-      border-radius: 20px;
-      margin-left: 40px;
-      margin-top: 30px;
-      transition-duration: 0.4s;
-    }
+        .lowest-focuspoint {
+            border: 1px solid black;
+            color: orange;
+            max-height: 200px;
+            min-width: 150px;
+            border-radius: 10px;
+            background-color: blue;
+            bottom: 100px;
+            margin-top: 0px;
 
 
-    .focuspoints > div {
-      width: 70%;
-      height: 95%;
-      border: 1px solid black;
-    }
+        }
+
+        .focus-button {
+            background-color: inherit;
+            border: 2px solid blue;
+            color: blue;
+            height: 27px;
+            width: 123px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 30px;
+            margin-top: 26px;
 
 
-    .lowest_focuspoint-image {
-      margin-left: 32px;
-    }
+        }
 
-    .percentage {
-      display: block;
-      width: fit-content;
-      font-size: 20px;
-      background-color: white;
-      font-weight: bold;
-      box-shadow: 0px 0px 10px 10px white;
-      border-radius: 10px;
-      margin-left: 70%;
-      margin-top: 0;
-    }
+        .focus-button:hover {
+            background-color: blue;
+            color: white;
+        }
 
-    .PART1 {
+        .report-button {
+            background-color: blue;
+            border: 2px solid blue;
+            color: #11E930;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            height: 27px;
+            width: 123px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 40px;
+            transition-duration: 0.4s;
+            margin-top: 21px;
+        }
 
-      width: 150px;
+        .report-button:hover {
+            background-color: transparent;
+            color: #0000ff
+        }
 
-    }
-
-    .PART2 {
-
-      text-align: center;
-
-
-    }
-
-    .recommend {
-      color: orange;
-      font-weight: bold;
-
-    }
-
-    .lfs-tekst {
-      color: blue !important;
-      padding-left: 10px;
-      padding-right: 10px;
-      text-align: center;
-    }
-
-    .choose-focuspoint {
-      display: flex;
-      font-size: 7px;
-      color: darkorange;
-      background-color: rgba(211, 211, 211, 0.5);
-      padding-bottom: 4px;
-    }
-
-    .focuspoint {
-      width: 100px;
-      border-radius: 12px;
-      background-color: white;
-      font-size: 10px;
-      box-shadow: 3px 3px 1px 0px #938c8c;
-
-    }
-
-    .focus-1 {
-      margin-right: 10px;
-      margin-left: 16px;
-    }
-
-    .focus-2 {
-      margin-left: 13px;
-      margin-right: 23px;
-    }
-
-    .focus-3 {
-      margin-right: 10px;
-    }
-
-    .secondLowest_focuspoint-image, .thirdLowest_focuspoint-image, .fourthLowest_focuspoint-image {
-      margin-right: 3px;
-    }
+        .lowest_focuspoint-image {
+            margin-left: 32px;
+        }
 
 
-    #job-crafting, #me-life, #adoptability {
-      display: none;
-    }
+        .percentage {
+            display: block;
+            width: 50px;
+            font-size: 20px;
+            background-color: white;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px 10px white;
+            border-radius: 10px;
+            margin-left: 67%;
+            border: 1px solid black;
+            margin-bottom: 10px;
+
+        }
+
+        .PART1 {
+
+            width: 150px;
+
+        }
+
+        .PART2 {
+            text-align: center;
+
+        }
+
+        .recommend {
+            color: orange;
+            font-weight: bold;
+
+        }
+
+        .lfs-tekst {
+            color: blue;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            min-width: 100px;
+            min-height: 130px;
+        }
+
+        .choose-focuspoint {
+            display: flex;
+            font-size: 7px;
+            color: darkorange;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .focuspoint {
+            width: 100px;
+            border-radius: 12px;
+            background-color: white;
+            font-size: 10px;
+            box-shadow: 3px 3px 1px 0px #938c8c;
+
+        }
+
+        .focus-1 {
+            margin-right: 10px;
+            margin-left: 13px;
+        }
+
+        .focus-2 {
+            margin-left: 10px;
+            margin-right: 18px;
+        }
+
+        .focus-3 {
+            margin-right: 10px;
+        }
+
+        .secondLowest_focuspoint-image, .thirdLowest_focuspoint-image, .fourthLowest_focuspoint-image {
+            margin-right: 3px;
+        }
 
 
-    label {
-      padding: 10px 10px;
-      background-color: transparent;
-      color: blue;
-      border-radius: 15px;
-      border: 1px solid blue;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 10px;
-      margin-left: 0px;
-      margin-bottom: 8px;
+        #job-crafting, #me-life, #adoptability {
+            display: none;
+        }
 
 
-    }
-    .preferences-header {
-      width: 100%;
-      height: 20px;
-      display: flex;
-      background-color: rgba(211, 211, 211, 0.5);
-    }
-
-    .pref-line {
-      border: 1px solid blue;
-      background-color: blue;
-      width: 187px;
-      height: 3px;
-      margin-top: 20px;
-      margin-left: 5px;
-      border-radius: 4px;
+        label {
+            padding: 4px 20px;
+            background-color: transparent;
+            color: blue;
+            border-radius: 15px;
+            border: 1px solid blue;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 0px;
+            margin-top: 10px;
 
 
-    }
-
-    .pref-tekst {
-      font-weight: bold;
-      color: orange;
-      margin-left: 8px;
-    }
-
-    #inhoudsvoorkeur-form{
-      background-color: rgba(211, 211, 211, 0.5);
-      padding-top: 37px;
-      padding-left:  7px;
-      padding-right:  7px;
-
-    }
-    #day-preferences{
-      padding-top: 17px;
-      background-color: rgba(211, 211, 211, 0.5);
-      padding-left:  7px;
-      padding-right:  7px;
-    }
-    #time_preference{
-      background-color: rgba(211, 211, 211, 0.5);
-      padding: 17px 7px;
-
-    }
+        }
 
 
-  </style>
+        .preferences-header {
+            width: 100%;
+            height: 20px;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .pref-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 187px;
+            height: 3px;
+            margin-top: 20px;
+            margin-left: 5px;
+            border-radius: 4px;
+
+
+        }
+
+        .pref-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-left: 8px;
+        }
+
+        #inhoudsvoorkeur-form {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-top: 37px;
+            padding-left: 7px;
+            padding-right: 7px;
+
+        }
+
+        #day-preferences {
+            padding-top: 17px;
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        #time_preference {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding: 17px 7px;
+
+        }
+
+
+    </style>
 </head>
 
 <body>
 <div class="body">
-  <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-      <td align="center" valign="middle">
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-        <div class="progressie-indicator"></div>
-      </td>
-    </tr>
-  </table>
-  <div class="intro-tekst">
-    <h1 style="color: white;">Welcome Shaey!</h1>
-    <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
-      en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
-      ziet. De<span class="pb" style="font-weight: bold;">voortgangsbalk</span>laat zien hoe ver je al bent. Neem
-      gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
-  </div>
-  <div class="rapport-samenvatting">
-    <div class="green-container">
-      <div class="PART1">
-        <div class="lowest-focuspoint">
-          <h2 style="font-weight: bold;
+    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="intro-tekst">
+        <h1 style="color: white;">Welcome <span th:text="${name}" th:remove="tag"></span></h1>
+        <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
+            en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
+            ziet. De <span class="pb" style="font-weight: bold;">voortgangsbalk</span> laat zien hoe ver je al bent.
+            Neem
+            gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
+    </div>
+    <div class="rapport-samenvatting">
+        <div class="green-container">
+            <div class="PART1">
+                <div class="lowest-focuspoint">
+                    <h2 style="font-weight: bold;
     margin-top: 10px;">
-            Financial Fit
-          </h2>
-          <img class="lowest_focuspoint-image"
-               src="https://drive.google.com/uc?export=download&id=1sdDU8Q0QvnzLsqIti8jRQ0Wfl7uRyDhs"
-               alt="logo" title="Logo" style="display:block" width="83" height="87"/>
-          <p class="percentage">
-            45%
-          </p>
+                        <span th:text="${lowestFocuspointName}"></span>
+                    </h2>
+                    <img class="lowest_focuspoint-image"
+                         th:src="${lowestFocuspointStatus}"
+                         alt="logo" title="Logo" style="display:block" width="83" height="87"/>
+                    <p class="percentage">
+                        <span th:text="${lowestFocuspointPercentage}"></span>%
+                    </p>
+                </div>
+                <button class="report-button">See my report</button>
+            </div>
+            <div class="PART2">
+                <h4 class="recommend"> Recommended</h4>
+                <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
+                <button class="focus-button">Choose Focuspoint</button>
+            </div>
         </div>
-        <button class="report-button">See my report</button>
-      </div>
-      <div class="PART2">
-        <h4 class="recommend"> Recommended</h4>
-        <p class="lfs-tekst">The test has shown that you are not properly preparing for your financial future.
-          This is very important to have security in your life</p>
-        <button class="focus-button">Choose Focuspoint</button>
-      </div>
     </div>
-  </div>
-  <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
-    <div class="choose-focuspoint">
-      <div class="focus-1 focuspoint">
-        <h2>Job Crafting</h2>
-        <img class="secondLowest_focuspoint-image"
-             src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
-             alt="logo" width="70" height="70"/>
-        <input type="radio" id="job-crafting" name="option" value="job-crafting">
-        <label for="job-crafting">Choose</label><br>
+    <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
+        <div class="choose-focuspoint">
+            <div class="focus-1 focuspoint">
+                <h2>Job Crafting</h2>
+                <img class="secondLowest_focuspoint-image"
+                     src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+                     alt="logo" width="70" height="70"/>
+                <input type="radio" id="job-crafting" name="option" value="job-crafting">
+                <label for="job-crafting">Choose</label><br>
 
 
-      </div>
-      <div class="focus-2 focuspoint">
-        <h2>Me Life</h2>
-        <img class="thirdLowest_focuspoint-image"
-             src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
-             alt="logo" width="70" height="70"/>
-        <input type="radio" id="me-life" name="option" value="me-life">
-        <label for="me-life">Choose</label><br>
-      </div>
-      <div class="focus-3 focuspoint">
-        <h2>Adoptability</h2>
-        <img class="fourthLowest_focuspoint-image"
-             src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
-             alt="logo" width="70" height="70"/>
-        <input type="radio" id="adoptability" name="option" value="adoptability">
-        <label for="adoptability">Choose</label><br>
-      </div>
+            </div>
+            <div class="focus-2 focuspoint">
+                <h2>Me Life</h2>
+                <img class="thirdLowest_focuspoint-image"
+                     src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+                     alt="logo" width="70" height="70"/>
+                <input type="radio" id="me-life" name="option" value="me-life">
+                <label for="me-life">Choose</label><br>
+            </div>
+            <div class="focus-3 focuspoint">
+                <h2>Adoptability</h2>
+                <img class="fourthLowest_focuspoint-image"
+                     src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+                     alt="logo" width="70" height="70"/>
+                <input type="radio" id="adoptability" name="option" value="adoptability">
+                <label for="adoptability">Choose</label><br>
+            </div>
+        </div>
+    </form>
+
+    <div class="preferences-header">
+        <p class="pref-tekst">What are you preferences?</p>
+        <div class="pref-line"></div>
     </div>
-  </form>
-
-  <div class="preferences-header">
-    <p class="pref-tekst">What are you preferences?</p>
-    <div class="pref-line"></div>
-  </div>
-  <form action="http://example.nl/hu/avocado" id="inhoudsvoorkeur-form" method="post">
+    <form action="http://example.nl/hu/avocado" id="inhoudsvoorkeur-form" method="post">
 
 
-    <div class="inhoud-container" style="
+        <div class="inhoud-container" style="
     background-color: blue;
     border-radius: 25px;">
 
-      <table style="
+            <table style="
       width: 100%;
       border-collapse: collapse;">
 
-        <tr>
-          <td style="
+                <tr>
+                    <td style="
           padding-right: 10px;
           width: 30%; left: 0">
-            <select id="options" name="options" style="
+                        <select id="options" name="options" style="
             width: 100%;
             border-radius: 25px 0 0 25px;
             padding: 8px;
@@ -406,39 +388,40 @@
             background-color: cornflowerblue;
             border: none; left: 0">
 
-              <option value="option1">Audio</option>
-              <option value="option2">Video</option>
-              <option value="option3">Assignments</option>
-              <option value="option4">E-course</option>
-              <option value="option5">Articles</option>
-              <option value="option6">Snackable content</option>
-            </select>
+                            <option value="option1">Audio</option>
+                            <option value="option2">Video</option>
+                            <option value="option3">Assignments</option>
+                            <option value="option4">E-course</option>
+                            <option value="option5">Articles</option>
+                            <option value="option6">Snackable content</option>
+                        </select>
 
-          </td>
-          <td style="
+                    </td>
+                    <td style="
           text-align: left;
-          color: white;">What kind of content do you prefer?</td>
+          color: white;">What kind of content do you prefer?
+                    </td>
 
-        </tr>
-      </table>
-    </div>
-  </form>
-  <form action="http://example.nl/hu/avocado" id="day-preferences" method="post">
+                </tr>
+            </table>
+        </div>
+    </form>
+    <form action="http://example.nl/hu/avocado" id="day-preferences" method="post">
 
 
-    <div class="inhoud-container" style="
+        <div class="inhoud-container" style="
     background-color: blue;
     border-radius: 25px;">
 
-      <table style="
+            <table style="
       width: 100%;
       border-collapse: collapse;">
 
-        <tr>
-          <td style="
+                <tr>
+                    <td style="
           padding-right: 10px;
           width: 30%; left: 0">
-            <select id="day-options" name="options" style="
+                        <select id="day-options" name="options" style="
             width: 100%;
             border-radius: 25px 0 0 25px;
             padding: 8px;
@@ -446,38 +429,39 @@
             background-color: cornflowerblue;
             border: none; left: 0">
 
-              <option value="day-option1">Monday</option>
-              <option value="day-option2">Tuesday</option>
-              <option value="day-option3">Wednesday</option>
-              <option value="day-option4">Thursday</option>
-              <option value="day-option5">Friday</option>
-            </select>
+                            <option value="day-option1">Monday</option>
+                            <option value="day-option2">Tuesday</option>
+                            <option value="day-option3">Wednesday</option>
+                            <option value="day-option4">Thursday</option>
+                            <option value="day-option5">Friday</option>
+                        </select>
 
-          </td>
-          <td style="
+                    </td>
+                    <td style="
           text-align: left;
-          color: white;">What day do you prefer?</td>
+          color: white;">What day do you prefer?
+                    </td>
 
-        </tr>
-      </table>
-    </div>
+                </tr>
+            </table>
+        </div>
 
-  </form>
-  <form action="http://example.nl/hu/avocado" id="time_preference" method="post">
-    <div class="tijd-container" style="
+    </form>
+    <form action="http://example.nl/hu/avocado" id="time_preference" method="post">
+        <div class="tijd-container" style="
     background-color: blue;
     border-radius: 25px;">
 
-      <table style="
+            <table style="
       width: 100%;
       border-collapse: collapse;">
 
-        <tr>
-          <td style="
+                <tr>
+                    <td style="
           padding-right: 10px;
           width: 30%; left: 0">
 
-            <select id="time-options" name="time-options" style="
+                        <select id="time-options" name="time-options" style="
             width: 100%;
             border-radius: 25px 0 0 25px;
             padding: 8px;
@@ -485,28 +469,29 @@
             background-color: cornflowerblue;
             border: none; left: 0">
 
-              <option value="option1">9 a.m.</option>
-              <option value="option2">10 a.m.</option>
-              <option value="option3">11 a.m.</option>
-              <option value="option4">12 p.m.</option>
-              <option value="option5">1 p.m.</option>
-              <option value="option6">2 p.m.</option>
-              <option value="option7">3 p.m.</option>
-              <option value="option8">4 p.m.</option>
-              <option value="option9">5 p.m.</option>
+                            <option value="option1">9 a.m.</option>
+                            <option value="option2">10 a.m.</option>
+                            <option value="option3">11 a.m.</option>
+                            <option value="option4">12 p.m.</option>
+                            <option value="option5">1 p.m.</option>
+                            <option value="option6">2 p.m.</option>
+                            <option value="option7">3 p.m.</option>
+                            <option value="option8">4 p.m.</option>
+                            <option value="option9">5 p.m.</option>
 
-            </select>
-          </td>
+                        </select>
+                    </td>
 
-          <td style="
+                    <td style="
           text-align: left;
-          color: white;">What time do you most prefer?</td>
+          color: white;">What time do you most prefer?
+                    </td>
 
-        </tr>
-      </table>
-    </div>
+                </tr>
+            </table>
+        </div>
 
-  </form>
+    </form>
 
 
 </div>
