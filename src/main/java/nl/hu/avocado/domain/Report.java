@@ -17,6 +17,14 @@ public class Report {
 
     private int lowestFocuspointPercentage;
 
+    @OneToOne
+    private Focuspoint secondLowestFocuspoint;
+
+    @OneToOne
+    private Focuspoint thirdLowestFocuspoint;
+
+    @OneToOne
+    private Focuspoint fourthLowestFocuspoint;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Focuspoint> focuspoints;
 
@@ -30,6 +38,9 @@ public class Report {
         this.focuspoints = focuspoints;
         this.lowestFocuspoint = getLowestFocuspoint();
         this.lowestFocuspointPercentage = calculateLowestFocuspointProgressie();
+        this.secondLowestFocuspoint = getSecondLowestFocuspoint();
+        this.thirdLowestFocuspoint = getThirdLowestFocuspoint();
+        this.fourthLowestFocuspoint = getFourthLowestFocuspoint();
 
     }
 
@@ -51,6 +62,28 @@ public class Report {
 
         return (int) Math.round(percentage);
     }
+    public Focuspoint getSecondLowestFocuspoint() {
+        return focuspoints.stream()
+                .filter(f -> f.getRanking() == 2)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Focuspoint getThirdLowestFocuspoint() {
+        return focuspoints.stream()
+                .filter(f -> f.getRanking() == 3)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Focuspoint getFourthLowestFocuspoint() {
+        return focuspoints.stream()
+                .filter(f -> f.getRanking() == 4)
+                .findFirst()
+                .orElse(null);
+    }
+
+
 
 
     public String getVoornaam() {

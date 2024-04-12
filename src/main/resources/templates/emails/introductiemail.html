@@ -1,13 +1,13 @@
 <!doctype html>
-<html ⚡4email lang="en" data-css-strict>
+<html  lang="en" >
 
 <head>
     <meta charset="utf-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <style amp4email-boilerplate>body {
+
+    <style >body {
         visibility: hidden
     }</style>
-    <style amp-custom>
+    <style >
         * {
             box-sizing: border-box;
         }
@@ -29,12 +29,35 @@
         .progressie-indicator {
             width: 35px;
             height: 35px;
-            background-color: #2E8B57;
             border-radius: 50%;
             border: 3px solid lightgreen;
             display: inline-block;
             margin: 0 10px; /* Space between indicators */
         }
+
+        .pi1 {
+            background-color: #2E8B57;
+        }
+
+        .pi2 {
+            background-color: white;
+
+        }
+
+        .pi3 {
+            background-color: white;
+        }
+
+        .pi4 {
+            background-color: white;
+
+        }
+
+        .pi5 {
+            background-color: white;
+
+        }
+
 
         .intro-tekst {
             margin: 0;
@@ -192,7 +215,7 @@
             background-color: white;
             font-size: 10px;
             box-shadow: 3px 3px 1px 0px #938c8c;
-
+            max-height: 250px;
         }
 
         .focus-1 {
@@ -348,11 +371,11 @@
     <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" valign="middle">
-                <div class="progressie-indicator"></div>
-                <div class="progressie-indicator"></div>
-                <div class="progressie-indicator"></div>
-                <div class="progressie-indicator"></div>
-                <div class="progressie-indicator"></div>
+                <div class="progressie-indicator pi1"></div>
+                <div class="progressie-indicator pi2"></div>
+                <div class="progressie-indicator pi3"></div>
+                <div class="progressie-indicator pi4"></div>
+                <div class="progressie-indicator pi5"></div>
             </td>
         </tr>
     </table>
@@ -391,7 +414,7 @@
     <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
         <div class="choose-focuspoint">
             <div class="focus-1 focuspoint">
-                <h2>Job Crafting</h2>
+                <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
                 <img class="secondLowest_focuspoint-image"
                      src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
                      alt="logo" width="70" height="70"/>
@@ -401,7 +424,7 @@
 
             </div>
             <div class="focus-2 focuspoint">
-                <h2>Me Life</h2>
+                <h2><span th:text="${thirdLowestFocuspointName}"></span></h2>
                 <img class="thirdLowest_focuspoint-image"
                      src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
                      alt="logo" width="70" height="70"/>
@@ -409,7 +432,7 @@
                 <label for="me-life">Choose</label><br>
             </div>
             <div class="focus-3 focuspoint">
-                <h2>Adoptability</h2>
+                <h2><span th:text="${fourthLowestFocuspointName}"></span></h2>
                 <img class="fourthLowest_focuspoint-image"
                      src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
                      alt="logo" width="70" height="70"/>
@@ -497,7 +520,7 @@
                     </td>
                     <td style="
           text-align: left;
-          color: white;">What day do you prefer?
+          color: white;"> What day do you prefer?
                     </td>
 
                 </tr>
