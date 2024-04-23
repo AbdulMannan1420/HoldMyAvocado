@@ -3,6 +3,7 @@ package nl.hu.avocado.service;
 import nl.hu.avocado.controller.dto.ReportDTO;
 import nl.hu.avocado.data.ReportRepository;
 import nl.hu.avocado.domain.Focuspoint;
+import nl.hu.avocado.domain.Theme;
 import nl.hu.avocado.domain.Report;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

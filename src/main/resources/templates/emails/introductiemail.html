@@ -124,7 +124,7 @@
             transition-duration: 0.4s;
             cursor: pointer;
             border-radius: 20px;
-            margin-left: 30px;
+            margin-left: 18px;
             margin-top: 26px;
 
 
@@ -396,10 +396,10 @@
                         <span th:text="${lowestFocuspointName}"></span>
                     </h2>
                     <img class="lowest_focuspoint-image"
-                         th:src="${lowestFocuspointStatus}"
-                         alt="logo" title="Logo" style="display:block" width="83" height="87"/>
+                         th:src="${lowestFocuspointLogo}"
+                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
                     <p class="percentage">
-                        <span th:text="${lowestFocuspointPercentage}"></span>%
+                        <span th:text="${lowestFocuspointProgress}"></span>%
                     </p>
                 </div>
                 <button class="report-button">See my report</button>
@@ -416,7 +416,7 @@
             <div class="focus-1 focuspoint">
                 <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
                 <img class="secondLowest_focuspoint-image"
-                     src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+                     th:src="${secondLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
                 <input type="radio" id="job-crafting" name="option" value="job-crafting">
                 <label for="job-crafting">Choose</label><br>
@@ -426,7 +426,7 @@
             <div class="focus-2 focuspoint">
                 <h2><span th:text="${thirdLowestFocuspointName}"></span></h2>
                 <img class="thirdLowest_focuspoint-image"
-                     src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+                     th:src="${thirdLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
                 <input type="radio" id="me-life" name="option" value="me-life">
                 <label for="me-life">Choose</label><br>
@@ -434,7 +434,7 @@
             <div class="focus-3 focuspoint">
                 <h2><span th:text="${fourthLowestFocuspointName}"></span></h2>
                 <img class="fourthLowest_focuspoint-image"
-                     src="https://drive.google.com/uc?export=download&id=14JK-LBGr3kPfXQxz2VTYmCrrLEEHiFvm"
+                     th:src="${fourthLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
                 <input type="radio" id="adoptability" name="option" value="adoptability">
                 <label for="adoptability">Choose</label><br>

@@ -3,9 +3,11 @@ package nl.hu.avocado.service;
 import nl.hu.avocado.controller.dto.FocuspointDTO;
 import nl.hu.avocado.data.FocuspointRepository;
 import nl.hu.avocado.domain.Focuspoint;
+import nl.hu.avocado.domain.Theme;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
@@ -13,21 +15,43 @@ import java.util.stream.Collectors;
 @Transactional
 @Service
 public class FocuspointService {
+
     private final FocuspointRepository focuspointRepository;
 
-    public FocuspointService(FocuspointRepository focuspointRepository) {
+    private final ThemeService themeService;
+
+    public FocuspointService(FocuspointRepository focuspointRepository, ThemeService themeService) {
         this.focuspointRepository = focuspointRepository;
+        this.themeService = themeService;
     }
 
-    public FocuspointDTO focuspointIntoDTO(Focuspoint focuspoint) {
-        return new FocuspointDTO(focuspoint.getId(), focuspoint.getNaam(), focuspoint.getRanking(), focuspoint.getScore(), focuspoint.getLogo(), focuspoint.getAdvies());
+    public FocuspointDTO focuspointIntoDto(Focuspoint focuspoint) {
+        List<Long> themes = focuspoint.getThemes().stream().map(Theme::getId).collect(Collectors.toList());;
+        return new FocuspointDTO(
+                focuspoint.getId(),
+                focuspoint.getName(),
+                focuspoint.getAdvies(),
+                focuspoint.getLogo(),
+                themes
+        );
     }
 
     public Focuspoint dtoIntoFocuspoint(FocuspointDTO dto) {
-        return new Focuspoint(dto.getId(), dto.getNaam(), dto.getScore(), dto.getRanking(), dto.getLogo(), dto.getAdvies());
+        List<Theme> themes = new ArrayList<>();
+        for(Long f : dto.getThemes()) {
+            themes.add(themeService.dtoIntoTheme(this.themeService.findById(f)));
+        }
+
+        return new Focuspoint(
+                dto.getId(),
+                dto.getName(),
+                dto.getAdvies(),
+                dto.getLogo(),
+                themes
+        );
     }
 
-    public void voegFocuspoint(FocuspointDTO focuspointDTO) {
+    public void addFocuspoint(FocuspointDTO focuspointDTO) {
         Focuspoint focuspoint = dtoIntoFocuspoint(focuspointDTO);
         focuspointRepository.save(focuspoint);
     }
@@ -35,12 +59,12 @@ public class FocuspointService {
     public FocuspointDTO findById(Long id) {
         Focuspoint focuspoint = focuspointRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Focuspoint not found with id: " + id));
-        return focuspointIntoDTO(focuspoint);
+        return focuspointIntoDto(focuspoint);
     }
 
     public List<FocuspointDTO> getAllFocuspoints() {
         return focuspointRepository.findAll().stream()
-                .map(this::focuspointIntoDTO)
+                .map(this::focuspointIntoDto)
                 .collect(Collectors.toList());
     }
 

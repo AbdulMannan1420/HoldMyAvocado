@@ -1,64 +1,77 @@
 package nl.hu.avocado.domain;
 
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
+import java.util.List;
 
 @Entity
 public class Focuspoint {
 
     @Id
-    private Long id;
+    private long id;
 
-    private String naam;
-    private int ranking;
-    private double score;
-    private String logo;
+    private String name;
 
     private String advies;
 
-    public Focuspoint(Long id, String naam, double score, int ranking, String logo, String advies) {
+    private String logo;
+
+    private int progress;
+
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Theme> themes;
+
+    public Focuspoint(long id, String name, String advies, String logo, List<Theme> themes) {
         this.id = id;
-        this.naam = naam;
-        this.score = score;
-        this.ranking = ranking;
-        this.logo = logo;
+        this.name = name;
         this.advies = advies;
+        this.logo = logo;
+        this.themes = themes;
+        this.progress = calculateProgress();
+
     }
 
     public Focuspoint() {
     }
 
-    public Long getId() {
+    private int calculateProgress() {
+        double totalScore = themes.stream()
+                .mapToDouble(Theme::getScore)
+                .sum();
+
+        int maxPoints = themes.size() * 4; // Aantal themes * max punten per theme
+
+        double percentage = (totalScore / maxPoints) * 100;
+
+        return (int) percentage;
+    }
+
+    public long getId() {
         return id;
     }
 
-
-    public String getNaam() {
-        return naam;
+    public String getName() {
+        return name;
     }
-
-
-    public int getRanking() {
-        return ranking;
-    }
-
-
-    public double getScore() {
-        return score;
-    }
-
-
-    public String getLogo() {
-        return logo;
-    }
-
 
     public String getAdvies() {
         return advies;
     }
 
+    public String getLogo() {
+        return logo;
+    }
 
+    public int getProgress() {
+        return progress;
+    }
+
+    public List<Theme> getThemes() {
+        return themes;
+    }
 }
-

@@ -52,13 +52,21 @@ public class EmailService {
             Context context = new Context();
             Map<String, Object> properties = new HashMap<String, Object>();
             properties.put("name", report.getVoornaam());
-            properties.put("lowestFocuspointName", report.getLowestFocuspoint().getNaam());
-            properties.put("lowestFocuspointPercentage", report.getLowestFocuspointPercentage());
+            // lowest
+            properties.put("lowestFocuspointName", report.getLowestFocuspoint().getName());
+            properties.put("lowestFocuspointProgress", report.getLowestFocuspoint().getProgress());
             properties.put("lowestFocuspointAdvies", report.getLowestFocuspoint().getAdvies());
-            properties.put("lowestFocuspointStatus", report.getLowestFocuspoint().getLogo());
-            properties.put("secondLowestFocuspointName", report.getSecondLowestFocuspoint().getNaam());
-            properties.put("thirdLowestFocuspointName", report.getThirdLowestFocuspoint().getNaam());
-            properties.put("fourthLowestFocuspointName", report.getFourthLowestFocuspoint().getNaam());
+            properties.put("lowestFocuspointLogo", report.getLowestFocuspoint().getLogo());
+            // second lowest
+            properties.put("secondLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(1).getName());
+            properties.put("secondLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(1).getLogo());
+            // third lowest
+            properties.put("thirdLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(2).getName());
+            properties.put("thirdLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(2).getLogo());
+            // fourth lowest
+            properties.put("fourthLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(3).getName());
+            properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3).getLogo());
+
             context.setVariables(properties);
 
 
@@ -70,8 +78,7 @@ public class EmailService {
             emailSender.send(message);
             log.info("simpleSend: Email Queued");
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             log.error("Exception: " + e.getMessage());
         }
 
