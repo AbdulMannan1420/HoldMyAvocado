@@ -65,7 +65,7 @@ public class EmailService {
             properties.put("thirdLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(2).getLogo());
             // fourth lowest
             properties.put("fourthLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(3).getName());
-            properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3).getLogo());
+            properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3  ).getLogo());
 
             context.setVariables(properties);
 
