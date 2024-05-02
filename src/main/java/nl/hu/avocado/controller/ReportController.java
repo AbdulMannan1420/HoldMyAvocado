@@ -29,7 +29,7 @@ public class ReportController {
         return reportService.findByEmail(email);
     }
 
-    @PostMapping("/{email}/chosenfocuspoint/{focuspointId}")
+    @GetMapping("/{email}/chosenfocuspoint/{focuspointId}")
     public void chooseFocuspoint(@PathVariable String email, @PathVariable Long focuspointId) {
         reportService.chooseFocuspoint(email, focuspointId);
     }
