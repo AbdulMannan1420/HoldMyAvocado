@@ -52,11 +52,14 @@ public class EmailService {
             Context context = new Context();
             Map<String, Object> properties = new HashMap<String, Object>();
             properties.put("name", report.getVoornaam());
+            // report
+            properties.put("email", report.getEmail());
             // lowest
             properties.put("lowestFocuspointName", report.getLowestFocuspoint().getName());
             properties.put("lowestFocuspointProgress", report.getLowestFocuspoint().getProgress());
             properties.put("lowestFocuspointAdvies", report.getLowestFocuspoint().getAdvies());
             properties.put("lowestFocuspointLogo", report.getLowestFocuspoint().getLogo());
+            properties.put("lowestFocuspointID", report.getLowestFocuspoint().getId());
             // second lowest
             properties.put("secondLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(1).getName());
             properties.put("secondLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(1).getLogo());
