@@ -9,6 +9,7 @@ import nl.hu.avocado.service.ReportService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/report")
 public class ReportController {
 
@@ -26,5 +27,10 @@ public class ReportController {
     @GetMapping("{email}")
     public Report getReportByEmail(@PathVariable String email) {
         return reportService.findByEmail(email);
+    }
+
+    @PostMapping("/{email}/chosenfocuspoint/{focuspointId}")
+    public void chooseFocuspoint(@PathVariable String email, @PathVariable Long focuspointId) {
+        reportService.chooseFocuspoint(email, focuspointId);
     }
 }

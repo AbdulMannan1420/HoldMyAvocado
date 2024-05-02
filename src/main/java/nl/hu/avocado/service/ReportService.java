@@ -1,5 +1,6 @@
 package nl.hu.avocado.service;
 
+import nl.hu.avocado.controller.dto.FocuspointDTO;
 import nl.hu.avocado.controller.dto.ReportDTO;
 import nl.hu.avocado.data.ReportRepository;
 import nl.hu.avocado.domain.Focuspoint;
@@ -39,5 +40,16 @@ public class ReportService {
     public Report findByEmail(String email) {
         return reportRepository.findByEmail(email)
                 .orElseThrow(() -> new NoSuchElementException("Report not found with email: " + email));
+    }
+
+    public void chooseFocuspoint(String email, Long focuspointId) {
+        Report report = reportRepository.findByEmail(email)
+                .orElseThrow(() -> new NoSuchElementException("Report not found with email: " + email));
+
+        FocuspointDTO focuspointDTO = focuspointService.findById(focuspointId);
+        Focuspoint chosenFocuspoint = focuspointService.dtoIntoFocuspoint(focuspointDTO);
+        report.setChosenFocuspoint(chosenFocuspoint);
+
+        reportRepository.save(report);
     }
 }
