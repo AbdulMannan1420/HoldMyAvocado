@@ -27,7 +27,7 @@ public class Report {
     private Focuspoint chosenFocuspoint;
 
 
-    public Report(Long id, String voornaam, String email, List<Focuspoint> focuspoints){
+    public Report(Long id, String voornaam, String email, List<Focuspoint> focuspoints) {
         this.id = id;
         this.voornaam = voornaam;
         this.email = email;
@@ -37,6 +37,7 @@ public class Report {
 
     public Report() {
     }
+
     private Focuspoint calculateLowestFocuspoint() {
         return focuspoints.stream()
                 .min(Comparator.comparingInt(Focuspoint::getProgress))
@@ -57,11 +58,16 @@ public class Report {
                 .sorted(Comparator.comparingInt(Focuspoint::getProgress))
                 .collect(Collectors.toList());
     }
+
     public void setChosenFocuspoint(Focuspoint chosenFocuspoint) {
         this.chosenFocuspoint = chosenFocuspoint;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public Focuspoint getChosenFocuspoint() {
+        return chosenFocuspoint;
     }
 }

@@ -93,7 +93,7 @@
 
         }
 
-        .lowest-focuspoint {
+        .chosen-focuspoint {
             border: 1px solid black;
             color: orange;
             max-height: 200px;
@@ -200,22 +200,22 @@
     <div class="rapport-samenvatting">
         <div class="green-container">
             <div class="PART1">
-                <div class="lowest-focuspoint">
+                <div class="chosen-focuspoint">
                     <h2 style="font-weight: bold;
     margin-top: 10px;">
-                        <span th:text="${lowestFocuspointName}"></span>
+                        <span th:text="${chosenFocuspointName}"></span>
                     </h2>
                     <img class="lowest_focuspoint-image"
-                         th:src="${lowestFocuspointLogo}"
+                         th:src="${chosenFocuspointLogo}"
                          alt="logo" title="Logo" style="display:block" width="88" height="92"/>
                     <p class="percentage">
-                        <span th:text="${lowestFocuspointProgress}"></span>%
+                        <span th:text="${chosenFocuspointProgress}"></span>%
                     </p>
                 </div>
             </div>
             <div class="PART2">
                 <h4 class="recommend"> Recommended</h4>
-                <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
+                <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
                 <button class="report-button">See my Report</button>
             </div>
         </div>
