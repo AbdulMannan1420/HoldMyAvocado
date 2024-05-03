@@ -406,7 +406,7 @@
             <div class="PART2">
                 <h4 class="recommend"> Recommended</h4>
                 <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
-                <form id="focuspoint-form" th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}" method="get" target="_blank">
+                <form id="focuspoint-form" th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}" method="post" target="_blank">
                     <button type="submit" class="focus-button">Choose Focuspoint</button>
                 </form>
 
