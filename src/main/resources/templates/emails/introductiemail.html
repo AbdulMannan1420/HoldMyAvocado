@@ -127,6 +127,7 @@
             cursor: pointer;
             border-radius: 20px;
             margin-top: 15px;
+            background-color: inherit;
         }
 
         .focus-button:hover {
@@ -235,13 +236,7 @@
             margin-right: 3px;
         }
 
-
-        #job-crafting, #me-life, #adoptability {
-            display: none;
-        }
-
-
-        label {
+         .button{
             padding: 4px 20px;
             background-color: transparent;
             color: blue;
@@ -252,9 +247,14 @@
             font-size: 10px;
             margin-left: 0px;
             margin-top: 10px;
-
+            margin-bottom: 7px;
 
         }
+        .button:hover {
+            background-color: blue;
+            color: white;
+        }
+
 
 
         .preferences-header {
@@ -413,16 +413,16 @@
             </div>
         </div>
     </div>
-    <form action="http://example.nl/hu/avocado" id="preference-form" method="post">
+    <div class="other_focuspoints">
         <div class="choose-focuspoint">
-            <div class="focus-1 focuspoint">
+                <div class="focus-1 focuspoint">
                 <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
                 <img class="secondLowest_focuspoint-image"
                      th:src="${secondLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
-                <input type="radio" id="job-crafting" name="option" value="job-crafting">
-                <label for="job-crafting">Choose</label><br>
-
+                <form id="job-crafting"  th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${secondlowestFocuspointID}}" method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button><br>
+                </form>
 
             </div>
             <div class="focus-2 focuspoint">
@@ -430,19 +430,21 @@
                 <img class="thirdLowest_focuspoint-image"
                      th:src="${thirdLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
-                <input type="radio" id="me-life" name="option" value="me-life">
-                <label for="me-life">Choose</label><br>
+                <form id="me-life"  th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${thirdlowestFocuspointID}}" method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button><br>
+                </form>
             </div>
             <div class="focus-3 focuspoint">
                 <h2><span th:text="${fourthLowestFocuspointName}"></span></h2>
                 <img class="fourthLowest_focuspoint-image"
                      th:src="${fourthLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
-                <input type="radio" id="adoptability" name="option" value="adoptability">
-                <label for="adoptability">Choose</label><br>
+                <form id="adoptability"  th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${fourthlowestFocuspointID}}" method="post" target="_blank">
+                    <button class="button" type="submit">Choose</button><br>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
 
     <div class="preferences-header">
         <p class="pref-tekst">What are you preferences?</p>

@@ -63,12 +63,15 @@ public class EmailService {
             // second lowest
             properties.put("secondLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(1).getName());
             properties.put("secondLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(1).getLogo());
+            properties.put("secondlowestFocuspointID", report.focuspointsSortedByProgressAsc().get(1).getId());
             // third lowest
             properties.put("thirdLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(2).getName());
             properties.put("thirdLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(2).getLogo());
+            properties.put("thirdlowestFocuspointID", report.focuspointsSortedByProgressAsc().get(2).getId());
             // fourth lowest
             properties.put("fourthLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(3).getName());
             properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3  ).getLogo());
+            properties.put("fourthlowestFocuspointID", report.focuspointsSortedByProgressAsc().get(3).getId());
             // chosen focuspoint
             properties.put("chosenFocuspointName", report.getChosenFocuspoint().getName());
             properties.put("chosenFocuspointLogo", report.getChosenFocuspoint().getLogo());
