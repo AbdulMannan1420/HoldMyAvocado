@@ -191,11 +191,13 @@
         </tr>
     </table>
     <div class="intro-tekst">
-        <h1 style="color: white;">Welcome <span th:text="${name}" th:remove="tag"></span></h1>
-        <p style="color: white;">Hier ben ik weer! Wat leuk dat je voor het financiële fit gedeelte hebt gekozen. Om
-            onze tool optimaal te kunnen gebruiken, willen wij u graag wat informatie verstrekken. In deze e-mail vind
-            je wat feiten en trivia, wat snackable content en kun je een verhaal lezen over iemand die deze cycli al
-            heeft gevolgd.</p>
+        <h1 style="color: white;">Hi <span th:text="${name}" th:remove="tag"></span>!</h1>
+        <p style="color: white;">Hier ben ik weer! Wat leuk dat je voor het <span th:text="${ chosenFocuspointName}"
+                                                                                  th:remove="tag"></span> focuspoint
+            hebt gekozen. Om
+            onze tool optimaal te kunnen gebruiken, willen wij u in deze mail wat informatieve content verstrekken. Veel
+            plezier!
+        </p>
     </div>
     <div class="rapport-samenvatting">
         <div class="green-container">
