@@ -49,12 +49,12 @@
         }
 
         .pi4 {
-            background-color: white;
+            background-color: #2E8B57;
 
         }
 
         .pi5 {
-            background-color: white;
+            background-color: #2E8B57;
 
         }
 
@@ -96,7 +96,7 @@
         .chosen-focuspoint {
             border: 1px solid black;
             color: orange;
-            max-height: 200px;
+            min-height: 180px;
             min-width: 150px;
             border-radius: 10px;
             background-color: blue;
@@ -106,7 +106,7 @@
 
         }
 
-        .report-button {
+        .ontwikkel_meter {
             background-color: inherit;
             border: 2px solid blue;
             color: blue;
@@ -119,35 +119,19 @@
             transition-duration: 0.4s;
             cursor: pointer;
             border-radius: 20px;
-            margin-left: 18px;
-            margin-top: 26px;
-
-
+            margin-left: 5px;
         }
 
-        .report-button:hover {
-            background-color: blue;
+        .ontwikkel_meter:hover {
+            background-color: orange;
             color: white;
+            border: 1px solid orange;
         }
 
         .lowest_focuspoint-image {
             margin-left: 32px;
         }
 
-
-        .percentage {
-            display: block;
-            width: 50px;
-            font-size: 20px;
-            background-color: white;
-            font-weight: bold;
-            box-shadow: 0px 0px 10px 10px white;
-            border-radius: 10px;
-            margin-left: 67%;
-            border: 1px solid black;
-            margin-bottom: 10px;
-
-        }
 
         .PART1 {
 
@@ -160,10 +144,9 @@
 
         }
 
-        .recommend {
-            color: orange;
-            font-weight: bold;
-
+        .lfs-header {
+            color: blue;
+            margin-top: 20px;
         }
 
         .lfs-tekst {
@@ -191,9 +174,10 @@
         </tr>
     </table>
     <div class="intro-tekst">
-        <h1 style="color: white;">Hi <span th:text="${name}" th:remove="tag"></span>!</h1>
-        <p style="color: white;">We ontmoeten elkaar weer. In deze mail wil ik je aantal oefeningen aanbieden over je
-            gekozen focuspoint om voor jezelf te zien hoeveel je hebt geleerd</p>
+        <h1 style="color: white;">Goed werk <span th:text="${name}" th:remove="tag"></span>!</h1>
+        <p style="color: white;"> Je hebt alle stappen van de cyclus doorlopen. Heel goed gedaan! Om er zeker van te
+            zijn dat je je hebt verbeterd in het focuspoint, is het belangrijk dat je de Ontwikkelmeter opnieuw invult.
+            Ben je nieuwsgierig naar je groei?</p>
     </div>
     <div class="rapport-samenvatting">
         <div class="green-container">
@@ -205,16 +189,16 @@
                     </h2>
                     <img class="lowest_focuspoint-image"
                          th:src="${chosenFocuspointLogo}"
-                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
-                    <p class="percentage">
-                        <span th:text="${chosenFocuspointProgress}"></span>%
-                    </p>
-                </div>
+                         alt="logo" title="Logo" style="display:block" width="88" height="92"/></div>
             </div>
             <div class="PART2">
-                <h4 class="recommend"> Recommended</h4>
-                <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
-                <button class="report-button">See my Report</button>
+                <h2 class="lfs-header"> Wow</h2>
+                <p class="lfs-tekst">Je hebt alle stappen doorlopen. Neem de test opnieuw zodat je persoonlijke groei
+                    kan ontdekken</p>
+                <button class="ontwikkel_meter"><a href="https://questionnaire.capabilitiessustain.com/"
+                                                   style="text-decoration: none; color: blue;">
+                    Neem de test
+                </a></button>
             </div>
         </div>
     </div>
