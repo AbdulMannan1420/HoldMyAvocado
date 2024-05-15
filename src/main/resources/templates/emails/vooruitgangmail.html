@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .body {
+            width: 400px;
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .progressie-bar {
+
+            background-color: blue;
+            text-align: center;
+            padding-top: 17px;
+        }
+
+        .progressie-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 3px solid lightgreen;
+            display: inline-block;
+            margin: 0 10px; /* Space between indicators */
+        }
+
+        .pi1 {
+            background-color: #2E8B57;
+        }
+
+        .pi2 {
+            background-color: white;
+
+        }
+
+        .pi3 {
+            background-color: white;
+        }
+
+        .pi4 {
+            background-color: white;
+
+        }
+
+        .pi5 {
+            background-color: white;
+
+        }
+
+
+        .intro-tekst {
+            margin: 0;
+            border: 1px solid blue;
+            background-color: blue;
+            text-align: center;
+            color: white;
+        }
+
+        .intro-tekst > p {
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+
+        .rapport-samenvatting, .progress-samenvatting {
+            padding-left: 23px;
+            padding-right: 15px;
+            background-color: rgba(211, 211, 211, 0.5);
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
+
+        }
+
+        .pb {
+            color: lightgreen;
+            text-decoration: underline;
+        }
+
+        .green-container {
+            margin: 50px auto;
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            height: 260px;
+            display: flex;
+            padding-bottom: 10px;
+
+
+        }
+
+        .lowest-focuspoint {
+            border: 1px solid black;
+            color: orange;
+            max-height: 200px;
+            min-width: 150px;
+            border-radius: 10px;
+            background-color: blue;
+            bottom: 100px;
+            margin-top: 0px;
+
+
+        }
+
+        #focuspoint-form {
+            background-color: inherit;
+            margin-left: 18px;
+            margin-top: 26px;
+
+        }
+
+        .focus-button {
+            border: 2px solid blue;
+            color: blue;
+            height: 27px;
+            width: 123px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 15px;
+            background-color: inherit;
+        }
+
+        .focus-button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .report-button {
+            background-color: blue;
+            border: 2px solid blue;
+            color: #11E930;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            height: 27px;
+            width: 123px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 40px;
+            transition-duration: 0.4s;
+            margin-top: 23px;
+
+        }
+
+        .report-button:hover {
+            background-color: transparent;
+            color: #0000ff
+        }
+
+        .lowest_focuspoint-image {
+            margin-left: 32px;
+        }
+
+
+        .percentage {
+            display: block;
+            width: 50px;
+            font-size: 20px;
+            background-color: white;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px 10px white;
+            border-radius: 10px;
+            margin-left: 67%;
+            border: 1px solid black;
+            margin-bottom: 10px;
+
+        }
+
+        .PART1 {
+
+            width: 150px;
+
+        }
+
+        .PART2 {
+            text-align: center;
+
+        }
+
+        .recommend {
+            color: orange;
+            font-weight: bold;
+
+        }
+
+        .lfs-tekst {
+            color: blue;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            min-width: 100px;
+            min-height: 130px;
+        }
+
+        .report_header {
+            width: 100%;
+            height: 20px;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .rh-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 215px;
+            height: 3px;
+            margin-top: 20px;
+            margin-left: 5px;
+            border-radius: 4px;
+
+
+        }
+
+        .rh-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-left: 8px;
+        }
+
+
+        .choose-focuspoint {
+            display: flex;
+            font-size: 7px;
+            color: darkorange;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .focuspoint {
+            width: 100px;
+            border-radius: 12px;
+            background-color: white;
+            font-size: 10px;
+            box-shadow: 3px 3px 1px 0px #938c8c;
+            max-height: 250px;
+        }
+
+        .focus-1 {
+            margin-right: 10px;
+            margin-left: 13px;
+        }
+
+        .focus-2 {
+            margin-left: 10px;
+            margin-right: 18px;
+        }
+
+        .focus-3 {
+            margin-right: 10px;
+        }
+
+        .secondLowest_focuspoint-image, .thirdLowest_focuspoint-image, .fourthLowest_focuspoint-image {
+            margin-right: 3px;
+        }
+
+        .button {
+            padding: 4px 20px;
+            background-color: transparent;
+            color: blue;
+            border-radius: 15px;
+            border: 1px solid blue;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 0px;
+            margin-top: 10px;
+            margin-bottom: 7px;
+
+        }
+
+        .button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+
+        .introduction-header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .intro-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 200px;
+            height: 3px;
+            margin-left: 15px;
+            margin-top: 23px;
+            border-radius: 4px;
+        }
+
+        .introd-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-bottom: 10px;
+            margin-right: 8px;
+
+        }
+
+        .introduction {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
+            background: rgba(211, 211, 211, 0.5) linear-gradient(to top, blue 45%, rgba(211, 211, 211, 0.5) 30%);
+            padding-bottom: 20px;
+
+        }
+
+        .intro_green-container {
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            height: 300px;
+            display: flex;
+            padding-bottom: 10px;
+            width: 87%;
+            margin: 50px auto 50px 20px;
+        }
+
+        .intro-PART1 {
+            text-align: center;
+            width: 45%;
+            height: 100%;
+            padding-left: 7px;
+
+        }
+
+        .intro-PART2 {
+            width: 55%;
+            height: 100%;
+        }
+
+        .unsubscribe_button {
+            background-color: blue;
+            border: 1px solid white;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            height: 27px;
+            width: 123px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition-duration: 0.4s;
+
+        }
+
+        .unsubscribe_button:hover {
+            background-color: lightgreen;
+            color: blue;
+            border: 1px solid lightgreen;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="body">
+    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <div class="progressie-indicator pi1"></div>
+                <div class="progressie-indicator pi2"></div>
+                <div class="progressie-indicator pi3"></div>
+                <div class="progressie-indicator pi4"></div>
+                <div class="progressie-indicator pi5"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="intro-tekst">
+        <h1 style="color: white;">Welcome <span th:text="${name}" th:remove="tag"></span></h1>
+        <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
+            en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
+            ziet. De <span class="pb" style="font-weight: bold;">voortgangsbalk</span> laat zien hoe ver je al bent.
+            Neem
+            gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
+    </div>
+    <div class="progress-samenvatting">
+        <div class="green-container">
+            <div class="PART1">
+                <div class="lowest-focuspoint">
+                    <h2 style="font-weight: bold;
+    margin-top: 10px;">
+                        <span th:text="${prevChosenFocuspointName}"></span>
+                    </h2>
+                    <img class="lowest_focuspoint-image"
+                         th:src="${prevChosenFocuspointLogo}"
+                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
+                    <p class="percentage">
+                        <span th:text="${currentChosenFocuspointProgress}"></span>%
+                    </p>
+                </div>
+                <button class="report-button">See my report</button>
+            </div>
+            <div class="PART2">
+                <h4 class="recommend"> Wow Great job!</h4>
+                <p class="lfs-tekst"> Uit de testen van de cyclus en de meting van de ontwikkelingsmeter blijkt dat je
+                    qua financiële fitheid <span th:text="${prevChosenFocuspointGrowth}"></span>% gegroeid bent.
+                    Laten we dit nog een keer doen!</p>
+            </div>
+        </div>
+    </div>
+    <div class="report_header">
+        <p class="rh-tekst">Let's do this again!</p>
+        <div class="rh-line"></div>
+    </div>
+    <div class="rapport-samenvatting">
+        <div class="green-container">
+            <div class="PART1">
+                <div class="lowest-focuspoint">
+                    <h2 style="font-weight: bold;
+    margin-top: 10px;">
+                        <span th:text="${lowestFocuspointName}"></span>
+                    </h2>
+                    <img class="lowest_focuspoint-image"
+                         th:src="${lowestFocuspointLogo}"
+                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
+                    <p class="percentage">
+                        <span th:text="${lowestFocuspointProgress}"></span>%
+                    </p>
+                </div>
+                <button class="report-button">See my report</button>
+            </div>
+            <div class="PART2">
+                <h4 class="recommend"> Recommended</h4>
+                <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
+                <form id="focuspoint-form"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="focus-button">Choose Focuspoint</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="other_focuspoints">
+
+        <div class="choose-focuspoint">
+            <div class="focus-1 focuspoint">
+                <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
+                <img class="secondLowest_focuspoint-image"
+                     th:src="${secondLowestFocuspointLogo}"
+                     alt="logo" width="70" height="70"/>
+                <form id="job-crafting"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${secondlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button>
+                    <br>
+                </form>
+
+            </div>
+            <div class="focus-2 focuspoint">
+                <h2><span th:text="${thirdLowestFocuspointName}"></span></h2>
+                <img class="thirdLowest_focuspoint-image"
+                     th:src="${thirdLowestFocuspointLogo}"
+                     alt="logo" width="70" height="70"/>
+                <form id="me-life"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${thirdlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button>
+                    <br>
+                </form>
+            </div>
+            <div class="focus-3 focuspoint">
+                <h2><span th:text="${fourthLowestFocuspointName}"></span></h2>
+                <img class="fourthLowest_focuspoint-image"
+                     th:src="${fourthLowestFocuspointLogo}"
+                     alt="logo" width="70" height="70"/>
+                <form id="adoptability"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${fourthlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button class="button" type="submit">Choose</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="introduction-header">
+        <p class="introd-tekst"> A message from Arjan</p>
+        <div class="intro-line"></div>
+    </div>
+
+    <div class="introduction">
+
+        <div class="intro_green-container">
+
+            <div class="intro-PART1">
+                <h3 style="color: darkorange;
+                font-weight: bold;"> Arjan Brons </h3>
+                <p style="color: blue; margin-top: 15px; "> Wat een geweldig resultaat <span th:text="${name}"></span>!
+                    En dat binnen een paar
+                    weken. Je kunt mij alles vragen en ik kan je helpen om nog meer resultaat
+                    te behalen!</p>
+                <button style="border: 1px solid blue; border-radius: 15px; color: blue; padding: 5px 17px; background-color: blue; margin-top: 20px;">
+                    <a href="https://www.holdmyavocado.nl/over-arjan/" style="text-decoration: none; color: white;">
+                        Let's Connect!
+                    </a>
+                </button>
+            </div>
+
+            <div class="intro-PART2">
+                <img style="margin-top: 52px; margin-left: 35px; border-radius: 25px;"
+                     src="https://drive.google.com/uc?export=download&id=19CVZUN-k9u0pquc6SjtqY83D8MzyXT3a"
+                     alt="logo" width="150" height="150"/>
+            </div>
+        </div>
+        <h2 style="color: white"> Niet langer deelnemen aan de cyclus? </h2>
+        <h4 style="color: white"> We suggereren je af te melden voor de mails</h4>
+        <h4 style="color: white"> Je kan je altijd weer aanmelden</h4>
+        <button class="unsubscribe_button"> afmelden</button>
+    </div>
+
+
+</div>
+</body>
+
+</html>

@@ -3,8 +3,10 @@ package nl.hu.avocado.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Getter;
 
 
+@Getter
 @Entity
 public class Theme {
 
@@ -28,35 +30,6 @@ public class Theme {
     }
 
     public Theme() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-
-    public String getNaam() {
-        return naam;
-    }
-
-
-    public int getRanking() {
-        return ranking;
-    }
-
-
-    public double getScore() {
-        return score;
-    }
-
-
-    public String getLogo() {
-        return logo;
-    }
-
-
-    public String getAdvies() {
-        return advies;
     }
 
 
