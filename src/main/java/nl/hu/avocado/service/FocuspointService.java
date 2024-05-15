@@ -26,7 +26,8 @@ public class FocuspointService {
     }
 
     public FocuspointDTO focuspointIntoDto(Focuspoint focuspoint) {
-        List<Long> themes = focuspoint.getThemes().stream().map(Theme::getId).collect(Collectors.toList());;
+        List<Long> themes = focuspoint.getThemes().stream().map(Theme::getId).collect(Collectors.toList());
+        ;
         return new FocuspointDTO(
                 focuspoint.getId(),
                 focuspoint.getName(),
@@ -38,7 +39,7 @@ public class FocuspointService {
 
     public Focuspoint dtoIntoFocuspoint(FocuspointDTO dto) {
         List<Theme> themes = new ArrayList<>();
-        for(Long f : dto.getThemes()) {
+        for (Long f : dto.getThemes()) {
             themes.add(themeService.dtoIntoTheme(this.themeService.findById(f)));
         }
 

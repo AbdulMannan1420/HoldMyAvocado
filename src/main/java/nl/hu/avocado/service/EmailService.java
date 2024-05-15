@@ -54,9 +54,9 @@ public class EmailService {
             Map<String, Object> properties = new HashMap<String, Object>();
 
 
-            // previous report
-            properties.put("prevChosenFocuspointName", user.getPreviousFocuspoint().getName());
-            properties.put("prevChosenFocuspointLogo", user.getPreviousFocuspoint().getLogo());
+            // previous chosen focuspoint for mail 6
+            properties.put("prevChosenFocuspointName", user.getPreviousChosenFocuspoint().getName());
+            properties.put("prevChosenFocuspointLogo", user.getPreviousChosenFocuspoint().getLogo());
             properties.put("prevChosenFocuspointGrowth", user.calculateFocuspointGrowth());
             properties.put("currentChosenFocuspointProgress", user.getCurrentProgressOfPreviousChosenFocuspoint().getProgress());
             // user details
@@ -78,7 +78,7 @@ public class EmailService {
             properties.put("thirdlowestFocuspointID", report.focuspointsSortedByProgressAsc().get(2).getId());
             // fourth lowest
             properties.put("fourthLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(3).getName());
-            properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3  ).getLogo());
+            properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3).getLogo());
             properties.put("fourthlowestFocuspointID", report.focuspointsSortedByProgressAsc().get(3).getId());
             // chosen focuspoint
             properties.put("chosenFocuspointName", report.getChosenFocuspoint().getName());

@@ -3,7 +3,6 @@ package nl.hu.avocado.service;
 import jakarta.transaction.Transactional;
 import nl.hu.avocado.controller.dto.UserDTO;
 import nl.hu.avocado.data.UserRepository;
-import nl.hu.avocado.domain.Focuspoint;
 import nl.hu.avocado.domain.Report;
 import nl.hu.avocado.domain.User;
 import org.springframework.stereotype.Service;
@@ -15,8 +14,8 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private ReportService reportService;
-    private UserRepository userRepository;
+    private final ReportService reportService;
+    private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository, ReportService reportService) {
         this.userRepository = userRepository;
@@ -25,19 +24,20 @@ public class UserService {
 
     public User dtoIntoUser(UserDTO dto) {
         List<Report> reports = new ArrayList<>();
-        for(Long f : dto.getReports()) {
+        for (Long f : dto.getReports()) {
             reports.add(reportService.dtoIntoReport(this.reportService.findReportById(f)));
         }
         return new User(dto.getId(), dto.getVoornaam(), dto.getEmail(), reports);
     }
+
     public void addUser(UserDTO userDTO) {
         User user = dtoIntoUser(userDTO);
         userRepository.save(user);
     }
+
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
-
 
 
 }

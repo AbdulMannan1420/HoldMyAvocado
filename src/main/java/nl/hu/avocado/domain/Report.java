@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+@Getter
 @Entity
 public class Report {
 
@@ -47,22 +48,6 @@ public class Report {
         return focuspoints.stream()
                 .sorted(Comparator.comparingInt(Focuspoint::getProgress))
                 .collect(Collectors.toList());
-    }
-
-    public Focuspoint getChosenFocuspoint() {
-        return chosenFocuspoint;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public List<Focuspoint> getFocuspoints() {
-        return focuspoints;
-    }
-
-    public Focuspoint getLowestFocuspoint() {
-        return lowestFocuspoint;
     }
 
 

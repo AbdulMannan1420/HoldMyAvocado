@@ -5,9 +5,11 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 @Entity
 public class Focuspoint {
 
@@ -44,34 +46,11 @@ public class Focuspoint {
                 .mapToDouble(Theme::getScore)
                 .sum();
 
-        int maxPoints = themes.size() * 4; // Aantal themes * max punten per theme
+        int maxPoints = themes.size() * 4;
 
         double percentage = (totalScore / maxPoints) * 100;
 
         return (int) percentage;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAdvies() {
-        return advies;
-    }
-
-    public String getLogo() {
-        return logo;
-    }
-
-    public int getProgress() {
-        return progress;
-    }
-
-    public List<Theme> getThemes() {
-        return themes;
-    }
 }

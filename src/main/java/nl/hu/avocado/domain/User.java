@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.List;
-import java.util.Objects;
+
 
 @Entity
 @Table(name = "person")
@@ -45,13 +45,13 @@ public class User {
     }
 
 
-    public Focuspoint getPreviousFocuspoint() {
+    public Focuspoint getPreviousChosenFocuspoint() {
         return this.getSecondLastReport().getChosenFocuspoint();
     }
 
     public Focuspoint getCurrentProgressOfPreviousChosenFocuspoint() {
         for (Focuspoint focuspoint : this.getLastReport().getFocuspoints()) {
-            if (focuspoint.getName().equals(this.getPreviousFocuspoint().getName())) {
+            if (focuspoint.getName().equals(this.getPreviousChosenFocuspoint().getName())) {
                 return focuspoint;
             }
         }
@@ -61,9 +61,9 @@ public class User {
 
     public int calculateFocuspointGrowth() {
 
-        int previous = this.getPreviousFocuspoint().getProgress();
+        int previous = this.getPreviousChosenFocuspoint().getProgress();
         for (Focuspoint focuspoint : this.getLastReport().getFocuspoints()) {
-            if (focuspoint.getName().equals(this.getPreviousFocuspoint().getName())) {
+            if (focuspoint.getName().equals(this.getPreviousChosenFocuspoint().getName())) {
                 return focuspoint.getProgress() - previous;
             }
         }
