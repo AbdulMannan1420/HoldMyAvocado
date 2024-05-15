@@ -24,11 +24,6 @@ public class ReportController {
         this.reportService.addReport(reportDTO);
     }
 
-    @GetMapping("{email}")
-    public Report getReportByEmail(@PathVariable String email) {
-        return reportService.findByEmail(email);
-    }
-
     @PostMapping("/{email}/chosenfocuspoint/{focuspointId}")
     public void chooseFocuspoint(@PathVariable String email, @PathVariable Long focuspointId) {
         reportService.chooseFocuspoint(email, focuspointId);

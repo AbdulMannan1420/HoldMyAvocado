@@ -1,10 +1,10 @@
 <!doctype html>
-<html  lang="en" >
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
 
-    <style >
+    <style>
         * {
             box-sizing: border-box;
         }
@@ -114,7 +114,8 @@
             margin-top: 26px;
 
         }
-        .focus-button{
+
+        .focus-button {
             border: 2px solid blue;
             color: blue;
             height: 27px;
@@ -236,7 +237,7 @@
             margin-right: 3px;
         }
 
-         .button{
+        .button {
             padding: 4px 20px;
             background-color: transparent;
             color: blue;
@@ -250,11 +251,11 @@
             margin-bottom: 7px;
 
         }
+
         .button:hover {
             background-color: blue;
             color: white;
         }
-
 
 
         .preferences-header {
@@ -406,7 +407,9 @@
             <div class="PART2">
                 <h4 class="recommend"> Recommended</h4>
                 <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
-                <form id="focuspoint-form" th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}" method="post" target="_blank">
+                <form id="focuspoint-form"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}"
+                      method="post" target="_blank">
                     <button type="submit" class="focus-button">Choose Focuspoint</button>
                 </form>
 
@@ -415,13 +418,16 @@
     </div>
     <div class="other_focuspoints">
         <div class="choose-focuspoint">
-                <div class="focus-1 focuspoint">
+            <div class="focus-1 focuspoint">
                 <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
                 <img class="secondLowest_focuspoint-image"
                      th:src="${secondLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
-                <form id="job-crafting"  th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${secondlowestFocuspointID}}" method="post" target="_blank">
-                    <button type="submit" class="button">Choose</button><br>
+                <form id="job-crafting"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${secondlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button>
+                    <br>
                 </form>
 
             </div>
@@ -430,8 +436,11 @@
                 <img class="thirdLowest_focuspoint-image"
                      th:src="${thirdLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
-                <form id="me-life"  th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${thirdlowestFocuspointID}}" method="post" target="_blank">
-                    <button type="submit" class="button">Choose</button><br>
+                <form id="me-life"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${thirdlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button>
+                    <br>
                 </form>
             </div>
             <div class="focus-3 focuspoint">
@@ -439,8 +448,11 @@
                 <img class="fourthLowest_focuspoint-image"
                      th:src="${fourthLowestFocuspointLogo}"
                      alt="logo" width="70" height="70"/>
-                <form id="adoptability"  th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${fourthlowestFocuspointID}}" method="post" target="_blank">
-                    <button class="button" type="submit">Choose</button><br>
+                <form id="adoptability"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${fourthlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button class="button" type="submit">Choose</button>
+                    <br>
                 </form>
             </div>
         </div>
@@ -472,8 +484,8 @@
             color: white;
             background-color: cornflowerblue;
             border: none; left: 0">
-                            <option value="option1"> Tekst </option>
-                            <option value="option2"> Tekst/Video </option>
+                            <option value="option1"> Tekst</option>
+                            <option value="option2"> Tekst/Video</option>
                         </select>
 
                     </td>

@@ -4,6 +4,7 @@ package nl.hu.avocado.service;
 import jakarta.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;
 import nl.hu.avocado.domain.Report;
+import nl.hu.avocado.domain.User;
 import nl.hu.avocado.model.SendHTMLEmailRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,7 +36,7 @@ public class EmailService {
     private String fromName;
 
     @Async
-    public void htmlSend(SendHTMLEmailRequest sendHTMLEmailRequest, Report report) {
+    public void htmlSend(SendHTMLEmailRequest sendHTMLEmailRequest, Report report, User user) {
 
 
         try {
@@ -51,9 +52,16 @@ public class EmailService {
             // Thymeleaf Context
             Context context = new Context();
             Map<String, Object> properties = new HashMap<String, Object>();
-            properties.put("name", report.getVoornaam());
-            // report
-            properties.put("email", report.getEmail());
+
+
+            // previous report
+            properties.put("prevChosenFocuspointName", user.getPreviousFocuspoint().getName());
+            properties.put("prevChosenFocuspointLogo", user.getPreviousFocuspoint().getLogo());
+            properties.put("prevChosenFocuspointGrowth", user.calculateFocuspointGrowth());
+            properties.put("currentChosenFocuspointProgress", user.getCurrentProgressOfPreviousChosenFocuspoint().getProgress());
+            // user details
+            properties.put("email", user.getEmail());
+            properties.put("name", user.getVoornaam());
             // lowest
             properties.put("lowestFocuspointName", report.getLowestFocuspoint().getName());
             properties.put("lowestFocuspointProgress", report.getLowestFocuspoint().getProgress());

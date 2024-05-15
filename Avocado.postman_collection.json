@@ -36,13 +36,111 @@
 			"response": []
 		},
 		{
+			"name": "Focuspoint mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"subject\": \"Test Intro mail\",\r\n    \"name\": \"Matthew\",\r\n    \"templateName\": \"Focuspointmail.html\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Oefening Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ontwikkelmeter Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"subject\": \"Test Intro mail\",\r\n    \"name\": \"Matthew\",\r\n    \"templateName\": \"focuspointmail.html\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vooruitgang Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "add report",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"voornaam\": \"Matthew\",\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"focuspoints\": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]\r\n}",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"voornaam\": \"Matthew\",\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"focuspoints\": [1,2,3,4]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,7 +180,7 @@
 			"response": []
 		},
 		{
-			"name": "voeg focuspoint",
+			"name": "add theme",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -109,26 +207,26 @@
 			"response": []
 		},
 		{
-			"name": "get focuspoint",
+			"name": "get theme",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/focuspoint/1",
+					"raw": "localhost:8080/theme/2",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"focuspoint",
-						"1"
+						"theme",
+						"2"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "get focuspoints",
+			"name": "get all themes",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -140,6 +238,72 @@
 					"port": "8080",
 					"path": [
 						"focuspoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add focuspoint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/focuspoint",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"focuspoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "choose focuspoint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/report/matthewbijlhout@gmail.com/chosenfocuspoint/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"matthewbijlhout@gmail.com",
+						"chosenfocuspoint",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 123,\r\n    \"voornaam\": \"Matthew\",\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"reports\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
 					]
 				}
 			},
