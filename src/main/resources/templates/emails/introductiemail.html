@@ -361,6 +361,18 @@
             width: 55%;
             height: 100%;
         }
+        input[type="submit"]{
+            color: blue;
+            font-size: large;
+            background-color: white;
+            border: 1px solid blue;
+            border-radius: 15px;
+            margin: 10px;
+        }
+        .selector{
+            margin: 10px;
+
+        }
 
 
     </style>
@@ -463,10 +475,10 @@
         <p class="pref-tekst">What are you preferences?</p>
         <div class="pref-line"></div>
     </div>
-    <form action="http://example.nl/hu/avocado" id="inhoudsvoorkeur-form" method="post">
+    <form action="http://localhost:8080/preference/receive" id="inhoudsvoorkeur-form" method="post">
 
 
-        <div class="inhoud-container" style="
+        <div class="inhoud-container selector" style="
     background-color: blue;
     border-radius: 25px;">
 
@@ -478,15 +490,15 @@
                     <td style="
           padding-right: 10px;
           width: 30%; left: 0">
-                        <select id="options" name="options" style="
+                        <select id="options" name="contentOptions" style="
             width: 100%;
             border-radius: 25px 0 0 25px;
             padding: 8px;
             color: white;
             background-color: cornflowerblue;
             border: none; left: 0">
-                            <option value="option1"> Tekst</option>
-                            <option value="option2"> Tekst/Video</option>
+                            <option value="tekst"> Tekst</option>
+                            <option value="tekst_video"> Tekst/Video</option>
                         </select>
 
                     </td>
@@ -498,11 +510,8 @@
                 </tr>
             </table>
         </div>
-    </form>
-    <form action="http://example.nl/hu/avocado" id="day-preferences" method="post">
 
-
-        <div class="inhoud-container" style="
+        <div class="inhoud-container selector" style="
     background-color: blue;
     border-radius: 25px;">
 
@@ -514,7 +523,7 @@
                     <td style="
           padding-right: 10px;
           width: 30%; left: 0">
-                        <select id="day-options" name="options" style="
+                        <select id="day-options" name="dayOptions" style="
             width: 100%;
             border-radius: 25px 0 0 25px;
             padding: 8px;
@@ -522,11 +531,13 @@
             background-color: cornflowerblue;
             border: none; left: 0">
 
-                            <option value="day-option1">Monday</option>
-                            <option value="day-option2">Tuesday</option>
-                            <option value="day-option3">Wednesday</option>
-                            <option value="day-option4">Thursday</option>
-                            <option value="day-option5">Friday</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
                         </select>
 
                     </td>
@@ -538,10 +549,7 @@
                 </tr>
             </table>
         </div>
-
-    </form>
-    <form action="http://example.nl/hu/avocado" id="time_preference" method="post">
-        <div class="tijd-container" style="
+        <div class="tijd-container selector" style="
     background-color: blue;
     border-radius: 25px;">
 
@@ -554,7 +562,7 @@
           padding-right: 10px;
           width: 30%; left: 0">
 
-                        <select id="time-options" name="time-options" style="
+                        <select id="time-options" name="timeOptions" style="
             width: 100%;
             border-radius: 25px 0 0 25px;
             padding: 8px;
@@ -562,15 +570,10 @@
             background-color: cornflowerblue;
             border: none; left: 0">
 
-                            <option value="option1">9 a.m.</option>
-                            <option value="option2">10 a.m.</option>
-                            <option value="option3">11 a.m.</option>
-                            <option value="option4">12 p.m.</option>
-                            <option value="option5">1 p.m.</option>
-                            <option value="option6">2 p.m.</option>
-                            <option value="option7">3 p.m.</option>
-                            <option value="option8">4 p.m.</option>
-                            <option value="option9">5 p.m.</option>
+                            <option value="8am">8 a.m.</option>
+                            <option value="12pm">12 p.m.</option>
+                            <option value="4pm">4 a.m.</option>
+                            <option value="8pm">8 p.m.</option>
 
                         </select>
                     </td>
@@ -583,7 +586,7 @@
                 </tr>
             </table>
         </div>
-
+        <input type="submit">
     </form>
     <div class="introduction-header">
         <div class="intro-line"></div>
