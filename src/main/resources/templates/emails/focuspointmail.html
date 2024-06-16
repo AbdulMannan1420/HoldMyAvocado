@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <style>body {
-        visibility: hidden
+        /*visibility: hidden*/
     }</style>
     <style>
         * {
@@ -174,6 +174,73 @@
             min-width: 100px;
             min-height: 130px;
         }
+        .snackable{
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+        .snackable-heading {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .snackable-heading p {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .snackable-heading::after {
+            content: "";
+            flex-grow: 1;
+            border-radius: 5px;
+            height: 3px;
+            background-color: blue;
+            margin-right: 5px;
+        }
+        .snack-button {
+            display: inline-block;
+            padding: 5px 7px;
+            color: blue;
+            background-color: rgba(211,211, 211, 0.5);
+            border: blue 2px solid;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: x-small;
+            transition: background-color 0.3s ease;
+        }
+
+        .snack-button:hover {
+            background-color: blue;
+            color: white;
+        }
+        .snackable-content{
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .snacked-content{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        .snacked-unit{
+            background-color: blue;
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            height: 170px;
+        }
+        .snacked-content img{
+            margin-bottom: 10px;
+            border-radius: 15px;
+            width: 90px;
+            height: 100px;
+        }
+        .snacked-content p{
+            color: white;
+            font-size: xx-small;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -222,6 +289,36 @@
             </div>
         </div>
     </div>
+    <div class="snackable">
+        <div class="divider">
+            <div class="snackable-heading">
+            <p>Snackable content</p>
+        </div>
+        <div class="snackable-content">
+            <div class="snacked-content content-1">
+                <div class="snacked-unit">
+                    <img src="https://via.placeholder.com/150">
+                    <p><span th:text="${hierkomtwat1}"></span></p>
+                </div>
+                <a class="snack-button" href="https://www.google.com">Take a look</a>
+            </div>
+            <div class="snacked-content content-2">
+                <div class="snacked-unit">
+                    <img src="https://via.placeholder.com/150">
+                    <p><span th:text="${hierkomtwat2}"></span></p>
+                </div>
+                <a class="snack-button" href="https://www.google.com">Take a look</a>
+            </div>
+            <div class="snacked-content content-3">
+                <div class="snacked-unit">
+                    <img src="https://via.placeholder.com/150">
+                    <p>Looking for something?<span th:text="${hierkomtwat3}"></span></p>
+                </div>
+                <a class="snack-button" href="https://www.google.com">Take a look</a>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 
