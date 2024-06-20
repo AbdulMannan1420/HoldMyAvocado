@@ -174,62 +174,6 @@
             min-width: 100px;
             min-height: 130px;
         }
-        .gekozen{
-            background-color: rgb(211, 211, 211, 0.5);
-            padding: 10px;
-        }
-        .gekozen-heading {
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-
-        .gekozen-heading p {
-            margin-right: 10px;
-            margin-left: 10px;
-        }
-        .gekozen-heading::after {
-         content: "";
-         flex-grow: 1;
-         border-radius: 5px;
-         height: 3px;
-         background-color: blue;
-         margin-right: 5px;
-        }
-        .witte-container{
-            background-color: white;
-            box-shadow: lightgray 5px 5px 5px 2px;
-            border: none;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 0 auto;
-            width: 340px;
-            height: auto;
-            display: flex;
-            color: blue;
-        }
-        .button-style {
-            display: inline-block;
-            padding: 5px 20px;
-            color: blue;
-            background-color: white;
-            border: blue 1px solid;
-            border-radius: 15px;
-            font-size: small;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .button-style:hover {
-            background-color: #0056b3;
-        }
-        .focus-image img{
-            margin-top:20px;
-            margin-left: 10px;
-            border-radius: 15px;
-        }
-
     </style>
 </head>
 
@@ -276,24 +220,6 @@
                 <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
                 <button class="report-button">See my Report</button>
             </div>
-        </div>
-    </div>
-    <div class="gekozen">
-        <div class="divider">
-            <div class="gekozen-heading">
-                <p>Interesting...</p>
-            </div>
-        </div>
-        <div class="witte-container">
-            <div class="focus-text">
-                <h3>Did you know?<span th:text="${headingabc}"></span></h3>
-                <p> This is a dummy text deze moet verwijderd worden en vervangen worden text vanuit java blah blah! <span th:text="${textabc1}"></span></p>
-                <a class="button-style" href="www.google.com">Read now</a>
-            </div>
-            <div class="focus-image">
-                <img src="https://via.placeholder.com/150"/>
-            </div>
-
         </div>
     </div>
 </div>
