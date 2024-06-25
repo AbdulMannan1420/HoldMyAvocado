@@ -18,7 +18,6 @@ public class User {
     @Getter
     private String email;
 
-
     @OneToMany(cascade = CascadeType.ALL)
     private List<Report> reports;
 
