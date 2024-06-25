@@ -16,16 +16,14 @@ public class Theme {
     private String naam;
     private int ranking;
     private double score;
-    private String logo;
 
     private String advies;
 
-    public Theme(Long id, String naam, double score, int ranking, String logo, String advies) {
+    public Theme(Long id, String naam, double score, int ranking, String advies) {
         this.id = id;
         this.naam = naam;
         this.score = score;
         this.ranking = ranking;
-        this.logo = logo;
         this.advies = advies;
     }
 

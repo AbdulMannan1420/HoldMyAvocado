@@ -19,14 +19,14 @@
             text-align: center;
         }
 
-        .progressie-bar {
+        .progression-bar {
 
             background-color: blue;
             text-align: center;
             padding-top: 17px;
         }
 
-        .progressie-indicator {
+        .progression-indicator {
             width: 35px;
             height: 35px;
             border-radius: 50%;
@@ -72,7 +72,7 @@
             margin-right: 17px;
         }
 
-        .rapport-samenvatting {
+        .report-summary {
             padding-left: 23px;
             padding-right: 15px;
             background-color: rgba(211, 211, 211, 0.5);
@@ -166,7 +166,7 @@
 
         }
 
-        .lfs-tekst {
+        .focuspoint-text {
             color: blue;
             padding-left: 10px;
             padding-right: 10px;
@@ -174,6 +174,26 @@
             min-width: 100px;
             min-height: 130px;
         }
+
+        .divide-line{
+            border: 1px solid blue;
+            background-color: blue;
+            width: 250px;
+            height: 3px;
+            margin-top: 10px;
+            margin-left: 5px;
+            border-radius: 4px;
+
+
+        }
+        .divide-tekst{
+            font-weight: bold;
+            color: orange;
+            margin-bottom: 10px;
+            margin-right: 8px;
+        }
+
+
         .gekozen{
             background-color: rgb(211, 211, 211, 0.5);
             padding: 10px;
@@ -338,6 +358,7 @@
         .story a:hover{
             background-color: white;
             color: blue;
+            border: none;
         }
         .story-image img{
             border-radius: 15px;
@@ -356,6 +377,7 @@
         .footer{
             height: 90px;
             background-color: blue;
+            width: auto;
         }
         .divider{
             padding-top: 10px;
@@ -367,14 +389,14 @@
 
 <body>
 <div class="body">
-    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+    <table class="progression-bar" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" valign="middle">
-                <div class="progressie-indicator pi1"></div>
-                <div class="progressie-indicator pi2"></div>
-                <div class="progressie-indicator pi3"></div>
-                <div class="progressie-indicator pi4"></div>
-                <div class="progressie-indicator pi5"></div>
+                <div class="progression-indicator pi1"></div>
+                <div class="progression-indicator pi2"></div>
+                <div class="progression-indicator pi3"></div>
+                <div class="progression-indicator pi4"></div>
+                <div class="progression-indicator pi5"></div>
             </td>
         </tr>
     </table>
@@ -387,7 +409,7 @@
             plezier!
         </p>
     </div>
-    <div class="rapport-samenvatting">
+    <div class="report-summary">
         <div class="green-container">
             <div class="PART1">
                 <div class="chosen-focuspoint">
@@ -405,15 +427,18 @@
             </div>
             <div class="PART2">
                 <h4 class="recommend"> Recommended</h4>
-                <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
+                <p class="focuspoint-text"><span th:text="${chosenFocuspointAdvies}"></span></p>
                 <button class="report-button">See my Report</button>
             </div>
         </div>
     </div>
+
+
     <div class="gekozen">
         <div class="divider">
             <div class="gekozen-heading">
-                <p style="color: darkorange">Interesting...</p>
+                <p class="divide-tekst">Interesting...</p>
+                <div class="divide-line"></div>
             </div>
         </div>
         <div class="witte-container">
@@ -431,23 +456,24 @@
     <div class="did-you-know">
         <div class="divider">
             <div class="gekozen-heading">
-                <p style="color: darkorange">Did you know?</p>
+                <p class="divide-tekst">Did you know?</p>
+                <div class="divide-line"></div>
             </div>
         </div>
         <div class="did-you-know-content">
             <div class="did-you-know-fact">
                 <a th:href="${factlink1}">
-                <p><b>Fact: </b> you know that <span th:text="${fact1}"></span></p>
+                    <p><b>Fact: </b> you know that <span th:text="${fact1}"></span></p>
                 </a>
             </div>
             <div class="did-you-know-fact fact-2">
                 <a th:href="${factlink2}">
-                <p><b>Fact: </b> you know that <span th:text="${fact2}"></span></p>
+                    <p><b>Fact: </b> you know that <span th:text="${fact2}"></span></p>
                 </a>
             </div>
             <div class="did-you-know-fact">
                 <a th:href="${factlink3}">
-                <p><b>Fact: </b> you know that <span th:text="${fact3}"></span></p>
+                    <p><b>Fact: </b> you know that <span th:text="${fact3}"></span></p>
                 </a>
             </div>
         </div>
@@ -455,7 +481,8 @@
     <div class="success">
         <div class="divider">
             <div class="gekozen-heading">
-                <p style="color: darkorange">Success Story</p>
+                <p class="divide-tekst">Success Story</p>
+                <div class="divide-line"></div>
             </div>
         </div>
         <div class="groene-container">
@@ -474,7 +501,8 @@
     <div class="snackable">
         <div class="divider">
             <div class="gekozen-heading">
-                <p style="color: darkorange">Snackable content</p>
+                <p class="divide-tekst">Snackable content</p>
+                <div class="divide-line"></div>
             </div>
         </div>
         <table>
@@ -502,10 +530,10 @@
                 </td>
             </tr>
         </table>        </div>
-    </div>
-
     <div class="footer">
     </div>
+
+
 </div>
 </body>
 
