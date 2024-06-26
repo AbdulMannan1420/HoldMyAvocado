@@ -12,15 +12,22 @@
             box-sizing: border-box;
         }
 
+        .parent-container {
+            background-color: grey;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
         .body {
             width: 400px;
-            margin: 0;
+            margin: 0 auto;
             padding: 1em;
             text-align: center;
+            background-color: white;
+            border-radius: 10px;
         }
 
         .progressie-bar {
-
             background-color: blue;
             text-align: center;
             padding-top: 17px;
@@ -32,7 +39,7 @@
             border-radius: 50%;
             border: 3px solid lightgreen;
             display: inline-block;
-            margin: 0 10px; /* Space between indicators */
+            margin: 0 10px;
         }
 
         .pi1 {
@@ -41,7 +48,6 @@
 
         .pi2 {
             background-color: #2E8B57;
-
         }
 
         .pi3 {
@@ -50,14 +56,11 @@
 
         .pi4 {
             background-color: white;
-
         }
 
         .pi5 {
             background-color: white;
-
         }
-
 
         .intro-tekst {
             margin: 0;
@@ -78,7 +81,6 @@
             background-color: rgba(211, 211, 211, 0.5);
             text-align: center;
             border: 1px solid rgba(211, 211, 211, 0.5);
-
         }
 
         .green-container {
@@ -89,8 +91,6 @@
             height: 280px;
             display: flex;
             padding-bottom: 10px;
-
-
         }
 
         .chosen-focuspoint {
@@ -100,10 +100,7 @@
             min-width: 150px;
             border-radius: 10px;
             background-color: blue;
-            bottom: 100px;
             margin-top: 0px;
-
-
         }
 
         .report-button {
@@ -121,8 +118,6 @@
             border-radius: 20px;
             margin-left: 18px;
             margin-top: 1px;
-
-
         }
 
         .report-button:hover {
@@ -133,7 +128,6 @@
         .lowest_focuspoint-image {
             margin-left: 32px;
         }
-
 
         .percentage {
             display: block;
@@ -146,24 +140,19 @@
             margin-left: 67%;
             border: 1px solid black;
             margin-bottom: 10px;
-
         }
 
         .PART1 {
-
             width: 150px;
-
         }
 
         .PART2 {
             text-align: center;
-
         }
 
         .recommend {
             color: orange;
             font-weight: bold;
-
         }
 
         .lfs-tekst {
@@ -178,44 +167,44 @@
 </head>
 
 <body>
-<div class="body">
-    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-            <td align="center" valign="middle">
-                <div class="progressie-indicator pi1"></div>
-                <div class="progressie-indicator pi2"></div>
-                <div class="progressie-indicator pi3"></div>
-                <div class="progressie-indicator pi4"></div>
-                <div class="progressie-indicator pi5"></div>
-            </td>
-        </tr>
-    </table>
-    <div class="intro-tekst">
-        <h1 style="color: white;">Hi <span th:text="${name}" th:remove="tag"></span>!</h1>
-        <p style="color: white;">We ontmoeten elkaar weer. In deze mail wil ik je aantal oefeningen aanbieden over je
-            gekozen focuspoint om voor jezelf te zien hoeveel je hebt geleerd</p>
-    </div>
-    <div class="rapport-samenvatting">
-        <div class="green-container">
-            <div class="PART1">
-                <div class="chosen-focuspoint">
-                    <h2 style="font-weight: bold;
-    margin-top: 10px;">
-                        <span th:text="${chosenFocuspointName}"></span>
-                    </h2>
-                    <img class="lowest_focuspoint-image"
-                         th:src="${chosenFocuspointLogo}"
-                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
-                    <p class="percentage">
-                        <span th:text="${chosenFocuspointProgress}"></span>%
-                    </p>
+<div class="parent-container">
+    <div class="body">
+        <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td align="center" valign="middle">
+                    <div class="progressie-indicator pi1"></div>
+                    <div class="progressie-indicator pi2"></div>
+                    <div class="progressie-indicator pi3"></div>
+                    <div class="progressie-indicator pi4"></div>
+                    <div class="progressie-indicator pi5"></div>
+                </td>
+            </tr>
+        </table>
+        <div class="intro-tekst">
+            <h1 style="color: white;">Hi <span th:text="${name}" th:remove="tag"></span>!</h1>
+            <p style="color: white;">We ontmoeten elkaar weer. In deze mail wil ik je aantal oefeningen aanbieden over je gekozen focuspoint om voor jezelf te zien hoeveel je hebt geleerd</p>
+        </div>
+        <div class="rapport-samenvatting">
+            <div class="green-container">
+                <div class="PART1">
+                    <div class="chosen-focuspoint">
+                        <h2 style="font-weight: bold; margin-top: 10px;">
+                            <span th:text="${chosenFocuspointName}"></span>
+                        </h2>
+                        <img class="lowest_focuspoint-image"
+                             th:src="${chosenFocuspointLogo}"
+                             alt="logo" title="Logo" style="display:block" width="88" height="92" />
+                        <p class="percentage">
+                            <span th:text="${chosenFocuspointProgress}"></span>%
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="PART2">
-                <h4 class="recommend"> Recommended</h4>
-                <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
-                <button class="report-button">See my Report</button>
+                <div class="PART2">
+                    <h4 class="recommend"> Recommended</h4>
+                    <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
+                    <button class="report-button">See my Report</button>
+                </div>
             </div>
         </div>
     </div>
