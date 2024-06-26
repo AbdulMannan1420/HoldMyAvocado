@@ -175,7 +175,7 @@
             min-height: 130px;
         }
 
-        .divide-line{
+        .divide-line {
             border: 1px solid blue;
             background-color: blue;
             width: 250px;
@@ -186,7 +186,8 @@
 
 
         }
-        .divide-tekst{
+
+        .divide-tekst {
             font-weight: bold;
             color: orange;
             margin-bottom: 10px;
@@ -194,10 +195,11 @@
         }
 
 
-        .gekozen{
+        .gekozen {
             background-color: rgb(211, 211, 211, 0.5);
             padding: 10px;
         }
+
         .gekozen-heading {
             display: flex;
             align-items: center;
@@ -208,6 +210,7 @@
             margin-right: 10px;
             margin-left: 10px;
         }
+
         .gekozen-heading::after {
             content: "";
             flex-grow: 1;
@@ -216,7 +219,8 @@
             background-color: blue;
             margin-right: 5px;
         }
-        .witte-container{
+
+        .witte-container {
             background-color: white;
             box-shadow: lightgray 5px 5px 5px 2px;
             border: none;
@@ -228,6 +232,7 @@
             display: flex;
             color: blue;
         }
+
         .button-style {
             display: inline-block;
             padding: 5px 20px;
@@ -244,11 +249,13 @@
         .button-style:hover {
             background-color: #0056b3;
         }
-        .focus-image img{
-            margin-top:20px;
+
+        .focus-image img {
+            margin-top: 20px;
             margin-left: 10px;
             border-radius: 15px;
         }
+
         .snackable {
             background-color: rgb(211, 211, 211, 0.5);
             padding: 20px;
@@ -299,10 +306,12 @@
             text-align: center;
             margin: 0;
         }
+
         .did-you-know {
             background-color: rgba(211, 211, 211, 0.5);
         }
-        .did-you-know-fact{
+
+        .did-you-know-fact {
             border: 2px solid blue;
             width: 80%;
             height: 50px;
@@ -311,61 +320,56 @@
             margin-right: auto;
             margin-top: 10px;
         }
-        .did-you-know-fact:hover{
+
+        .did-you-know-fact:hover {
             background-color: blue;
             color: white;
         }
-        .did-you-know-fact:hover a{
+
+        .did-you-know-fact:hover a {
             color: white;
         }
-        .fact-2{
+
+        .fact-2 {
             border: 2px solid darkorange;
         }
-        .fact-2 a{
+
+        .fact-2 a {
             color: darkorange;
         }
-        .fact-2:hover{
+
+        .fact-2:hover {
             background-color: darkorange;
             color: white;
         }
-        .fact-2:hover a{
+
+        .fact-2:hover a {
             color: white;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
-        .success{
-            background-color: rgba(211, 211, 211, 0.5);
-        }
-        .groene-container{
-            margin: auto;
-            width: 85%;
-            border-radius: 15px;
-            background: linear-gradient(to top left, #11E930, #FFFFFF);
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            padding-bottom: 20px;
-        }
-        .story{
-            max-width: 60%;
-        }
-        .story a{
+
+        .story a {
             color: white;
             text-decoration: none;
             background-color: blue;
         }
-        .story a:hover{
+
+        .story a:hover {
             background-color: white;
             color: blue;
             border: none;
         }
-        .story-image img{
+
+        .story-image img {
             border-radius: 15px;
             height: 80%;
             width: 160px;
         }
-        .story-image p{
+
+        .story-image p {
             text-align: center;
             font-size: medium;
             font-weight: bold;
@@ -374,12 +378,14 @@
             background-color: #FFFFFF;
             box-shadow: 0px 0px 10px 10px #FFFFFF;
         }
-        .footer{
+
+        .footer {
             height: 90px;
             background-color: blue;
             width: auto;
         }
-        .divider{
+
+        .divider {
             padding-top: 10px;
             padding-bottom: 10px;
         }
@@ -444,7 +450,8 @@
         <div class="witte-container">
             <div class="focus-text">
                 <h3>Did you know?<span th:text="${headingabc}"></span></h3>
-                <p> This is a dummy text deze moet verwijderd worden en vervangen worden text vanuit java blah blah! <span th:text="${textabc1}"></span></p>
+                <p> This is a dummy text deze moet verwijderd worden en vervangen worden text vanuit java blah blah!
+                    <span th:text="${textabc1}"></span></p>
                 <a class="button-style" href="www.google.com">Read now</a>
             </div>
             <div class="focus-image">
@@ -478,25 +485,7 @@
             </div>
         </div>
     </div>
-    <div class="success">
-        <div class="divider">
-            <div class="gekozen-heading">
-                <p class="divide-tekst">Success Story</p>
-                <div class="divide-line"></div>
-            </div>
-        </div>
-        <div class="groene-container">
-            <div class="story">
-                <h3><span th:text="${naam_sucess}"></span></h3>
-                <p> This is a dummy text deze moet verwijderd worden en vervangen worden text vanuit java blah blah!sssssssssss sssssss ssssss sssssss ssss ssssssssssss sssssssssss sssssssss <span th:text="${success_story}"></span></p>
-                <a class="button-style" href="www.google.com">Read more stories</a>
-            </div>
-            <div class="story-image">
-                <img src="https://via.placeholder.com/150"/>
-                <p>"Fall, Learn, Repeat"</p>
-            </div>
-        </div>
-    </div>
+
 
     <div class="snackable">
         <div class="divider">
@@ -529,7 +518,8 @@
                     <a class="snack-button" href="https://www.google.com">Take a look</a>
                 </td>
             </tr>
-        </table>        </div>
+        </table>
+    </div>
     <div class="footer">
     </div>
 

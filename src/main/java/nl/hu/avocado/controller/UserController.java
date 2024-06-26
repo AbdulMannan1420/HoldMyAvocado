@@ -32,6 +32,7 @@ public class UserController{
     public Report getLastReport(@PathVariable String email){
         return this.userService.findLastReportByEmail(email);
     }
+
     @GetMapping("/secondlastreport/{email}")
     public Report getSecondLastReport(@PathVariable String email){
         return this.userService.findSecondLastReport(email);

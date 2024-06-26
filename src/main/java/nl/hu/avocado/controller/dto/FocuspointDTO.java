@@ -11,15 +11,18 @@ public class FocuspointDTO {
     private String logo;
     private List<Long> themes;
 
+    private Long focuspointMailContent;
+
     public FocuspointDTO() {
     }
 
-    public FocuspointDTO(long id, String name, String advies, String logo, List<Long> themeList) {
+    public FocuspointDTO(long id, String name, String advies, String logo, List<Long> themeList, Long focuspointMailContent) {
         this.id = id;
         this.name = name;
         this.advies = advies;
         this.logo = logo;
         this.themes = themeList;
+        this.focuspointMailContent = focuspointMailContent;
     }
 
     // Getters en setters
@@ -63,5 +66,13 @@ public class FocuspointDTO {
 
     public void setThemes(List<Long> themeList) {
         this.themes = themeList;
+    }
+
+    public Long getFocuspointMailContent() {
+        return focuspointMailContent;
+    }
+
+    public void setFocuspointMailContent(Long focuspointMailContent) {
+        this.focuspointMailContent = focuspointMailContent;
     }
 }

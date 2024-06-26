@@ -13,7 +13,7 @@ public class PreferenceController {
     @PostMapping(value = "/receive", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String receiveFormData(@ModelAttribute PreferenceDTO preferenceDTO) {
         // dit moet uiteindelijk naar opgeslagen worden in de database om preferences van de gebruiker te bewaren
-        System.out.println("Content preference: " + preferenceDTO.getContentOptions());
+        System.out.println("FocuspointMailContent preference: " + preferenceDTO.getContentOptions());
         System.out.println("Day preference: " + preferenceDTO.getDayOptions());
         System.out.println("Time preference: " + preferenceDTO.getTimeOptions());
         return "Form data received successfully!";

@@ -1,6 +1,7 @@
 package nl.hu.avocado.service;
 
 import nl.hu.avocado.controller.dto.FocuspointDTO;
+import nl.hu.avocado.data.FocuspointMailContentRepository;
 import nl.hu.avocado.data.FocuspointRepository;
 import nl.hu.avocado.domain.Focuspoint;
 import nl.hu.avocado.domain.Theme;
@@ -18,11 +19,14 @@ public class FocuspointService {
 
     private final FocuspointRepository focuspointRepository;
 
+    private final FocuspointMailContentRepository focuspointMailContentRepository;
+
     private final ThemeService themeService;
 
-    public FocuspointService(FocuspointRepository focuspointRepository, ThemeService themeService) {
+    public FocuspointService(FocuspointRepository focuspointRepository, ThemeService themeService, FocuspointMailContentRepository focuspointMailContentRepository) {
         this.focuspointRepository = focuspointRepository;
         this.themeService = themeService;
+        this.focuspointMailContentRepository = focuspointMailContentRepository;
     }
 
     public FocuspointDTO focuspointIntoDto(Focuspoint focuspoint) {
@@ -33,7 +37,7 @@ public class FocuspointService {
                 focuspoint.getName(),
                 focuspoint.getAdvies(),
                 focuspoint.getLogo(),
-                themes
+                themes, focuspoint.getFocuspointMailContent().getId()
         );
     }
 
@@ -48,7 +52,7 @@ public class FocuspointService {
                 dto.getName(),
                 dto.getAdvies(),
                 dto.getLogo(),
-                themes
+                themes, this.focuspointMailContentRepository.findById(dto.getFocuspointMailContent()).orElseThrow()
         );
     }
 

@@ -1,10 +1,7 @@
 package nl.hu.avocado.domain;
 
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.List;
@@ -28,13 +25,17 @@ public class Focuspoint {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Theme> themes;
 
-    public Focuspoint(long id, String name, String advies, String logo, List<Theme> themes) {
+    @OneToOne(cascade = CascadeType.ALL)
+    private FocuspointMailContent focuspointMailContent;
+
+    public Focuspoint(long id, String name, String advies, String logo, List<Theme> themes, FocuspointMailContent focuspointMailContent) {
         this.id = id;
         this.name = name;
         this.advies = advies;
         this.logo = logo;
         this.themes = themes;
         this.progress = calculateProgress();
+        this.focuspointMailContent = focuspointMailContent;
 
     }
 
