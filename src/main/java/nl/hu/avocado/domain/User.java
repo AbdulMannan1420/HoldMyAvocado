@@ -5,6 +5,7 @@ import lombok.Getter;
 
 import java.util.List;
 
+
 @Entity
 @Table(name = "person")
 public class User {
@@ -17,7 +18,7 @@ public class User {
     @Getter
     private String email;
 
-    @Getter
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Report> reports;
 
@@ -28,6 +29,7 @@ public class User {
         this.reports = reports;
     }
 
+
     public User() {
 
     }
@@ -37,46 +39,37 @@ public class User {
     }
 
     public Report getSecondLastReport() {
-        if (reports != null && reports.size() >= 2) {
-            return reports.get(reports.size() - 2);
-        }
-        return null;
+
+        return reports.get(reports.size() - 2);
+
     }
 
+
     public Focuspoint getPreviousChosenFocuspoint() {
-        Report secondLastReport = this.getSecondLastReport();
-        if (secondLastReport != null) {
-            return secondLastReport.getChosenFocuspoint();
-        }
-        return null;
+        return this.getSecondLastReport().getChosenFocuspoint();
     }
 
     public Focuspoint getCurrentProgressOfPreviousChosenFocuspoint() {
-        Report lastReport = this.getLastReport();
-        Focuspoint previousChosenFocuspoint = this.getPreviousChosenFocuspoint();
-        if (lastReport != null && previousChosenFocuspoint != null) {
-            for (Focuspoint focuspoint : lastReport.getFocuspoints()) {
-                if (focuspoint.getName().equals(previousChosenFocuspoint.getName())) {
-                    return focuspoint;
-                }
+        for (Focuspoint focuspoint : this.getLastReport().getFocuspoints()) {
+            if (focuspoint.getName().equals(this.getPreviousChosenFocuspoint().getName())) {
+                return focuspoint;
             }
         }
         return null;
     }
 
+
     public int calculateFocuspointGrowth() {
-        Focuspoint previousChosenFocuspoint = this.getPreviousChosenFocuspoint();
-        if (previousChosenFocuspoint != null) {
-            int previous = previousChosenFocuspoint.getProgress();
-            Report lastReport = this.getLastReport();
-            if (lastReport != null) {
-                for (Focuspoint focuspoint : lastReport.getFocuspoints()) {
-                    if (focuspoint.getName().equals(previousChosenFocuspoint.getName())) {
-                        return focuspoint.getProgress() - previous;
-                    }
-                }
+
+        int previous = this.getPreviousChosenFocuspoint().getProgress();
+        for (Focuspoint focuspoint : this.getLastReport().getFocuspoints()) {
+            if (focuspoint.getName().equals(this.getPreviousChosenFocuspoint().getName())) {
+                return focuspoint.getProgress() - previous;
             }
         }
         return 0;
+
     }
+
+
 }
