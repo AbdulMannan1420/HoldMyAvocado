@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <style>body {
-        visibility: hidden
+        /*visibility: hidden*/
     }</style>
     <style>
         * {
@@ -19,14 +19,14 @@
             text-align: center;
         }
 
-        .progressie-bar {
+        .progression-bar {
 
             background-color: blue;
             text-align: center;
             padding-top: 17px;
         }
 
-        .progressie-indicator {
+        .progression-indicator {
             width: 35px;
             height: 35px;
             border-radius: 50%;
@@ -72,7 +72,7 @@
             margin-right: 17px;
         }
 
-        .rapport-samenvatting {
+        .report-summary {
             padding-left: 23px;
             padding-right: 15px;
             background-color: rgba(211, 211, 211, 0.5);
@@ -166,7 +166,7 @@
 
         }
 
-        .lfs-tekst {
+        .focuspoint-text {
             color: blue;
             padding-left: 10px;
             padding-right: 10px;
@@ -174,19 +174,229 @@
             min-width: 100px;
             min-height: 130px;
         }
+
+        .divide-line{
+            border: 1px solid blue;
+            background-color: blue;
+            width: 250px;
+            height: 3px;
+            margin-top: 10px;
+            margin-left: 5px;
+            border-radius: 4px;
+
+
+        }
+        .divide-tekst{
+            font-weight: bold;
+            color: orange;
+            margin-bottom: 10px;
+            margin-right: 8px;
+        }
+
+
+        .gekozen{
+            background-color: rgb(211, 211, 211, 0.5);
+            padding: 10px;
+        }
+        .gekozen-heading {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .gekozen-heading p {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        .gekozen-heading::after {
+            content: "";
+            flex-grow: 1;
+            border-radius: 5px;
+            height: 3px;
+            background-color: blue;
+            margin-right: 5px;
+        }
+        .witte-container{
+            background-color: white;
+            box-shadow: lightgray 5px 5px 5px 2px;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 0 auto;
+            width: 340px;
+            height: auto;
+            display: flex;
+            color: blue;
+        }
+        .button-style {
+            display: inline-block;
+            padding: 5px 20px;
+            color: blue;
+            background-color: white;
+            border: blue 1px solid;
+            border-radius: 15px;
+            font-size: small;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-style:hover {
+            background-color: #0056b3;
+        }
+        .focus-image img{
+            margin-top:20px;
+            margin-left: 10px;
+            border-radius: 15px;
+        }
+        .snackable {
+            background-color: rgb(211, 211, 211, 0.5);
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .gekozen-heading p {
+            color: darkorange;
+            margin: 0;
+        }
+
+        .snack-button {
+            display: inline-block;
+            padding: 5px 7px;
+            color: blue;
+            background-color: #D3D3D3;
+            border: blue 2px solid;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: x-small;
+            margin-top: 10px;
+        }
+
+        .snack-button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .snacked-unit {
+            background-color: blue;
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            height: 170px;
+            text-align: center;
+        }
+
+        .snacked-unit img {
+            margin-bottom: 10px;
+            border-radius: 15px;
+            width: 90px;
+            height: 100px;
+        }
+
+        .snacked-unit p {
+            color: white;
+            font-size: xx-small;
+            text-align: center;
+            margin: 0;
+        }
+        .did-you-know {
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+        .did-you-know-fact{
+            border: 2px solid blue;
+            width: 80%;
+            height: 50px;
+            border-radius: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        .did-you-know-fact:hover{
+            background-color: blue;
+            color: white;
+        }
+        .did-you-know-fact:hover a{
+            color: white;
+        }
+        .fact-2{
+            border: 2px solid darkorange;
+        }
+        .fact-2 a{
+            color: darkorange;
+        }
+        .fact-2:hover{
+            background-color: darkorange;
+            color: white;
+        }
+        .fact-2:hover a{
+            color: white;
+        }
+        a{
+            text-decoration: none;
+        }
+        .success{
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+        .groene-container{
+            margin: auto;
+            width: 85%;
+            border-radius: 15px;
+            background: linear-gradient(to top left, #11E930, #FFFFFF);
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 20px;
+        }
+        .story{
+            max-width: 60%;
+        }
+        .story a{
+            color: white;
+            text-decoration: none;
+            background-color: blue;
+        }
+        .story a:hover{
+            background-color: white;
+            color: blue;
+            border: none;
+        }
+        .story-image img{
+            border-radius: 15px;
+            height: 80%;
+            width: 160px;
+        }
+        .story-image p{
+            text-align: center;
+            font-size: medium;
+            font-weight: bold;
+            margin-top: 0;
+            color: darkorange;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 10px 10px #FFFFFF;
+        }
+        .footer{
+            height: 90px;
+            background-color: blue;
+            width: auto;
+        }
+        .divider{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
     </style>
 </head>
 
 <body>
 <div class="body">
-    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+    <table class="progression-bar" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" valign="middle">
-                <div class="progressie-indicator pi1"></div>
-                <div class="progressie-indicator pi2"></div>
-                <div class="progressie-indicator pi3"></div>
-                <div class="progressie-indicator pi4"></div>
-                <div class="progressie-indicator pi5"></div>
+                <div class="progression-indicator pi1"></div>
+                <div class="progression-indicator pi2"></div>
+                <div class="progression-indicator pi3"></div>
+                <div class="progression-indicator pi4"></div>
+                <div class="progression-indicator pi5"></div>
             </td>
         </tr>
     </table>
@@ -199,7 +409,7 @@
             plezier!
         </p>
     </div>
-    <div class="rapport-samenvatting">
+    <div class="report-summary">
         <div class="green-container">
             <div class="PART1">
                 <div class="chosen-focuspoint">
@@ -217,11 +427,113 @@
             </div>
             <div class="PART2">
                 <h4 class="recommend"> Recommended</h4>
-                <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
+                <p class="focuspoint-text"><span th:text="${chosenFocuspointAdvies}"></span></p>
                 <button class="report-button">See my Report</button>
             </div>
         </div>
     </div>
+
+
+    <div class="gekozen">
+        <div class="divider">
+            <div class="gekozen-heading">
+                <p class="divide-tekst">Interesting...</p>
+                <div class="divide-line"></div>
+            </div>
+        </div>
+        <div class="witte-container">
+            <div class="focus-text">
+                <h3>Did you know?<span th:text="${headingabc}"></span></h3>
+                <p> This is a dummy text deze moet verwijderd worden en vervangen worden text vanuit java blah blah! <span th:text="${textabc1}"></span></p>
+                <a class="button-style" href="www.google.com">Read now</a>
+            </div>
+            <div class="focus-image">
+                <img src="https://via.placeholder.com/150"/>
+            </div>
+
+        </div>
+    </div>
+    <div class="did-you-know">
+        <div class="divider">
+            <div class="gekozen-heading">
+                <p class="divide-tekst">Did you know?</p>
+                <div class="divide-line"></div>
+            </div>
+        </div>
+        <div class="did-you-know-content">
+            <div class="did-you-know-fact">
+                <a th:href="${factlink1}">
+                    <p><b>Fact: </b> you know that <span th:text="${fact1}"></span></p>
+                </a>
+            </div>
+            <div class="did-you-know-fact fact-2">
+                <a th:href="${factlink2}">
+                    <p><b>Fact: </b> you know that <span th:text="${fact2}"></span></p>
+                </a>
+            </div>
+            <div class="did-you-know-fact">
+                <a th:href="${factlink3}">
+                    <p><b>Fact: </b> you know that <span th:text="${fact3}"></span></p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="success">
+        <div class="divider">
+            <div class="gekozen-heading">
+                <p class="divide-tekst">Success Story</p>
+                <div class="divide-line"></div>
+            </div>
+        </div>
+        <div class="groene-container">
+            <div class="story">
+                <h3><span th:text="${naam_sucess}"></span></h3>
+                <p> This is a dummy text deze moet verwijderd worden en vervangen worden text vanuit java blah blah!sssssssssss sssssss ssssss sssssss ssss ssssssssssss sssssssssss sssssssss <span th:text="${success_story}"></span></p>
+                <a class="button-style" href="www.google.com">Read more stories</a>
+            </div>
+            <div class="story-image">
+                <img src="https://via.placeholder.com/150"/>
+                <p>"Fall, Learn, Repeat"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="snackable">
+        <div class="divider">
+            <div class="gekozen-heading">
+                <p class="divide-tekst">Snackable content</p>
+                <div class="divide-line"></div>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td width="33%" align="center">
+                    <div class="snacked-unit">
+                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                        <p><span>Content 1</span></p>
+                    </div>
+                    <a class="snack-button" href="https://www.google.com">Take a look</a>
+                </td>
+                <td width="33%" align="center">
+                    <div class="snacked-unit">
+                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                        <p><span>Content 2</span></p>
+                    </div>
+                    <a class="snack-button" href="https://www.google.com">Take a look</a>
+                </td>
+                <td width="33%" align="center">
+                    <div class="snacked-unit">
+                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                        <p>Looking for something?<span>Content 3</span></p>
+                    </div>
+                    <a class="snack-button" href="https://www.google.com">Take a look</a>
+                </td>
+            </tr>
+        </table>        </div>
+    <div class="footer">
+    </div>
+
+
 </div>
 </body>
 
