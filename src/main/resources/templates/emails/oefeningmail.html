@@ -174,37 +174,6 @@
             min-width: 100px;
             min-height: 130px;
         }
-
-        .quiz {
-            background-color: rgba(211, 211, 211, 0.5);
-            padding: 10px;
-        }
-        .answer1 {
-            width: 100%;
-            border-radius: 25px 0 0 25px;
-            padding: 8px;
-            color: white;
-            background-color: cornflowerblue;
-            border: none; left: 0
-        }
-        .table-cell-answer1 {
-            width: 30%;
-            left: 0;
-            padding: 0;
-        }
-        .table-question1 {
-            width: 100%;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        .table-cell-question1 {
-            text-align: left;
-            color: white;
-            background-color: blue;
-            width: 70%;
-            border-radius: 0 20px 20px 0;
-            padding-left: 10px;
-        }
         .quiz-title {
             width: 100%;
             display: flex;
@@ -225,7 +194,114 @@
             margin-left: 5px;
             border-radius: 4px;
         }
-
+        .quiz {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding: 10px;
+        }
+        .question-1 {
+            padding-bottom: 15px;
+        }
+        .answer1 {
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0;
+            cursor: pointer;
+        }
+        .table-cell-answer1 {
+            width: 30%;
+            left: 0;
+            padding: 0;
+        }
+        .table-question1 {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .table-cell-question1 {
+            text-align: left;
+            color: white;
+            background-color: blue;
+            width: 70%;
+            border-radius: 0 20px 20px 0;
+            padding-left: 10px;
+        }
+        .question-2 {
+            padding-bottom: 15px;
+        }
+        .answer2 {
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0;
+            cursor: pointer;
+        }
+        .table-cell-answer2 {
+            width: 30%;
+            left: 0;
+            padding: 0;
+        }
+        .table-question2 {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .table-cell-question2 {
+            text-align: left;
+            color: white;
+            background-color: blue;
+            width: 70%;
+            border-radius: 0 20px 20px 0;
+            padding-left: 10px;
+        }
+        .question-3 {
+            padding-bottom: 15px;
+        }
+        .answer3 {
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0;
+            cursor: pointer;
+        }
+        .table-cell-answer3 {
+            width: 30%;
+            left: 0;
+            padding: 0;
+        }
+        .table-question3 {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .table-cell-question3 {
+            text-align: left;
+            color: white;
+            background-color: blue;
+            width: 70%;
+            border-radius: 0 20px 20px 0;
+            padding-left: 10px;
+        }
+        .quiz-button {
+            border-color: blue;
+            border-radius: 25px 25px;
+            color: blue;
+            padding: 6px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+        .quiz-button:hover {
+            background-color: cornflowerblue;
+            color: white;
+        }
     </style>
 </head>
 
@@ -296,10 +372,39 @@
             </table>
         </div>
         <div class="question-2">
-
+            <table class="table-question2">
+                <tr>
+                    <td class="table-cell-answer2">
+                        <select class="answer2" name="answer2">
+                            <option value="answer1"> answer1</option>
+                            <option value="answer2"> answer2</option>
+                        </select>
+                    </td>
+                    <td class="table-cell-question2">Question 2?
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="question-3">
+            <table class="table-question3">
+                <tr>
+                    <td class="table-cell-answer3">
+                        <select class="answer3" name="answer3">
+                            <option value="answer1"> answer1</option>
+                            <option value="answer2"> answer2</option>
+                        </select>
+                    </td>
+                    <td class="table-cell-question3">Question 3?
+                    </td>
+                </tr>
+            </table>
+        </div>
 
+        <div class="quiz-result-button">
+            <button class="quiz-button">
+                Check my answers
+<!--                <p class="quizbutton-tekst">Check my answers</p>-->
+            </button>
         </div>
     </div>
 </div>
