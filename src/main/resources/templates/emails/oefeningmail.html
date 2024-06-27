@@ -174,6 +174,58 @@
             min-width: 100px;
             min-height: 130px;
         }
+
+        .quiz {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding: 10px;
+        }
+        .answer1 {
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0
+        }
+        .table-cell-answer1 {
+            width: 30%;
+            left: 0;
+            padding: 0;
+        }
+        .table-question1 {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .table-cell-question1 {
+            text-align: left;
+            color: white;
+            background-color: blue;
+            width: 70%;
+            border-radius: 0 20px 20px 0;
+            padding-left: 10px;
+        }
+        .quiz-title {
+            width: 100%;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-left: 10px;
+        }
+        .quiz-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-left: 8px;
+        }
+        .quiz-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 187px;
+            height: 3px;
+            margin-top: 20px;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
+
     </style>
 </head>
 
@@ -217,6 +269,37 @@
                 <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
                 <button class="report-button">See my Report</button>
             </div>
+        </div>
+    </div>
+    <div class="for-you">
+    </div>
+    <div class="quiz-title">
+        <p class="quiz-tekst">Assignment time...</p>
+        <div class="quiz-line"></div>
+    </div>
+    <div class="quiz">
+        <div class="intro">
+
+        </div>
+        <div class="question-1">
+            <table class="table-question1">
+                <tr>
+                    <td class="table-cell-answer1">
+                        <select class="answer1" name="answer1">
+                            <option value="answer1"> answer1</option>
+                            <option value="answer2"> answer2</option>
+                        </select>
+                    </td>
+                    <td class="table-cell-question1">Question 1?
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="question-2">
+
+        </div>
+        <div class="question-3">
+
         </div>
     </div>
 </div>
