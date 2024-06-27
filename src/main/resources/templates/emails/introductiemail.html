@@ -16,14 +16,14 @@
             text-align: center;
         }
 
-        .progression-bar {
+        .progressie-bar {
 
             background-color: blue;
             text-align: center;
             padding-top: 17px;
         }
 
-        .progression-indicator {
+        .progressie-indicator {
             width: 35px;
             height: 35px;
             border-radius: 50%;
@@ -69,7 +69,7 @@
             margin-right: 17px;
         }
 
-        .report-summary {
+        .rapport-samenvatting {
             padding-left: 23px;
             padding-right: 15px;
             background-color: rgba(211, 211, 211, 0.5);
@@ -78,7 +78,7 @@
 
         }
 
-        .highlight {
+        .pb {
             color: lightgreen;
             text-decoration: underline;
         }
@@ -115,7 +115,7 @@
 
         }
 
-        .focuspoint-button {
+        .focus-button {
             border: 2px solid blue;
             color: blue;
             height: 27px;
@@ -131,7 +131,7 @@
             background-color: inherit;
         }
 
-        .focuspoint-button:hover {
+        .focus-button:hover {
             background-color: blue;
             color: white;
         }
@@ -194,7 +194,7 @@
 
         }
 
-        .lowestFocuspoint-tekst {
+        .lfs-tekst {
             color: blue;
             padding-left: 10px;
             padding-right: 10px;
@@ -219,17 +219,17 @@
             max-height: 250px;
         }
 
-        .focuspoint-1 {
+        .focus-1 {
             margin-right: 10px;
             margin-left: 13px;
         }
 
-        .focuspoint-2 {
+        .focus-2 {
             margin-left: 10px;
             margin-right: 18px;
         }
 
-        .focuspoint-3 {
+        .focus-3 {
             margin-right: 10px;
         }
 
@@ -265,7 +265,7 @@
             background-color: rgba(211, 211, 211, 0.5);
         }
 
-        .preferences-line {
+        .pref-line {
             border: 1px solid blue;
             background-color: blue;
             width: 187px;
@@ -277,7 +277,7 @@
 
         }
 
-        .preferences-tekst {
+        .pref-tekst {
             font-weight: bold;
             color: orange;
             margin-left: 8px;
@@ -361,8 +361,7 @@
             width: 55%;
             height: 100%;
         }
-
-        input[type="submit"] {
+        input[type="submit"]{
             color: blue;
             font-size: large;
             background-color: white;
@@ -370,8 +369,7 @@
             border-radius: 15px;
             margin: 10px;
         }
-
-        .selector {
+        .selector{
             margin: 10px;
 
         }
@@ -382,30 +380,26 @@
 
 <body>
 <div class="body">
-
-    <table class="progression-bar" cellpadding="0" cellspacing="0" width="100%">
+    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" valign="middle">
-                <div class="progression-indicator pi1"></div>
-                <div class="progression-indicator pi2"></div>
-                <div class="progression-indicator pi3"></div>
-                <div class="progression-indicator pi4"></div>
-                <div class="progression-indicator pi5"></div>
+                <div class="progressie-indicator pi1"></div>
+                <div class="progressie-indicator pi2"></div>
+                <div class="progressie-indicator pi3"></div>
+                <div class="progressie-indicator pi4"></div>
+                <div class="progressie-indicator pi5"></div>
             </td>
         </tr>
     </table>
-
     <div class="intro-tekst">
         <h1 style="color: white;">Welcome <span th:text="${name}" th:remove="tag"></span></h1>
         <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
             en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
-            ziet. De <span class="highlight" style="font-weight: bold;">voortgangsbalk</span> laat zien hoe ver je al
-            bent.
+            ziet. De <span class="pb" style="font-weight: bold;">voortgangsbalk</span> laat zien hoe ver je al bent.
             Neem
             gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
     </div>
-
-    <div class="report-summary">
+    <div class="rapport-samenvatting">
         <div class="green-container">
             <div class="PART1">
                 <div class="lowest-focuspoint">
@@ -424,21 +418,20 @@
             </div>
             <div class="PART2">
                 <h4 class="recommend"> Recommended</h4>
-                <p class="lowestFocuspoint-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
+                <p class="lfs-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
                 <form id="focuspoint-form"
                       th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}"
                       method="post" target="_blank">
-                    <button type="submit" class="focuspoint-button">Choose Focuspoint</button>
+                    <button type="submit" class="focus-button">Choose Focuspoint</button>
                 </form>
 
             </div>
         </div>
     </div>
-
     <div class="other_focuspoints">
 
         <div class="choose-focuspoint">
-            <div class="focuspoint-1 focuspoint">
+            <div class="focus-1 focuspoint">
                 <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
                 <img class="secondLowest_focuspoint-image"
                      th:src="${secondLowestFocuspointLogo}"
@@ -451,7 +444,7 @@
                 </form>
 
             </div>
-            <div class="focuspoint-2 focuspoint">
+            <div class="focus-2 focuspoint">
                 <h2><span th:text="${thirdLowestFocuspointName}"></span></h2>
                 <img class="thirdLowest_focuspoint-image"
                      th:src="${thirdLowestFocuspointLogo}"
@@ -463,7 +456,7 @@
                     <br>
                 </form>
             </div>
-            <div class="focuspoint-3 focuspoint">
+            <div class="focus-3 focuspoint">
                 <h2><span th:text="${fourthLowestFocuspointName}"></span></h2>
                 <img class="fourthLowest_focuspoint-image"
                      th:src="${fourthLowestFocuspointLogo}"
@@ -479,8 +472,8 @@
     </div>
 
     <div class="preferences-header">
-        <p class="preferences-tekst">What are you preferences?</p>
-        <div class="preferences-line"></div>
+        <p class="pref-tekst">What are you preferences?</p>
+        <div class="pref-line"></div>
     </div>
     <form action="http://localhost:8080/preference/receive" id="inhoudsvoorkeur-form" method="post">
 
@@ -595,7 +588,6 @@
         </div>
         <input type="submit">
     </form>
-
     <div class="introduction-header">
         <div class="intro-line"></div>
         <p class="introd-tekst"> Introduction</p>

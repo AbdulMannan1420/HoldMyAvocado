@@ -55,14 +55,10 @@ public class EmailService {
 
 
             // previous chosen focuspoint for mail 6
-            if (user.getReports().size() > 1) {
-
-
-                properties.put("prevChosenFocuspointName", user.getPreviousChosenFocuspoint().getName());
-                properties.put("prevChosenFocuspointLogo", user.getPreviousChosenFocuspoint().getLogo());
-                properties.put("prevChosenFocuspointGrowth", user.calculateFocuspointGrowth());
-                properties.put("currentChosenFocuspointProgress", user.getCurrentProgressOfPreviousChosenFocuspoint().getProgress());
-            }
+            properties.put("prevChosenFocuspointName", user.getPreviousChosenFocuspoint().getName());
+            properties.put("prevChosenFocuspointLogo", user.getPreviousChosenFocuspoint().getLogo());
+            properties.put("prevChosenFocuspointGrowth", user.calculateFocuspointGrowth());
+            properties.put("currentChosenFocuspointProgress", user.getCurrentProgressOfPreviousChosenFocuspoint().getProgress());
             // user details
             properties.put("email", user.getEmail());
             properties.put("name", user.getVoornaam());
