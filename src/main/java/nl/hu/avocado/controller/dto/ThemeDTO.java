@@ -11,16 +11,14 @@ public class ThemeDTO {
     private String naam;
     private int ranking;
     private double score;
-    private String logo;
 
     private String advies;
 
-    public ThemeDTO(Long id, String naam, int ranking, double score, String logo, String advies) {
+    public ThemeDTO(Long id, String naam, int ranking, double score, String advies) {
         this.id = id;
         this.naam = naam;
         this.ranking = ranking;
         this.score = score;
-        this.logo = logo;
         this.advies = advies;
     }
 
@@ -56,13 +54,7 @@ public class ThemeDTO {
         this.score = score;
     }
 
-    public String getLogo() {
-        return logo;
-    }
 
-    public void setLogo(String status) {
-        this.logo = status;
-    }
 
     public String getAdvies() {
         return advies;

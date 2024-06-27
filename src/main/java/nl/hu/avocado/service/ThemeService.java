@@ -22,11 +22,11 @@ public class ThemeService {
     }
 
     public ThemeDTO themeIntoDTO(Theme theme) {
-        return new ThemeDTO(theme.getId(), theme.getNaam(), theme.getRanking(), theme.getScore(), theme.getLogo(), theme.getAdvies());
+        return new ThemeDTO(theme.getId(), theme.getNaam(), theme.getRanking(), theme.getScore(), theme.getAdvies());
     }
 
     public Theme dtoIntoTheme(ThemeDTO dto) {
-        return new Theme(dto.getId(), dto.getNaam(), dto.getScore(), dto.getRanking(), dto.getLogo(), dto.getAdvies());
+        return new Theme(dto.getId(), dto.getNaam(), dto.getScore(), dto.getRanking(), dto.getAdvies());
     }
 
     public void addTheme(ThemeDTO themeDTO) {

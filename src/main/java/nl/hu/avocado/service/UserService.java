@@ -39,5 +39,17 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public Report findLastReportByEmail(String email) {
+        User user = findUserByEmail(email);
+        return user.getLastReport();
+
+    }
+
+    public Report findSecondLastReport(String email) {
+        User user = findUserByEmail(email);
+        return user.getLastReport();
+
+    }
+
 
 }
