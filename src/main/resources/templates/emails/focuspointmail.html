@@ -502,24 +502,24 @@
             <tr>
                 <td width="33%" align="center">
                     <div class="snacked-unit">
-                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
-                        <p><span>Content 1</span></p>
+                        <img th:src="${snc1_imageURL}" alt="logo" width="125" height="125"/>
+                        <p><span th:text="${snc1_tekst}"></span></p>
                     </div>
-                    <a class="snack-button" href="https://www.google.com">Take a look</a>
+                    <a class="snack-button" th:href="${snc1_URL}">Take a look</a>
                 </td>
                 <td width="33%" align="center">
                     <div class="snacked-unit">
-                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
-                        <p><span>Content 2</span></p>
+                        <img th:src="${snc2_imageURL}" alt="logo" width="125" height="125"/>
+                        <p><span th:text="${snc2_tekst}"></span></p>
                     </div>
-                    <a class="snack-button" href="https://www.google.com">Take a look</a>
+                    <a class="snack-button" th:href="${snc2_URL}">Take a look</a>
                 </td>
                 <td width="33%" align="center">
                     <div class="snacked-unit">
-                        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
-                        <p>Looking for something?<span>Content 3</span></p>
+                        <img th:src="${snc3_imageURL}" alt="logo" width="125" height="125"/>
+                        <p><span th:text="${snc3_tekst}"></span></p>
                     </div>
-                    <a class="snack-button" href="https://www.google.com">Take a look</a>
+                    <a class="snack-button" th:href="${snc3_URL}">Take a look</a>
                 </td>
             </tr>
         </table>

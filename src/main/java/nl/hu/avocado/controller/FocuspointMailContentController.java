@@ -26,9 +26,9 @@ public class FocuspointMailContentController {
     }
 
     @GetMapping("/{title}")
-    public ResponseEntity<FocuspointMailContent> getFocuspointMailContentById(@PathVariable String title) {
+    public FocuspointMailContent getFocuspointMailContentById(@PathVariable String title) {
         FocuspointMailContent focuspointMailContentDTO = focuspointMailContentService.findByTitle(title);
-        return ResponseEntity.ok(focuspointMailContentDTO);
+        return focuspointMailContentDTO;
     }
 
     @GetMapping
