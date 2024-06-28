@@ -174,6 +174,26 @@
             min-width: 100px;
             min-height: 130px;
         }
+        .something-fun-title {
+            width: 100%;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-left: 10px;
+        }
+        .something-fun-title-tekst {
+            font-weight: bold;
+            color: darkorange;
+            margin-left: 8px;
+        }
+        .something-fun-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 60%;
+            height: 3px;
+            margin-top: 25px;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
         .quiz-title {
             width: 100%;
             display: flex;
@@ -182,13 +202,33 @@
         }
         .quiz-tekst {
             font-weight: bold;
-            color: orange;
+            color: darkorange;
             margin-left: 8px;
         }
         .quiz-line {
             border: 1px solid blue;
             background-color: blue;
             width: 187px;
+            height: 3px;
+            margin-top: 25px;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
+        .special-offers-title {
+            width: 100%;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-left: 10px;
+        }
+        .special-offers-title-tekst {
+            font-weight: bold;
+            color: darkorange;
+            margin-left: 8px;
+        }
+        .special-offers-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 130px;
             height: 3px;
             margin-top: 25px;
             margin-left: 5px;
@@ -310,6 +350,91 @@
             background-color: darkorange;
             color: white;
         }
+        .something-fun {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding: 10px 50px 10px 20px;
+        }
+        .base-container {
+            background-color: white;
+            color: blue;
+            border-radius: 25px 25px;
+            padding: 5px 20px 20px;
+            position: relative;
+            text-align: left;
+        }
+        .something-fun-button {
+            border-radius: 25px 25px;
+            background-color: white;
+            color: blue;
+            border-color: blue;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .something-fun-button:hover {
+            background-color: darkorange;
+            color: white;
+        }
+        .overlay-container {
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 15px darkorange;
+            transform: rotate(5deg);
+            width: 55%;
+        }
+        .something-fun-tekst {
+            width: 50%;
+            font-weight: bold;
+        }
+        .special-offers {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
+            height: 300px;
+        }
+        .offer {
+            background-color: blue;
+            border-radius: 15px;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        .offer1, .offer2, .offer3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 150px;
+        }
+        .offer-button {
+            background-color: white;
+            border-radius: 25px;
+            border-color: blue;
+            color: blue;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 6px 20px;
+            font-size: 10px;
+        }
+        .offer-button:hover {
+            color: white;
+            background-color: darkorange;
+        }
+        .offerimage {
+            align-items: flex-start;
+            border-radius: 15px;
+        }
+        .e-learing-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
     </style>
 </head>
 
@@ -355,7 +480,27 @@
             </div>
         </div>
     </div>
-    <div class="for-you">
+    <div class="something-fun-title">
+        <p class="something-fun-title-tekst">Something fun</p>
+        <div class="something-fun-line"></div>
+    </div>
+    <div class="something-fun">
+        <div class="base-container">
+            <h1>For You!</h1>
+            <p class="something-fun-tekst">
+                To help you
+                financially prepare
+                for the future, I have
+                chosen this video
+                for you to watch.
+            </p>
+            <button class="something-fun-button">
+                Watch now!
+            </button>
+            <div class="overlay-container">
+                <h1>FOTO</h1>
+            </div>
+        </div>
     </div>
     <div class="quiz-title">
         <p class="quiz-tekst">Assignment time...</p>
@@ -412,6 +557,36 @@
             <button class="quiz-button">
                 Check my answers
             </button>
+        </div>
+    </div>
+    <div class="special-offers-title">
+        <p class="special-offers-title-tekst">Special offers: E-learnings</p>
+        <div class="special-offers-line"></div>
+    </div>
+    <div class="special-offers">
+        <div class="offer offer1">
+            <img src="/images/testimage.png" alt="test-image"
+                 width="100%" class="offerimage">
+            <div class="e-learning1">
+                <p class="e-learing-text">Learn to type?</p>
+            </div>
+            <button class="offer-button">Take a look</button>
+        </div>
+        <div class="offer offer2">
+            <img src="/images/testimage.png" alt="test-image"
+                 width="100%" class="offerimage">
+            <div class="e-learning2">
+                <p class="e-learing-text">Practice for your soul?</p>
+            </div>
+            <button class="offer-button">Take a look</button>
+        </div>
+        <div class="offer offer3">
+            <img src="/images/testimage.png" alt="test-image"
+                 width="100%" class="offerimage">
+            <div class="e-learning3">
+                <p class="e-learing-text">Get rich fast!</p>
+            </div>
+            <button class="offer-button">Take a look</button>
         </div>
     </div>
 </div>
