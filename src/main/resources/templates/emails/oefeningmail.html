@@ -190,7 +190,7 @@
             background-color: blue;
             width: 187px;
             height: 3px;
-            margin-top: 20px;
+            margin-top: 25px;
             margin-left: 5px;
             border-radius: 4px;
         }
@@ -198,13 +198,21 @@
             background-color: rgba(211, 211, 211, 0.5);
             padding: 10px;
         }
+        .quiz-intro {
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            border-radius: 25px 25px;
+            margin-bottom: 15px;
+            padding: 7px;
+            color: blue;
+            font-weight: bold;
+        }
         .question-1 {
             padding-bottom: 15px;
         }
         .answer1 {
             width: 100%;
             border-radius: 25px 0 0 25px;
-            padding: 8px;
+            padding: 10px;
             color: white;
             background-color: cornflowerblue;
             border: none; left: 0;
@@ -234,7 +242,7 @@
         .answer2 {
             width: 100%;
             border-radius: 25px 0 0 25px;
-            padding: 8px;
+            padding: 10px;
             color: white;
             background-color: cornflowerblue;
             border: none; left: 0;
@@ -264,7 +272,7 @@
         .answer3 {
             width: 100%;
             border-radius: 25px 0 0 25px;
-            padding: 8px;
+            padding: 10px;
             color: white;
             background-color: cornflowerblue;
             border: none; left: 0;
@@ -299,7 +307,7 @@
             display: inline-block;
         }
         .quiz-button:hover {
-            background-color: cornflowerblue;
+            background-color: darkorange;
             color: white;
         }
     </style>
@@ -354,8 +362,8 @@
         <div class="quiz-line"></div>
     </div>
     <div class="quiz">
-        <div class="intro">
-
+        <div class="quiz-intro">
+            <label>Answer these questions </label>
         </div>
         <div class="question-1">
             <table class="table-question1">
@@ -403,7 +411,6 @@
         <div class="quiz-result-button">
             <button class="quiz-button">
                 Check my answers
-<!--                <p class="quizbutton-tekst">Check my answers</p>-->
             </button>
         </div>
     </div>
