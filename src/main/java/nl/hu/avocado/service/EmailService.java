@@ -63,6 +63,8 @@ public class EmailService {
                 properties.put("prevChosenFocuspointGrowth", user.calculateFocuspointGrowth());
                 properties.put("currentChosenFocuspointProgress", user.getCurrentProgressOfPreviousChosenFocuspoint().getProgress());
             }
+
+            // introduction mail   ->  mail 1
             // user details
             properties.put("email", user.getEmail());
             properties.put("name", user.getVoornaam());
@@ -84,13 +86,14 @@ public class EmailService {
             properties.put("fourthLowestFocuspointName", report.focuspointsSortedByProgressAsc().get(3).getName());
             properties.put("fourthLowestFocuspointLogo", report.focuspointsSortedByProgressAsc().get(3).getLogo());
             properties.put("fourthlowestFocuspointID", report.focuspointsSortedByProgressAsc().get(3).getId());
+
+
+            // Focuspoint mail1 Content - mail 2
             // chosen focuspoint
             properties.put("chosenFocuspointName", report.getChosenFocuspoint().getName());
             properties.put("chosenFocuspointLogo", report.getChosenFocuspoint().getLogo());
             properties.put("chosenFocuspointAdvies", report.getChosenFocuspoint().getAdvies());
             properties.put("chosenFocuspointProgress", report.getChosenFocuspoint().getProgress());
-
-            // Focuspoint mail1 Content
             // interesting...
             properties.put("Title", report.getChosenFocuspoint().getFocuspointMailContent().getTitle());
             properties.put("Text", report.getChosenFocuspoint().getFocuspointMailContent().getText());
@@ -119,8 +122,10 @@ public class EmailService {
             properties.put("snc3_URL", report.getChosenFocuspoint().getFocuspointMailContent().getSnc3_URL());
             properties.put("snc3_imageURL", report.getChosenFocuspoint().getFocuspointMailContent().getSnc3_imageURL());
 
-
-
+            // Oefening Mail ->  mail 3
+            // quiz content
+            properties.put("quizContent_URL", report.getChosenFocuspoint().getOefeningMailContent().getQuizContent_URL());
+            properties.put("quiz_URL", report.getChosenFocuspoint().getOefeningMailContent().getQuiz_URL());
 
 
 

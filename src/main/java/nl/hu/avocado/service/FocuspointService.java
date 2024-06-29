@@ -3,6 +3,7 @@ package nl.hu.avocado.service;
 import nl.hu.avocado.controller.dto.FocuspointDTO;
 import nl.hu.avocado.data.FocuspointMailContentRepository;
 import nl.hu.avocado.data.FocuspointRepository;
+import nl.hu.avocado.data.OefeningMailContentRepository;
 import nl.hu.avocado.domain.Focuspoint;
 import nl.hu.avocado.domain.Theme;
 import org.springframework.stereotype.Service;
@@ -21,12 +22,15 @@ public class FocuspointService {
 
     private final FocuspointMailContentRepository focuspointMailContentRepository;
 
+    private final OefeningMailContentRepository oefeningMailContentRepository;
+
     private final ThemeService themeService;
 
-    public FocuspointService(FocuspointRepository focuspointRepository, ThemeService themeService, FocuspointMailContentRepository focuspointMailContentRepository) {
+    public FocuspointService(FocuspointRepository focuspointRepository, FocuspointMailContentRepository focuspointMailContentRepository, OefeningMailContentRepository oefeningMailContentRepository, ThemeService themeService) {
         this.focuspointRepository = focuspointRepository;
-        this.themeService = themeService;
         this.focuspointMailContentRepository = focuspointMailContentRepository;
+        this.oefeningMailContentRepository = oefeningMailContentRepository;
+        this.themeService = themeService;
     }
 
     public FocuspointDTO focuspointIntoDto(Focuspoint focuspoint) {
@@ -37,7 +41,7 @@ public class FocuspointService {
                 focuspoint.getName(),
                 focuspoint.getAdvies(),
                 focuspoint.getLogo(),
-                themes, focuspoint.getFocuspointMailContent().getId()
+                themes, focuspoint.getFocuspointMailContent().getId(), focuspoint.getOefeningMailContent().getId()
         );
     }
 
@@ -53,7 +57,7 @@ public class FocuspointService {
                 dto.getAdvies(),
                 dto.getLogo(),
                 themes, this.focuspointMailContentRepository.findById(dto.getFocuspointMailContent()).orElseThrow()
-        );
+        , this.oefeningMailContentRepository.findById(dto.getOefeningMailContent()).orElseThrow());
     }
 
     public void addFocuspoint(FocuspointDTO focuspointDTO) {

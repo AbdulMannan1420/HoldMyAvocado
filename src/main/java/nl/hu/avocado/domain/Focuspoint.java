@@ -28,7 +28,10 @@ public class Focuspoint {
     @OneToOne(cascade = CascadeType.ALL)
     private FocuspointMailContent focuspointMailContent;
 
-    public Focuspoint(long id, String name, String advies, String logo, List<Theme> themes, FocuspointMailContent focuspointMailContent) {
+    @OneToOne(cascade = CascadeType.ALL)
+    private OefeningMailContent oefeningMailContent;
+
+    public Focuspoint(long id, String name, String advies, String logo, List<Theme> themes, FocuspointMailContent focuspointMailContent, OefeningMailContent oefeningMailContent) {
         this.id = id;
         this.name = name;
         this.advies = advies;
@@ -36,6 +39,8 @@ public class Focuspoint {
         this.themes = themes;
         this.progress = calculateProgress();
         this.focuspointMailContent = focuspointMailContent;
+        this.oefeningMailContent = oefeningMailContent;
+
 
     }
 
