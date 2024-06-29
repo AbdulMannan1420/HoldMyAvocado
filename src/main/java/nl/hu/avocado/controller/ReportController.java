@@ -9,8 +9,7 @@ import nl.hu.avocado.service.ReportService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/report")
+@RequestMapping(value = "/report" , method = { RequestMethod.GET, RequestMethod.POST })
 public class ReportController {
 
     private final ReportService reportService;
