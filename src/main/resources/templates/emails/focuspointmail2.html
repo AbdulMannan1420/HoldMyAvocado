@@ -174,6 +174,62 @@
             min-width: 100px;
             min-height: 130px;
         }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-left: 0;
+            font-family: Verdana, sans-serif;
+        }
+        .left-column, .right-column {
+            padding: 20px;
+        }
+        .left-column {
+            background-color: white;
+            width: 40%;
+            text-align: left;
+        }
+        .right-column {
+            background-color: blue;
+            color: white;
+            width: 50%;
+            border-radius: 20px;
+        }
+        .read-more {
+            color: lightblue;
+            border: 2px solid lightblue;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: small;
+        }
+        .read-more:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+        .articles {
+            color: blue;
+        }
+        .container{
+            margin-top: 20px;
+            box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+        }
+        table{
+            padding: 10px;
+
+        }
+        p{
+            font-size: x-small;
+            margin: 0;
+        }
+        h2{
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -223,6 +279,21 @@
                 <span style="color: DarkOrange; display: inline-block;">Articles</span>
                 <div style="background-color: blue; height: 3px; width: 80%; display: inline-block;"></div>
             </div>
+            <table class="container" role="presentation" cellspacing="0" cellpadding="0" border="0" style="background-color: #FFFFFF">
+                <tr>
+                    <td class="left-column">
+                        <h2 style="padding-bottom: 10px; font-weight: bolder">Something different...</h2>
+                        <p style="padding-bottom: 10px">To help you financially prepare for the future I have chosen these articles for you to read.</p>
+                        <p>To switch things up we have strayed away from last week's video format! Instead, we will give you small parts of articles to read, if you end up liking any you can click on the link to read more.</p>
+                    </td>
+                    <td class="right-column" style="padding-left: 10px; padding-right: 0">
+                        <img src="https://via.placeholder.com/150" alt="placeholder" title="Placeholder"  width="50" height="50" style=""/>
+                        <h2 style="font-size: small; margin: 0;padding: 0;">How to invest</h2>
+                        <p>Investing with smaller dollar amounts is possible now more than ever, thanks to low or no investment minimums, zero commissions, and fractional shares. There are plenty of investments available for relatively small amounts, such as index funds, exchange traded funds...</p>
+                        <a href="#" class="read-more">Read more</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
