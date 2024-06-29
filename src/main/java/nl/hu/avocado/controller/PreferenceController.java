@@ -1,5 +1,6 @@
-package nl.hu.avocado.controller.dto;
+package nl.hu.avocado.controller;
 
+import nl.hu.avocado.controller.dto.PreferenceDTO;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
