@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <style>body {
+        /*visibility: hidden*/
+    }</style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .body {
+            width: 400px;
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .progressie-bar {
+
+            background-color: blue;
+            text-align: center;
+            padding-top: 17px;
+        }
+
+        .progressie-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 3px solid lightgreen;
+            display: inline-block;
+            margin: 0 10px; /* Space between indicators */
+        }
+
+        .pi1 {
+            background-color: #2E8B57;
+        }
+
+        .pi2 {
+            background-color: #2E8B57;
+
+        }
+
+        .pi3 {
+            background-color: #2E8B57;
+        }
+
+        .pi4 {
+            background-color: #2E8B57;
+
+        }
+
+        .pi5 {
+            background-color: white;
+
+        }
+
+
+        .intro-tekst {
+            margin: 0;
+            border: 1px solid blue;
+            background-color: blue;
+            text-align: center;
+            color: white;
+        }
+
+        .intro-tekst > p {
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+
+        .rapport-samenvatting {
+            padding-left: 23px;
+            padding-right: 15px;
+            background-color: rgba(211, 211, 211, 0.5);
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
+
+        }
+
+        .green-container {
+            margin: 50px auto;
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            height: 280px;
+            display: flex;
+            padding-bottom: 10px;
+
+
+        }
+
+        .chosen-focuspoint {
+            border: 1px solid black;
+            color: orange;
+            max-height: 200px;
+            min-width: 150px;
+            border-radius: 10px;
+            background-color: blue;
+            bottom: 100px;
+            margin-top: 0px;
+
+
+        }
+
+        .report-button {
+            background-color: inherit;
+            border: 2px solid blue;
+            color: blue;
+            height: 27px;
+            width: 123px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 18px;
+            margin-top: 1px;
+
+
+        }
+
+        .report-button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .lowest_focuspoint-image {
+            margin-left: 32px;
+        }
+
+
+        .percentage {
+            display: block;
+            width: 50px;
+            font-size: 20px;
+            background-color: white;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px 10px white;
+            border-radius: 10px;
+            margin-left: 67%;
+            border: 1px solid black;
+            margin-bottom: 10px;
+
+        }
+
+        .PART1 {
+
+            width: 150px;
+
+        }
+
+        .PART2 {
+            text-align: center;
+
+        }
+
+        .recommend {
+            color: orange;
+            font-weight: bold;
+
+        }
+
+        .lfs-tekst {
+            color: blue;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            min-width: 100px;
+            min-height: 130px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-left: 0;
+            font-family: Verdana, sans-serif;
+        }
+        .left-column, .right-column {
+            padding: 20px;
+        }
+        .left-column {
+            background-color: white;
+            width: 40%;
+            text-align: left;
+        }
+        .right-column {
+            background-color: blue;
+            color: white;
+            width: 50%;
+            border-radius: 20px;
+        }
+        .read-more {
+            color: lightblue;
+            border: 2px solid lightblue;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: small;
+        }
+        .read-more:hover {
+            background-color: lightgreen;
+            color: white;
+        }
+        .articles {
+            color: blue;
+        }
+        .container{
+            margin-top: 20px;
+            box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+        }
+        table{
+            padding: 10px;
+
+        }
+        p{
+            font-size: x-small;
+            margin: 0;
+        }
+        h2{
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="body">
+    <table class="progressie-bar" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <div class="progressie-indicator pi1"></div>
+                <div class="progressie-indicator pi2"></div>
+                <div class="progressie-indicator pi3"></div>
+                <div class="progressie-indicator pi4"></div>
+                <div class="progressie-indicator pi5"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="intro-tekst">
+        <h1 style="color: white;">Welkom Terug <span th:text="${name}" th:remove="tag"></span>!</h1>
+        <p style="color: white;">De Tijd vliegt voorbij en we zijn al bij de vierde mail! Om je horizon te verbreden,
+            wil ik je in deze mail meer content aanbieden over de thema's van je gekozen focuspoint. Veel plezier!</p>
+    </div>
+    <div class="rapport-samenvatting">
+        <div class="green-container">
+            <div class="PART1">
+                <div class="chosen-focuspoint">
+                    <h2 style="font-weight: bold;
+    margin-top: 10px;">
+                        <span th:text="${chosenFocuspointName}"></span>
+                    </h2>
+                    <img class="lowest_focuspoint-image"
+                         th:src="${chosenFocuspointLogo}"
+                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
+                    <p class="percentage">
+                        <span th:text="${chosenFocuspointProgress}"></span>%
+                    </p>
+                </div>
+            </div>
+
+            <div class="PART2">
+                <h4 class="recommend"> Recommended</h4>
+                <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
+                <button class="report-button">See my Report</button>
+            </div>
+        </div>
+        <div class="articles">
+            <div style="text-align: center;">
+                <span style="color: DarkOrange; display: inline-block;">Articles</span>
+                <div style="background-color: blue; height: 3px; width: 80%; display: inline-block;"></div>
+            </div>
+            <table class="container" role="presentation" cellspacing="0" cellpadding="0" border="0" style="background-color: #FFFFFF">
+                <tr>
+                    <td class="left-column">
+                        <h2 style="padding-bottom: 10px; font-weight: bolder">Something different...</h2>
+                        <p style="padding-bottom: 10px">To help you financially prepare for the future I have chosen these articles for you to read.</p>
+                        <p>To switch things up we have strayed away from last week's video format! Instead, we will give you small parts of articles to read, if you end up liking any you can click on the link to read more.</p>
+                    </td>
+                    <td class="right-column" style="padding-left: 10px; padding-right: 0">
+                        <img src="https://via.placeholder.com/150" alt="placeholder" title="Placeholder"  width="50" height="50" style=""/>
+                        <h2 style="font-size: small; margin: 0;padding: 0;">How to invest</h2>
+                        <p>Investing with smaller dollar amounts is possible now more than ever, thanks to low or no investment minimums, zero commissions, and fractional shares. There are plenty of investments available for relatively small amounts, such as index funds, exchange traded funds...</p>
+                        <a href="#" class="read-more">Read more</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
