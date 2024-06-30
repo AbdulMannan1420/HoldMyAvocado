@@ -127,6 +127,30 @@ public class EmailService {
             properties.put("quizContent_URL", report.getChosenFocuspoint().getOefeningMailContent().getQuizContent_URL());
             properties.put("quiz_URL", report.getChosenFocuspoint().getOefeningMailContent().getQuiz_URL());
 
+            // FocuspointMail2 ->  mail 4
+            // Article
+            properties.put("focuspointMail2_URL", report.getChosenFocuspoint().getFocuspointMail2Content().getArticle_URL());
+            properties.put("focuspointMail2_imageURL", report.getChosenFocuspoint().getFocuspointMail2Content().getArticle_imageURL());
+            properties.put("focuspointMail2_title", report.getChosenFocuspoint().getFocuspointMail2Content().getArticle_title());
+            properties.put("focuspointMail2_text", report.getChosenFocuspoint().getFocuspointMail2Content().getArticle_text());
+            // Something Fun
+            properties.put("focuspointMail2_sn1_URL", report.getChosenFocuspoint().getFocuspointMail2Content().getSn1_URL());
+            properties.put("focuspointMail2_sn1_imageURL", report.getChosenFocuspoint().getFocuspointMail2Content().getSn1_imageURL());
+            properties.put("focuspointMail2_sn1_title", report.getChosenFocuspoint().getFocuspointMail2Content().getSn1_title());
+            properties.put("focuspointMail2_sn1_text", report.getChosenFocuspoint().getFocuspointMail2Content().getSn1_text());
+
+            properties.put("focuspointMail2_sn2_URL", report.getChosenFocuspoint().getFocuspointMail2Content().getSn2_URL());
+            properties.put("focuspointMail2_sn2_imageURL", report.getChosenFocuspoint().getFocuspointMail2Content().getSn2_imageURL());
+            properties.put("focuspointMail2_sn2_title", report.getChosenFocuspoint().getFocuspointMail2Content().getSn2_title());
+            properties.put("focuspointMail2_sn2_text", report.getChosenFocuspoint().getFocuspointMail2Content().getSn2_text());
+
+            properties.put("focuspointMail2_sn3_URL", report.getChosenFocuspoint().getFocuspointMail2Content().getSn3_URL());
+            properties.put("focuspointMail2_sn3_imageURL", report.getChosenFocuspoint().getFocuspointMail2Content().getSn3_imageURL());
+            properties.put("focuspointMail2_sn3_title", report.getChosenFocuspoint().getFocuspointMail2Content().getSn3_title());
+            properties.put("focuspointMail2_sn3_text", report.getChosenFocuspoint().getFocuspointMail2Content().getSn3_text());
+
+
+
 
 
 

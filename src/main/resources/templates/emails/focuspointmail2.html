@@ -307,7 +307,7 @@
     </table>
     <div class="intro-tekst">
         <h1 style="color: white;">Welkom Terug <span th:text="${name}" th:remove="tag"></span>!</h1>
-        <p style="color: white;">De Tijd vliegt voorbij en we zijn al bij de vierde mail! Om je horizon te verbreden,
+        <p style="color: white;"> De tijd vliegt voorbij en we zijn al bij de vierde mail! Om je horizon te verbreden,
             wil ik je in deze mail meer content aanbieden over de thema's van je gekozen focuspoint. Veel plezier!</p>
     </div>
     <div class="rapport-samenvatting">
@@ -341,15 +341,13 @@
             <table class="container" role="presentation" cellspacing="0" cellpadding="0" border="0" style="background-color: #FFFFFF">
                 <tr>
                     <td class="left-column">
-                        <h2 style="padding-bottom: 10px; font-weight: bolder">Something different...</h2>
-                        <p style="padding-bottom: 10px">To help you financially prepare for the future I have chosen these articles for you to read.</p>
-                        <p>To switch things up we have strayed away from last week's video format! Instead, we will give you small parts of articles to read, if you end up liking any you can click on the link to read more.</p>
+                        <h2 style="padding-bottom: 10px; font-weight: bolder">More In-Depth...</h2>
                     </td>
                     <td class="right-column" style="padding-left: 10px; padding-right: 0">
-                        <img src="https://via.placeholder.com/150" alt="placeholder" title="Placeholder"  width="50" height="50" style=""/>
-                        <h2 style="font-size: small; margin: 0;padding: 0;">How to invest</h2>
-                        <p>Investing with smaller dollar amounts is possible now more than ever, thanks to low or no investment minimums, zero commissions, and fractional shares. There are plenty of investments available for relatively small amounts, such as index funds, exchange traded funds...</p>
-                        <a href="#" class="read-more">Read more</a>
+                        <img th:src="${focuspointMail2_imageURL}" alt="placeholder" title="Placeholder"  width="50" height="50" style=""/>
+                        <h2 style="font-size: small; margin: 0;padding: 0;"><span th:text="${focuspointMail2_title}"></span></h2>
+                        <p><span th:text="${focuspointMail2_text}"></span></p>
+                        <a th:href="${focuspointMail2_URL}" class="read-more">Read more</a>
                     </td>
                 </tr>
             </table>
@@ -362,12 +360,12 @@
             <table style="margin-top: 10px" class="container-2" role="presentation" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td class="blue-box">
-                        <h2 class="h2"><span class="orange">Investing</span> for beginners</h2>
-                        <img src="https://via.placeholder.com/100" alt="Bank Image" width="75" height="75">
+                        <h2 class="h2"><span th:text="${focuspointMail2_sn1_title}"></span></h2>
+                        <img th:src="${focuspointMail2_sn1_imageURL}" alt="Bank Image" width="75" height="75">
                     </td>
                     <td class="text-column">
-                        <p>“Learned a lot about the basics of investing from this course! Definitely would recommend for any of you who haven’t started investing.”</p>
-                        <a href="#" class="button">Take a look</a>
+                        <p><span th:text="${focuspointMail2_sn1_text}"></span></p>
+                        <a th:href="${focuspointMail2_sn1_URL}" class="button">Take a look</a>
                     </td>
                 </tr>
             </table>
@@ -375,12 +373,12 @@
             <table style="margin-top: 10px" class="container-2" role="presentation" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td class="blue-box" style="margin: -50px">
-                        <h2 class="h2">Learn the <span class="light-blue">market</span></h2>
-                        <img src="https://via.placeholder.com/100" alt="Bank Image" width="75" height="75">
+                        <h2 class="h2"><span th:text="${focuspointMail2_sn2_title}"></span></h2>
+                        <img th:src="${focuspointMail2_sn2_imageURL}" alt="Bank Image" width="75" height="75">
                     </td>
                     <td class="text-column">
-                        <p>“The market seems so clear to me thanks a lot!”</p>
-                        <a href="#" class="button">Take a look</a>
+                        <p><span th:text="${focuspointMail2_sn2_text}"></span></p>
+                        <a th:href="${focuspointMail2_sn2_URL}" class="button">Take a look</a>
                     </td>
                 </tr>
             </table>
@@ -388,12 +386,12 @@
             <table style="margin-top: 10px" class="container-2" role="presentation" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td class="blue-box">
-                        <h2 class="h2">Get <span class="light-blue">out </span>your <span class="orange">comfort zone</span></h2>
-                        <img src="https://via.placeholder.com/100" alt="Bank Image" width="75" height="75">
+                        <h2 class="h2"><span th:text="${focuspointMail2_sn3_title}"></span></h2>
+                        <img th:src="${focuspointMail2_sn3_imageURL}" alt="Bank Image" width="75" height="75">
                     </td>
                     <td class="text-column">
-                        <p>“Learned a lot about the basics of investing from this course! Definitely would recommend for any of you who haven’t started investing.”</p>
-                        <a href="#" class="button">Take a look</a>
+                        <p><span th:text="${focuspointMail2_sn3_text}"></span></p>
+                        <a th:href="${focuspointMail2_sn3_URL}" class="button">Take a look</a>
                     </td>
                 </tr>
             </table>

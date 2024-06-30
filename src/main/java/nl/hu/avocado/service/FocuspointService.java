@@ -2,6 +2,7 @@ package nl.hu.avocado.service;
 
 import nl.hu.avocado.controller.dto.FocuspointDTO;
 import nl.hu.avocado.data.FocuspointMailContentRepository;
+import nl.hu.avocado.data.FocuspointMail2ContentRepository;
 import nl.hu.avocado.data.FocuspointRepository;
 import nl.hu.avocado.data.OefeningMailContentRepository;
 import nl.hu.avocado.domain.Focuspoint;
@@ -24,12 +25,15 @@ public class FocuspointService {
 
     private final OefeningMailContentRepository oefeningMailContentRepository;
 
+    private final FocuspointMail2ContentRepository focuspointMailContent2Repository;
+
     private final ThemeService themeService;
 
-    public FocuspointService(FocuspointRepository focuspointRepository, FocuspointMailContentRepository focuspointMailContentRepository, OefeningMailContentRepository oefeningMailContentRepository, ThemeService themeService) {
+    public FocuspointService(FocuspointRepository focuspointRepository, FocuspointMailContentRepository focuspointMailContentRepository, OefeningMailContentRepository oefeningMailContentRepository, FocuspointMail2ContentRepository focuspointMail2ContentRepository, ThemeService themeService) {
         this.focuspointRepository = focuspointRepository;
         this.focuspointMailContentRepository = focuspointMailContentRepository;
         this.oefeningMailContentRepository = oefeningMailContentRepository;
+        this.focuspointMailContent2Repository = focuspointMail2ContentRepository;
         this.themeService = themeService;
     }
 
@@ -41,7 +45,7 @@ public class FocuspointService {
                 focuspoint.getName(),
                 focuspoint.getAdvies(),
                 focuspoint.getLogo(),
-                themes, focuspoint.getFocuspointMailContent().getId(), focuspoint.getOefeningMailContent().getId()
+                themes, focuspoint.getFocuspointMailContent().getId(), focuspoint.getOefeningMailContent().getId(), focuspoint.getFocuspointMail2Content().getId()
         );
     }
 
@@ -57,8 +61,9 @@ public class FocuspointService {
                 dto.getAdvies(),
                 dto.getLogo(),
                 themes, this.focuspointMailContentRepository.findById(dto.getFocuspointMailContent()).orElseThrow()
-        , this.oefeningMailContentRepository.findById(dto.getOefeningMailContent()).orElseThrow());
+                , this.oefeningMailContentRepository.findById(dto.getOefeningMailContent()).orElseThrow(), this.focuspointMailContent2Repository.findById(dto.getFocuspointMail2Content()).orElseThrow());
     }
+
 
     public void addFocuspoint(FocuspointDTO focuspointDTO) {
         Focuspoint focuspoint = dtoIntoFocuspoint(focuspointDTO);
