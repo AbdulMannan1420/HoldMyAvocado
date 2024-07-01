@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .body {
+            width: 400px;
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .progression-bar {
+
+            background-color: blue;
+            text-align: center;
+            padding-top: 17px;
+        }
+
+        .progression-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 3px solid lightgreen;
+            display: inline-block;
+            margin: 0 10px; /* Space between indicators */
+        }
+
+        .pi1 {
+            background-color: #2E8B57;
+        }
+
+        .pi2 {
+            background-color: white;
+
+        }
+
+        .pi3 {
+            background-color: white;
+        }
+
+        .pi4 {
+            background-color: white;
+
+        }
+
+        .pi5 {
+            background-color: white;
+
+        }
+
+
+        .intro-tekst {
+            margin: 0;
+            border: 1px solid blue;
+            background-color: blue;
+            text-align: center;
+            color: white;
+        }
+
+        .intro-tekst > p {
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+
+        .report-summary {
+            padding-left: 23px;
+            padding-right: 15px;
+            background-color: rgba(211, 211, 211, 0.5);
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
+
+        }
+
+        .highlight {
+            color: lightgreen;
+            text-decoration: underline;
+        }
+
+        .green-container {
+            margin: 50px auto;
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            height: 260px;
+            display: flex;
+            padding-bottom: 10px;
+
+
+        }
+
+        .lowest-focuspoint {
+            border: 1px solid black;
+            color: orange;
+            max-height: 200px;
+            min-width: 150px;
+            border-radius: 10px;
+            background-color: blue;
+            bottom: 100px;
+            margin-top: 0px;
+
+
+        }
+
+        #focuspoint-form {
+            background-color: inherit;
+            margin-left: 18px;
+            margin-top: 26px;
+
+        }
+
+        .focuspoint-button {
+            border: 2px solid blue;
+            color: blue;
+            height: 27px;
+            width: 123px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 15px;
+            background-color: inherit;
+        }
+
+        .focuspoint-button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        .report-button {
+            background-color: blue;
+            border: 2px solid blue;
+            color: #11E930;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            height: 27px;
+            width: 123px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 40px;
+            transition-duration: 0.4s;
+            margin-top: 23px;
+        }
+
+        .report-button:hover {
+            background-color: transparent;
+            color: #0000ff
+        }
+
+        .lowest_focuspoint-image {
+            margin-left: 32px;
+        }
+
+
+        .percentage {
+            display: block;
+            width: 50px;
+            font-size: 20px;
+            background-color: white;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px 10px white;
+            border-radius: 10px;
+            margin-left: 67%;
+            border: 1px solid black;
+            margin-bottom: 10px;
+
+        }
+
+        .PART1 {
+
+            width: 150px;
+
+        }
+
+        .PART2 {
+            text-align: center;
+
+        }
+
+        .recommend {
+            color: orange;
+            font-weight: bold;
+
+        }
+
+        .lowestFocuspoint-tekst {
+            color: blue;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            min-width: 100px;
+            min-height: 130px;
+        }
+
+        .choose-focuspoint {
+            display: flex;
+            font-size: 7px;
+            color: darkorange;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .focuspoint {
+            width: 100px;
+            border-radius: 12px;
+            background-color: white;
+            font-size: 10px;
+            box-shadow: 3px 3px 1px 0px #938c8c;
+            max-height: 250px;
+        }
+
+        .focuspoint-1 {
+            margin-right: 10px;
+            margin-left: 13px;
+        }
+
+        .focuspoint-2 {
+            margin-left: 10px;
+            margin-right: 18px;
+        }
+
+        .focuspoint-3 {
+            margin-right: 10px;
+        }
+
+        .secondLowest_focuspoint-image, .thirdLowest_focuspoint-image, .fourthLowest_focuspoint-image {
+            margin-right: 3px;
+        }
+
+        .button {
+            padding: 4px 20px;
+            background-color: transparent;
+            color: blue;
+            border-radius: 15px;
+            border: 1px solid blue;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 0px;
+            margin-top: 10px;
+            margin-bottom: 7px;
+
+        }
+
+        .button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+
+        .preferences-header {
+            width: 100%;
+            height: 20px;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .preferences-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 187px;
+            height: 3px;
+            margin-top: 20px;
+            margin-left: 5px;
+            border-radius: 4px;
+
+
+        }
+
+        .preferences-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-left: 8px;
+        }
+
+        #inhoudsvoorkeur-form {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-top: 37px;
+            padding-left: 7px;
+            padding-right: 7px;
+
+        }
+
+        #day-preferences {
+            padding-top: 17px;
+            background-color: rgba(211, 211, 211, 0.5);
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        #time_preference {
+            background-color: rgba(211, 211, 211, 0.5);
+            padding: 17px 7px;
+
+        }
+
+        .introduction-header {
+            width: 100%;
+            height: auto;
+            display: flex;
+            background-color: rgba(211, 211, 211, 0.5);
+        }
+
+        .intro-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 290px;
+            height: 3px;
+            margin-left: 6px;
+            margin-top: 20px;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+
+        .introd-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-bottom: 10px;
+            margin-right: 8px;
+
+        }
+
+        .introduction {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            border: 1px solid rgba(211, 211, 211, 0.5);
+            background: rgba(211, 211, 211, 0.5) linear-gradient(to top, blue 45%, rgba(211, 211, 211, 0.5) 30%);
+
+        }
+
+        .intro_green-container {
+            border-radius: 15px;
+            background: linear-gradient(to bottom right, #11E930, #FFFFFF);
+            text-align: center;
+            height: 200px;
+            display: flex;
+            padding-bottom: 10px;
+            width: 87%;
+            margin: 50px auto 50px 20px;
+        }
+
+        .intro-PART1 {
+            text-align: center;
+            width: 45%;
+            height: 100%;
+
+        }
+
+        .intro-PART2 {
+            width: 55%;
+            height: 100%;
+        }
+
+        input[type="submit"] {
+            color: blue;
+            font-size: large;
+            background-color: white;
+            border: 1px solid blue;
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+        .selector {
+            margin: 10px;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="body">
+
+    <table class="progression-bar" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <div class="progression-indicator pi1"></div>
+                <div class="progression-indicator pi2"></div>
+                <div class="progression-indicator pi3"></div>
+                <div class="progression-indicator pi4"></div>
+                <div class="progression-indicator pi5"></div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="intro-tekst">
+        <h1 style="color: white;">Welkom <span th:text="${name}" th:remove="tag"></span></h1>
+        <p style="color: white;">Fijn dat je de MAE persoonlijke ontwikkelingsmeter hebt voltooid. Mijn naam is Sophia
+            en ik ben je online supervisor deze periode. Samen met mijn team hopen we dat je binnen 2 maanden resultaten
+            ziet. De <span class="highlight" style="font-weight: bold;">voortgangsbalk</span> laat zien hoe ver je al
+            bent.
+            Neem
+            gerust een kijkje en we nemen binnenkort weer contact met je op.</p>
+    </div>
+
+    <div class="report-summary">
+        <div class="green-container">
+            <div class="PART1">
+                <div class="lowest-focuspoint">
+                    <h2 style="font-weight: bold;
+    margin-top: 10px;">
+                        <span th:text="${lowestFocuspointName}"></span>
+                    </h2>
+                    <img class="lowest_focuspoint-image"
+                         src="https://i.ibb.co/T1rwgWG/326014.png"
+                         alt="logo" title="Logo" style="display:block" width="88" height="92"/>
+                    <p class="percentage">
+                        <span th:text="${lowestFocuspointProgress}"></span>%
+                    </p>
+                </div>
+                <button class="report-button">See my report</button>
+            </div>
+            <div class="PART2">
+                <h4 class="recommend"> Recommended</h4>
+                <p class="lowestFocuspoint-tekst"><span th:text="${lowestFocuspointAdvies}"></span></p>
+                <form id="focuspoint-form"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${lowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="focuspoint-button">Choose Focuspoint</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="other_focuspoints">
+
+        <div class="choose-focuspoint">
+            <div class="focuspoint-1 focuspoint">
+                <h2><span th:text="${secondLowestFocuspointName}"></span></h2>
+                <img class="secondLowest_focuspoint-image"
+                     th:src="${secondLowestFocuspointLogo}"
+                     alt="logo" width="70" height="70"/>
+                <form id="job-crafting"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${secondlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button>
+                    <br>
+                </form>
+
+            </div>
+            <div class="focuspoint-2 focuspoint">
+                <h2><span th:text="${thirdLowestFocuspointName}"></span></h2>
+                <img class="thirdLowest_focuspoint-image"
+                     th:src="${thirdLowestFocuspointLogo}"
+                     alt="logo" width="70" height="70"/>
+                <form id="me-life"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${thirdlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button type="submit" class="button">Choose</button>
+                    <br>
+                </form>
+            </div>
+            <div class="focuspoint-3 focuspoint">
+                <h2><span th:text="${fourthLowestFocuspointName}"></span></h2>
+                <img class="fourthLowest_focuspoint-image"
+                     th:src="${fourthLowestFocuspointLogo}"
+                     alt="logo" width="70" height="70"/>
+                <form id="adoptability"
+                      th:action="@{'http://localhost:8080/report/' + ${email} + '/chosenfocuspoint/' + ${fourthlowestFocuspointID}}"
+                      method="post" target="_blank">
+                    <button class="button" type="submit">Choose</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="preferences-header">
+        <p class="preferences-tekst">What are you preferences?</p>
+        <div class="preferences-line"></div>
+    </div>
+    <form action="http://localhost:8080/preference/receive" id="inhoudsvoorkeur-form" method="post">
+
+
+        <div class="inhoud-container selector" style="
+    background-color: blue;
+    border-radius: 25px;">
+
+            <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+                <tr>
+                    <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+                        <select id="options" name="contentOptions" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+                            <option value="tekst"> Tekst</option>
+                            <option value="tekst_video"> Tekst/Video</option>
+                        </select>
+
+                    </td>
+                    <td style="
+          text-align: left;
+          color: white;">What kind of content do you prefer?
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="inhoud-container selector" style="
+    background-color: blue;
+    border-radius: 25px;">
+
+            <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+                <tr>
+                    <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+                        <select id="day-options" name="dayOptions" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
+                        </select>
+
+                    </td>
+                    <td style="
+          text-align: left;
+          color: white;"> What day do you prefer?
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="tijd-container selector" style="
+    background-color: blue;
+    border-radius: 25px;">
+
+            <table style="
+      width: 100%;
+      border-collapse: collapse;">
+
+                <tr>
+                    <td style="
+          padding-right: 10px;
+          width: 30%; left: 0">
+
+                        <select id="time-options" name="timeOptions" style="
+            width: 100%;
+            border-radius: 25px 0 0 25px;
+            padding: 8px;
+            color: white;
+            background-color: cornflowerblue;
+            border: none; left: 0">
+
+                            <option value="8am">8 a.m.</option>
+                            <option value="12pm">12 p.m.</option>
+                            <option value="4pm">4 a.m.</option>
+                            <option value="8pm">8 p.m.</option>
+
+                        </select>
+                    </td>
+
+                    <td style="
+          text-align: left;
+          color: white;">What time do you most prefer?
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <input type="submit">
+    </form>
+
+    <div class="introduction-header">
+        <div class="intro-line"></div>
+        <p class="introd-tekst"> Introduction</p>
+    </div>
+    <div class="introduction">
+        <div class="intro_green-container">
+            <div class="intro-PART1">
+                <h3 style="color: darkorange;
+                font-weight: bold;"> Arjan Brons </h3>
+                <p style="color: blue; margin-top: 15px; "> "Your success is my success. Whatever it takes...."</p>
+                <button style="border: 1px solid blue; border-radius: 15px; color: blue; padding: 5px 17px; background-color: transparent; margin-top: 20px;">
+                    <a href="https://www.holdmyavocado.nl/over-arjan/" style="text-decoration: none; color: blue;">
+                        Read more
+                    </a>
+                </button>
+            </div>
+            <div class="intro-PART2">
+                <img style="margin-top: 52px; margin-left: 35px; border-radius: 25px;"
+                     src="https://drive.google.com/uc?export=download&id=19CVZUN-k9u0pquc6SjtqY83D8MzyXT3a"
+                     alt="logo" width="150" height="150"/>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+
+</html>

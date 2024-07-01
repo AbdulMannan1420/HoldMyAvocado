@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "ae166850-b45c-4b1b-9e05-6deb9a71501f",
+		"name": "Avocado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27440580"
+	},
+	"item": [
+		{
+			"name": "theme",
+			"item": [
+				{
+					"name": "add theme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 32,\r\n    \"naam\": \"naam\",\r\n    \"ranking\": 0,\r\n    \"score\": 0,\r\n    \"advies\": \"advies\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/theme",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"theme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get theme",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/theme/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"theme",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all themes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/focuspoint",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"focuspoint"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "focuspoint",
+			"item": [
+				{
+					"name": "add focuspoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"?\",\r\n    \"advies\": \"?\",\r\n    \"logo\": \"?\",\r\n    \"themes\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/focuspoint",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"focuspoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  focuspoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/focuspoint/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"focuspoint",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all focuspoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/focuspoint",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"focuspoint"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "add report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"focuspoints\": [1,2,3,4]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/report",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "choose focuspoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/report/matthewbijlhout@gmail.com/chosenfocuspoint/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"matthewbijlhout@gmail.com",
+								"chosenfocuspoint",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"voornaam\": \"Matthew\",\r\n    \"email\": \"matthewbijlhout@gmail.com\",\r\n    \"reports\": [1]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get last report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/lastreport/matthewbijlhout@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"lastreport",
+								"matthewbijlhout@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "oefeningMailContent",
+			"item": [
+				{
+					"name": "add content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"quizContent_URL\": \"https://example.com/quiz-content\",\n    \"quiz_URL\": \"https://example.com/quiz\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/oefeningContent",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oefeningContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "focuspointmail2 content",
+			"item": [
+				{
+					"name": "add content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"article_title\": \"Example Article Title\",\n    \"article_text\": \"This is the text of the example article.\",\n    \"article_URL\": \"http://example.com/article\",\n    \"article_imageURL\": \"http://example.com/image.jpg\",\n    \"sn1_title\": \"Snippet 1 Title\",\n    \"sn1_text\": \"This is the text of the first snippet.\",\n    \"sn1_URL\": \"http://example.com/snippet1\",\n    \"sn1_imageURL\": \"http://example.com/snippet1image.jpg\",\n    \"sn2_title\": \"Snippet 2 Title\",\n    \"sn2_text\": \"This is the text of the second snippet.\",\n    \"sn2_URL\": \"http://example.com/snippet2\",\n    \"sn2_imageURL\": \"http://example.com/snippet2image.jpg\",\n    \"sn3_title\": \"Snippet 3 Title\",\n    \"sn3_text\": \"This is the text of the third snippet.\",\n    \"sn3_URL\": \"http://example.com/snippet3\",\n    \"sn3_imageURL\": \"http://example.com/snippet3image.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/theme_content",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"theme_content"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Introductie mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"avocadotestmail1@gmail.com\",\r\n    \"subject\": \"Introductie Mail\",\r\n    \"name\": \"Avocado\",\r\n    \"templateName\": \"introductiemail.html\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Focuspoint mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"avocadotestmail1@gmail.com\",\r\n    \"subject\": \"Focuspoint mail\",\r\n    \"name\": \"Avocado\",\r\n    \"templateName\": \"focuspointmail.html\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Oefening Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"avocadotestmail1@gmail.com\",\n    \"subject\": \"Oefening Mail\",\n    \"name\": \"Avocado\",\n    \"templateName\": \"alt.html\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Focuspointmail2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"avocadotestmail1@gmail.com\",\n    \"subject\": \"Focuspoint mail 2\",\n    \"name\": \"Avocado\",\n    \"templateName\": \"focuspointmail2.html\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ontwikkelmeter Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"avocadotestmail1@gmail.com\",\r\n    \"subject\": \"Ontwikkelmeter mail\",\r\n    \"name\": \"Avocado\",\r\n    \"templateName\": \"ontwikkelmetermail.html\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vooruitgang Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"avocadotestmail1@gmail.com\",\n    \"subject\": \"Vooruitgang/Intro mail\",\n    \"name\": \"Avocado\",\n    \"templateName\": \"vooruitgangmail.html\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sendHTMLEmail",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sendHTMLEmail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
