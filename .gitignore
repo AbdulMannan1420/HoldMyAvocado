@@ -1,4 +1,4 @@
 .mvn
 target
 .idea
-/src/main/resources/secret.properties
+secret.properties
