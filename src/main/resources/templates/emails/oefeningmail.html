@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <style>body {
-        visibility: hidden
+        /*visibility: hidden*/
     }</style>
     <style>
         * {
@@ -174,6 +174,102 @@
             min-width: 100px;
             min-height: 130px;
         }
+
+        .focus-text {
+            width: 77%;
+        }
+
+        .divide-line {
+            border: 1px solid blue;
+            background-color: blue;
+            width: 250px;
+            height: 3px;
+            margin-top: 10px;
+            margin-left: 5px;
+            border-radius: 4px;
+
+
+        }
+
+        .divide-tekst {
+            font-weight: bold;
+            color: orange;
+            margin-bottom: 10px;
+            margin-right: 8px;
+        }
+
+
+        .quiz-content, .quiz {
+            background-color: rgb(211, 211, 211, 0.5);
+            padding: 10px;
+        }
+
+        .gekozen-heading {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .gekozen-heading p {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .gekozen-heading::after {
+            content: "";
+            flex-grow: 1;
+            border-radius: 5px;
+            height: 3px;
+            background-color: blue;
+            margin-right: 5px;
+        }
+
+        .witte-container {
+            background-color: white;
+            box-shadow: lightgray 5px 5px 5px 2px;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 0 auto;
+            width: 340px;
+            height: auto;
+            display: flex;
+            color: blue;
+        }
+
+        .button-style {
+            display: inline-block;
+            padding: 5px 20px;
+            color: blue;
+            background-color: white;
+            border: blue 1px solid;
+            border-radius: 15px;
+            font-size: small;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-style:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .focus-image img {
+            margin-top: 20px;
+            margin-left: 10px;
+            border-radius: 15px;
+        }
+
+        .gekozen-heading p {
+            color: darkorange;
+            margin: 0;
+        }
+
+        .divider {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -192,7 +288,7 @@
     </table>
     <div class="intro-tekst">
         <h1 style="color: white;">Hi <span th:text="${name}" th:remove="tag"></span>!</h1>
-        <p style="color: white;">We ontmoeten elkaar weer. In deze mail wil ik je aantal oefeningen aanbieden over je
+        <p style="color: white;">We ontmoeten elkaar weer. In deze mail wil ik je een quiz aanbieden over je
             gekozen focuspoint om voor jezelf te zien hoeveel je hebt geleerd</p>
     </div>
     <div class="rapport-samenvatting">
@@ -217,6 +313,47 @@
                 <p class="lfs-tekst"><span th:text="${chosenFocuspointAdvies}"></span></p>
                 <button class="report-button">See my Report</button>
             </div>
+        </div>
+    </div>
+    <div class="quiz-content">
+        <div class="divider">
+            <div class="gekozen-heading">
+                <p class="divide-tekst">Something fun</p>
+                <div class="divide-line"></div>
+            </div>
+        </div>
+        <div class="witte-container">
+            <div class="focus-text">
+                <h3> Bestudeer de content   </h3>
+                <p>
+                    Ik heb hier wat content voor je uitgekozen. Neem deze goed door, want je gaat er straks een
+                    quiz over maken. Veel success!</p>
+                <a class="button-style" th:href="${quizContent_URL}">Read now</a>
+            </div>
+            <div class="focus-image">
+                <img src="https://drive.google.com/uc?export=download&id=1seCaSnMnhwOchJXBagviBGbzbsS7QO0b" alt="logo" width="125" height="125"/>
+            </div>
+
+        </div>
+    </div>
+    <div class="quiz">
+        <div class="divider">
+            <div class="gekozen-heading">
+                <p class="divide-tekst">Something fun</p>
+                <div class="divide-line"></div>
+            </div>
+        </div>
+        <div class="witte-container">
+            <div class="focus-text">
+                <h3> Maak de quiz </h3>
+                <p>
+                    Klaar? Maak hieronder de quiz om je kennis te testen.</p>
+                <a class="button-style" th:href="${quiz_URL}">Take the quiz</a>
+            </div>
+            <div class="focus-image">
+                <img src="https://drive.google.com/uc?export=download&id=1ssZDDgjlpNF0h8plE5dwjIl6kz4IleEl" alt="logo" width="125" height="125"/>
+            </div>
+
         </div>
     </div>
 </div>
