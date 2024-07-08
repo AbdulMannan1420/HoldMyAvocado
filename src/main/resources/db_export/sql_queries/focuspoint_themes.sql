@@ -1,0 +1,16 @@
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (1, 14);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (1, 15);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (1, 16);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (2, 3);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (2, 11);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (2, 12);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (2, 13);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (3, 1);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (3, 2);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (3, 4);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (3, 9);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (3, 10);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (4, 5);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (4, 6);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (4, 7);
+INSERT INTO public.focuspoint_themes (focuspoint_id, themes_id) VALUES (4, 8);
